@@ -1,0 +1,19 @@
+[2026-04-26T15:28:40Z] test capture start
+$ ctest --test-dir /Users/tin12q/Projects/lab_ips_sec/build-verify --output-on-failure
+Test project /Users/tin12q/Projects/lab_ips_sec/build-verify
+    Start 1: decode TCP packet and produce summary
+1/5 Test #1: decode TCP packet and produce summary ..............   Passed    0.04 sec
+    Start 2: decode UDP packet
+2/5 Test #2: decode UDP packet ..................................   Passed    0.04 sec
+    Start 3: decode ICMP packet
+3/5 Test #3: decode ICMP packet .................................   Passed    0.04 sec
+    Start 4: reject unsupported non IPv4 ethertype
+4/5 Test #4: reject unsupported non IPv4 ethertype ..............   Passed    0.04 sec
+    Start 5: reject truncated ethernet and truncated ipv4/tcp
+5/5 Test #5: reject truncated ethernet and truncated ipv4/tcp ...   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 5
+
+Total Test time (real) =   0.20 sec
+exit_code=0
+[2026-04-26T15:28:41Z] test capture end

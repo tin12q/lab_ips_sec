@@ -1,0 +1,62 @@
+services:
+  ips:
+    build: ./docker/ips
+    container_name: ms_ips
+    hostname: ips
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+    sysctls:
+      net.ipv4.ip_forward: "1"
+    volumes:
+      - ./:/workspace
+      - ./logs:/var/log/minisnort
+    networks:
+      net_attack:
+        ipv4_address: 172.20.0.2
+      net_victim:
+        ipv4_address: 172.21.0.2
+    command: /workspace/scripts/ips_entrypoint.sh
+    tty: true
+
+  attacker:
+    build: ./docker/attacker
+    container_name: ms_attacker
+    hostname: attacker
+    cap_add:
+      - NET_RAW
+      - NET_ADMIN
+    volumes:
+      - ./scripts:/scripts:ro
+      - ./logs/attacker:/var/log/attacker
+    networks:
+      net_attack:
+        ipv4_address: 172.20.0.10
+    depends_on:
+      - ips
+    command: /scripts/attacker_entrypoint.sh
+    tty: true
+
+  victim:
+    build: ./docker/victim
+    container_name: ms_victim
+    hostname: victim
+    networks:
+      net_victim:
+        ipv4_address: 172.21.0.20
+    depends_on:
+      - ips
+    ports: []
+    tty: true
+
+networks:
+  net_attack:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.20.0.0/24
+  net_victim:
+    driver: bridge
+    ipam:
+      config:
+        - subnet: 172.21.0.0/24
