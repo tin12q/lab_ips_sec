@@ -3,6 +3,7 @@ services:
     build: ./docker/ips
     container_name: ms_ips
     hostname: ips
+    restart: always
     cap_add:
       - NET_ADMIN
       - NET_RAW
@@ -13,9 +14,9 @@ services:
       - ./logs:/var/log/minisnort
     networks:
       net_attack:
-        ipv4_address: 172.20.0.2
+        ipv4_address: 10.200.0.2
       net_victim:
-        ipv4_address: 172.21.0.2
+        ipv4_address: 10.201.0.2
     command: /workspace/scripts/ips_entrypoint.sh
     tty: true
 
@@ -31,7 +32,7 @@ services:
       - ./logs/attacker:/var/log/attacker
     networks:
       net_attack:
-        ipv4_address: 172.20.0.10
+        ipv4_address: 10.200.0.10
     depends_on:
       - ips
     command: /scripts/attacker_entrypoint.sh
@@ -41,9 +42,11 @@ services:
     build: ./docker/victim
     container_name: ms_victim
     hostname: victim
+    cap_add:
+      - NET_ADMIN
     networks:
       net_victim:
-        ipv4_address: 172.21.0.20
+        ipv4_address: 10.201.0.20
     depends_on:
       - ips
     ports: []
@@ -54,9 +57,9 @@ networks:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.20.0.0/24
+        - subnet: 10.200.0.0/24
   net_victim:
     driver: bridge
     ipam:
       config:
-        - subnet: 172.21.0.0/24
+        - subnet: 10.201.0.0/24

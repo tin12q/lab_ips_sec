@@ -1,0 +1,2 @@
+port_22=ok
+port_80=ok

@@ -1,0 +1,128 @@
+[2026-04-26T23:52:53Z] runtime capture start
+$ docker compose -f /Users/tin12q/Projects/lab_ips_sec/docker-compose.yml ps && docker logs --tail=120 ms_ips
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED       STATUS         PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   7 hours ago   Up 3 minutes   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        7 hours ago   Up 4 seconds   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     7 hours ago   Up 3 minutes   
+-- Build type: Release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/minisnort-build
+ninja: Entering directory `/tmp/minisnort-build'
+[0/4] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[0/4] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[1/4] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[1/4] Linking CXX executable src/minisnort[K[2/4] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[2/4] Linking CXX executable tests/test_parser[K[3/4] Linking CXX executable src/minisnort[K[4/4] Linking CXX executable tests/test_parser[K
+[2026-04-26 17:05:25.507] [[31m[1merror[m] unsupported networks entry at line 7: external_net: "any"
+sysctl: setting key "net.ipv4.ip_forward", ignoring: Read-only file system
+-- Using the multi-header code from /tmp/minisnort-build/_deps/nlohmann_json-src/include/
+-- Build spdlog: 1.14.1
+-- Build type: Release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/minisnort-build
+ninja: Entering directory `/tmp/minisnort-build'
+[0/4] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[0/4] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[1/4] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[1/4] Linking CXX executable src/minisnort[K[2/4] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[2/4] Linking CXX executable tests/test_parser[K[3/4] Linking CXX executable src/minisnort[K[4/4] Linking CXX executable tests/test_parser[K
+[2026-04-26 17:07:32.669] [[32minfo[m] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+[2026-04-26 17:07:32.669] [[32minfo[m] [nfq] listening on queue 0
+[2026-04-26 17:07:44.620] [[32minfo[m] [nfq] Got packet id=1, len=84
+[2026-04-26 17:07:44.621] [[32minfo[m] [nfq] Got packet id=2, len=84
+[2026-04-26 17:07:45.659] [[32minfo[m] [nfq] Got packet id=3, len=84
+[2026-04-26 17:07:45.660] [[32minfo[m] [nfq] Got packet id=4, len=84
+[2026-04-26 17:07:46.801] [[32minfo[m] [nfq] Got packet id=5, len=60
+[2026-04-26 17:07:46.801] [[32minfo[m] [nfq] Got packet id=6, len=60
+[2026-04-26 17:07:46.801] [[32minfo[m] [nfq] Got packet id=7, len=52
+[2026-04-26 17:07:46.801] [[32minfo[m] [nfq] Got packet id=8, len=127
+[2026-04-26 17:07:46.801] [[32minfo[m] [nfq] Got packet id=9, len=52
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=10, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=11, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=12, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=13, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=14, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=15, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=16, len=1500
+[2026-04-26 17:07:46.803] [[32minfo[m] [nfq] Got packet id=17, len=842
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=18, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=19, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=20, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=21, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=22, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=23, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=24, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=25, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=26, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=27, len=52
+[2026-04-26 17:07:46.804] [[32minfo[m] [nfq] Got packet id=28, len=52
+sysctl: setting key "net.ipv4.ip_forward", ignoring: Read-only file system
+-- Using the multi-header code from /tmp/minisnort-build/_deps/nlohmann_json-src/include/
+-- Build spdlog: 1.14.1
+-- Build type: Release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/minisnort-build
+ninja: Entering directory `/tmp/minisnort-build'
+[0/17] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[0/17] Building CXX object src/CMakeFiles/minisnort.dir/daq/pcap_daq.cpp.o[K[0/17] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[0/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/engine.cpp.o[K[0/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/http_parser.cpp.o[K[0/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/matcher.cpp.o[K[1/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/http_parser.cpp.o[K[1/17] Building CXX object tests/CMakeFiles/test_matcher.dir/test_matcher.cpp.o[K[2/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/engine.cpp.o[K[2/17] Building CXX object tests/CMakeFiles/test_matcher.dir/__/src/detection/http_parser.cpp.o[K[3/17] Building CXX object tests/CMakeFiles/test_matcher.dir/__/src/detection/http_parser.cpp.o[K[3/17] Building CXX object tests/CMakeFiles/test_matcher.dir/__/src/detection/matcher.cpp.o[K[4/17] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[4/17] Building CXX object tests/CMakeFiles/test_engine.dir/test_engine.cpp.o[K[5/17] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[5/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/engine.cpp.o[K[6/17] Building CXX object tests/CMakeFiles/test_matcher.dir/test_matcher.cpp.o[K[6/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/http_parser.cpp.o[K[7/17] Building CXX object src/CMakeFiles/minisnort.dir/daq/pcap_daq.cpp.o[K[7/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/matcher.cpp.o[K[8/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/http_parser.cpp.o[K[8/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/rules/rule_store.cpp.o[K[9/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/engine.cpp.o[K[10/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/rules/rule_store.cpp.o[K[11/17] Building CXX object tests/CMakeFiles/test_engine.dir/test_engine.cpp.o[K[12/17] Building CXX object src/CMakeFiles/minisnort.dir/detection/matcher.cpp.o[K[12/17] Linking CXX executable src/minisnort[K[13/17] Linking CXX executable src/minisnort[K[14/17] Building CXX object tests/CMakeFiles/test_matcher.dir/__/src/detection/matcher.cpp.o[K[14/17] Linking CXX executable tests/test_matcher[K[15/17] Linking CXX executable tests/test_matcher[K[16/17] Building CXX object tests/CMakeFiles/test_engine.dir/__/src/detection/matcher.cpp.o[K[16/17] Linking CXX executable tests/test_engine[K[17/17] Linking CXX executable tests/test_engine[K
+[2026-04-26 23:20:40.905] [[32minfo[m] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+[2026-04-26 23:20:40.905] [[32minfo[m] [nfq] listening on queue 0
+sysctl: setting key "net.ipv4.ip_forward", ignoring: Read-only file system
+-- Using the multi-header code from /tmp/minisnort-build/_deps/nlohmann_json-src/include/
+-- Build spdlog: 1.14.1
+-- Build type: Release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/minisnort-build
+ninja: Entering directory `/tmp/minisnort-build'
+[0/9] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[0/9] Building CXX object src/CMakeFiles/minisnort.dir/daq/pcap_daq.cpp.o[K[0/9] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[0/9] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[0/9] Building CXX object src/CMakeFiles/minisnort.dir/logger/alert_fast.cpp.o[K[0/9] Building CXX object tests/CMakeFiles/test_parser.dir/test_parser.cpp.o[K[1/9] Building CXX object src/CMakeFiles/minisnort.dir/util/config.cpp.o[K[1/9] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[2/9] Building CXX object src/CMakeFiles/minisnort.dir/daq/pcap_daq.cpp.o[K[3/9] Building CXX object src/CMakeFiles/minisnort.dir/logger/alert_fast.cpp.o[K[4/9] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[5/9] Building CXX object tests/CMakeFiles/test_parser.dir/__/src/util/config.cpp.o[K[6/9] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[6/9] Linking CXX executable src/minisnort[K[7/9] Linking CXX executable src/minisnort[K[8/9] Building CXX object tests/CMakeFiles/test_parser.dir/test_parser.cpp.o[K[8/9] Linking CXX executable tests/test_parser[K[9/9] Linking CXX executable tests/test_parser[K
+[2026-04-26 23:50:07.683] [[32minfo[m] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+[2026-04-26 23:50:07.685] [[32minfo[m] Alert fast log file: /var/log/minisnort/alert.log
+[2026-04-26 23:50:07.685] [[32minfo[m] [nfq] listening on queue 0
+[2026-04-26 23:50:08.189] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=1
+[2026-04-26 23:50:10.281] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=2
+[2026-04-26 23:50:10.282] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=3
+[2026-04-26 23:50:11.326] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=4
+[2026-04-26 23:50:11.326] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=5
+[2026-04-26 23:50:11.404] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=6
+[2026-04-26 23:50:11.404] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=7
+[2026-04-26 23:50:11.404] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=8
+[2026-04-26 23:50:11.405] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=9
+[2026-04-26 23:50:11.405] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=10
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=11
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=12
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=13
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=14
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=15
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=16
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=17
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=18
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=19
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=20
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=21
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=22
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=23
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=24
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=25
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=26
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=27
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=28
+[2026-04-26 23:50:11.407] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=29
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=30
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=31
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=32
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=33
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=34
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=35
+[2026-04-26 23:50:11.467] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=36
+[2026-04-26 23:50:11.468] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=37
+[2026-04-26 23:50:11.468] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=38
+[2026-04-26 23:50:11.468] [[33m[1mwarning[m] [nfq] fail-open: decode failed for packet_id=39
+sysctl: setting key "net.ipv4.ip_forward", ignoring: Read-only file system
+-- Using the multi-header code from /tmp/minisnort-build/_deps/nlohmann_json-src/include/
+-- Build spdlog: 1.14.1
+-- Build type: Release
+-- Configuring done
+-- Generating done
+-- Build files have been written to: /tmp/minisnort-build
+ninja: Entering directory `/tmp/minisnort-build'
+[0/4] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[0/4] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[0/4] Building CXX object src/CMakeFiles/minisnort.dir/logger/alert_fast.cpp.o[K[1/4] Building CXX object src/CMakeFiles/minisnort.dir/daq/nfq_daq.cpp.o[K[2/4] Building CXX object src/CMakeFiles/minisnort.dir/logger/alert_fast.cpp.o[K[3/4] Building CXX object src/CMakeFiles/minisnort.dir/main.cpp.o[K[3/4] Linking CXX executable src/minisnort[K[4/4] Linking CXX executable src/minisnort[K
+[2026-04-26 23:52:50.915] [[32minfo[m] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+[2026-04-26 23:52:50.915] [[32minfo[m] Alert fast log file: /var/log/minisnort/alert.log
+[2026-04-26 23:52:50.915] [[32minfo[m] [nfq] listening on queue 0
+exit_code=0
+[2026-04-26T23:52:53Z] runtime capture end

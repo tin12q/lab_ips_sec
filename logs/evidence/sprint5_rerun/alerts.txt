@@ -1,0 +1,4 @@
+[2026-04-27T02:55:02Z] alerts capture start
+$ docker exec ms_ips sh -lc 'ls -la /var/log/minisnort; tail -n 300 /var/log/minisnort/alert.log; echo --- runtime_snapshot ---; sed -n "1,40p" /var/log/minisnort/runtime_snapshot.txt'
+exit_code=1
+[2026-04-27T02:55:03Z] alerts capture end

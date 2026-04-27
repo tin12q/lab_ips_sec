@@ -1,0 +1,21 @@
+[2026-04-27T02:54:16Z] runtime capture start
+$ docker compose up ips (captured ~20s)
+ Container ms_ips  Running
+Attaching to ms_ips
+ms_ips  | -- Using the multi-header code from /tmp/minisnort-build/_deps/nlohmann_json-src/include/
+ms_ips  | -- Build spdlog: 1.14.1
+ms_ips  | -- Build type: Release
+ms_ips  | -- Configuring done
+ms_ips  | -- Generating done
+ms_ips  | -- Build files have been written to: /tmp/minisnort-build
+ms_ips  | ninja: Entering directory `/tmp/minisnort-build'
+ms_ips  | ninja: no work to do.
+ms_ips  | [2026-04-27 02:54:17.294] [[32minfo[m] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+ms_ips  | [2026-04-27 02:54:17.294] [[32minfo[m] Alert fast log file: /var/log/minisnort/alert.log
+ms_ips  | [2026-04-27 02:54:17.294] [[32minfo[m] [nfq] listening on queue 0
+Gracefully Stopping... press Ctrl+C again to force
+ Container ms_ips  Stopping
+ Container ms_ips  Stopped
+
+exit_code=0
+[2026-04-27T02:54:38Z] runtime capture end

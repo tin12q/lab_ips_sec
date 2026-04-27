@@ -1,0 +1,3 @@
+# minimal config with no recognized sections
+unrelated:
+  enabled: true

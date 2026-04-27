@@ -1,0 +1,4 @@
+[2026-04-27T03:37:54Z] test capture start
+$ docker exec ms_attacker python3 - <<"PY"\nimport socket\nfor p in (22,80):\n s=socket.socket(); s.settimeout(3)\n try:\n  s.connect(("10.201.0.20",p)); print(f"port_{p}=ok")\n except Exception as e:\n  print(f"port_{p}=err:{e}")\n s.close()\nPY
+bash: -c: line 0: syntax error near unexpected token `('
+bash: -c: line 0: `docker exec ms_attacker python3 - <<"PY"\nimport socket\nfor p in (22,80):\n s=socket.socket(); s.settimeout(3)\n try:\n  s.connect(("10.201.0.20",p)); print(f"port_{p}=ok")\n except Exception as e:\n  print(f"port_{p}=err:{e}")\n s.close()\nPY'

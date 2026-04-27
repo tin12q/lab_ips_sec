@@ -3,7 +3,7 @@ interface: eth0
 nfqueue:
   queue_num: 0
 networks:
-  home_net: "172.21.0.0/24"
+  home_net: "10.201.0.0/24"
   external_net: "any"
 rules:
   file: "/workspace/config/rules/local.rules"

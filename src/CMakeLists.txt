@@ -23,6 +23,16 @@ add_executable(minisnort
   main.cpp
   daq/pcap_daq.cpp
   daq/nfq_daq.cpp
+  detection/engine.cpp
+  detection/threshold.cpp
+  detection/http_parser.cpp
+  detection/matcher.cpp
+  flow/flow_table.cpp
+  flow/tcp_state.cpp
+  rules/parser.cpp
+  rules/rule_store.cpp
+  util/config.cpp
+  logger/alert_fast.cpp
 )
 
 target_include_directories(minisnort PRIVATE ${CMAKE_CURRENT_SOURCE_DIR})

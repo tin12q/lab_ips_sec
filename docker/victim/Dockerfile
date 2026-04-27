@@ -11,4 +11,4 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
 COPY init-dvwa.sh /usr/local/bin/init-dvwa.sh
 RUN chmod +x /usr/local/bin/init-dvwa.sh
 
-CMD ["/bin/bash", "-lc", "service mysql start && service apache2 start && service ssh start && ip route del default 2>/dev/null || true && ip route add default via 172.21.0.2 || true && /usr/local/bin/init-dvwa.sh && tail -f /dev/null"]
+CMD ["/bin/bash", "-lc", "service mysql start && service apache2 start && service ssh start && ip route del default 2>/dev/null || true && ip route add default via 10.201.0.2 || true && /usr/local/bin/init-dvwa.sh && tail -f /dev/null"]

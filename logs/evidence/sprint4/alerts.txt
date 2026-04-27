@@ -1,0 +1,114 @@
+[2026-04-27T02:04:50Z] alerts capture start
+$ docker exec ms_ips sh -lc 'ls -la /var/log/minisnort; tail -n 300 /var/log/minisnort/alert.log'
+total 20
+drwxr-xr-x 5 root root   160 Apr 26 23:50 .
+drwxr-xr-x 1 root root  4096 Apr 26 16:48 ..
+-rw-r--r-- 1 root root 14744 Apr 27 02:04 alert.log
+drwxr-xr-x 2 root root    64 Apr 26 15:05 attacker
+drwxr-xr-x 7 root root   224 Apr 27 01:42 evidence
+04/27-01:42:07.533591 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:07.533591 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:08.545183 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:08.545183 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:09.560321 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:09.560321 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:19.691258 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:19.691258 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:19.692153 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:42:20.043242 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:20.247685 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:20.457949 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:20.867966 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:21.727547 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:23.386398 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:26.650309 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:33.369892 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:42:46.681748 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:43:12.795972 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:54108 -> 10.201.0.20:80
+04/27-01:54:48.908823 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:54:48.908823 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:54:49.950272 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:54:49.950272 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:54:50.974042 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:54:50.974042 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:55:01.119249 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:55:01.119249 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:55:01.120597 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-01:55:01.298638 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59722 -> 10.201.0.20:22
+04/27-01:55:01.567343 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59728 -> 10.201.0.20:22
+04/27-01:55:01.577478 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59728 -> 10.201.0.20:22
+04/27-01:55:01.584349 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59728 -> 10.201.0.20:22
+04/27-01:55:01.628801 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59740 -> 10.201.0.20:22
+04/27-01:55:08.263011 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59728 -> 10.201.0.20:22
+04/27-01:55:12.693079 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59740 -> 10.201.0.20:22
+04/27-01:55:46.939549 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57864 -> 10.201.0.20:22
+04/27-01:55:46.982440 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57864 -> 10.201.0.20:22
+04/27-01:55:46.988497 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57864 -> 10.201.0.20:22
+04/27-01:55:47.030109 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57864 -> 10.201.0.20:22
+04/27-01:55:53.658847 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57864 -> 10.201.0.20:22
+04/27-01:55:58.090197 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57854 -> 10.201.0.20:22
+04/27-01:56:32.356691 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51390 -> 10.201.0.20:22
+04/27-01:56:32.400060 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51390 -> 10.201.0.20:22
+04/27-01:56:32.405850 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51390 -> 10.201.0.20:22
+04/27-01:56:32.448201 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51390 -> 10.201.0.20:22
+04/27-01:56:36.975011 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51390 -> 10.201.0.20:22
+04/27-01:56:43.605573 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:51392 -> 10.201.0.20:22
+04/27-01:57:17.864559 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55504 -> 10.201.0.20:22
+04/27-01:57:17.870133 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55494 -> 10.201.0.20:22
+04/27-01:57:17.911810 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55494 -> 10.201.0.20:22
+04/27-01:57:17.962218 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55504 -> 10.201.0.20:22
+04/27-01:57:24.549308 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55494 -> 10.201.0.20:22
+04/27-01:57:29.013800 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:55504 -> 10.201.0.20:22
+04/27-01:58:01.026015 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37466 -> 10.201.0.20:22
+04/27-01:58:01.043453 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37472 -> 10.201.0.20:22
+04/27-01:58:01.084675 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37472 -> 10.201.0.20:22
+04/27-01:58:01.123590 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37466 -> 10.201.0.20:22
+04/27-01:58:12.140186 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37472 -> 10.201.0.20:22
+04/27-01:58:18.772536 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37466 -> 10.201.0.20:22
+04/27-01:58:50.802468 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48932 -> 10.201.0.20:22
+04/27-01:58:50.843876 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48932 -> 10.201.0.20:22
+04/27-01:58:50.848732 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48932 -> 10.201.0.20:22
+04/27-01:58:50.890263 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48932 -> 10.201.0.20:22
+04/27-01:58:55.320617 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48934 -> 10.201.0.20:22
+04/27-01:59:04.154230 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:48932 -> 10.201.0.20:22
+04/27-01:59:38.400309 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40468 -> 10.201.0.20:22
+04/27-01:59:38.443271 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40468 -> 10.201.0.20:22
+04/27-01:59:38.447591 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40470 -> 10.201.0.20:22
+04/27-01:59:38.492502 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40468 -> 10.201.0.20:22
+04/27-01:59:47.328860 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40468 -> 10.201.0.20:22
+04/27-01:59:53.964290 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:40470 -> 10.201.0.20:22
+04/27-02:00:28.198080 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45052 -> 10.201.0.20:22
+04/27-02:00:28.203816 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45052 -> 10.201.0.20:22
+04/27-02:00:28.244830 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45052 -> 10.201.0.20:22
+04/27-02:00:28.295979 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45046 -> 10.201.0.20:22
+04/27-02:00:37.087872 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45052 -> 10.201.0.20:22
+04/27-02:00:41.546809 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:45046 -> 10.201.0.20:22
+04/27-02:01:13.559909 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:34020 -> 10.201.0.20:22
+04/27-02:01:13.571158 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:34020 -> 10.201.0.20:22
+04/27-02:01:13.617437 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:34008 -> 10.201.0.20:22
+04/27-02:01:15.840393 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:34020 -> 10.201.0.20:22
+04/27-02:01:24.652790 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:34008 -> 10.201.0.20:22
+04/27-02:01:58.898327 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41048 -> 10.201.0.20:22
+04/27-02:01:58.908177 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41052 -> 10.201.0.20:22
+04/27-02:01:58.950070 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41052 -> 10.201.0.20:22
+04/27-02:01:58.995250 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41048 -> 10.201.0.20:22
+04/27-02:02:07.789042 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41052 -> 10.201.0.20:22
+04/27-02:02:12.235838 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41048 -> 10.201.0.20:22
+04/27-02:02:44.221572 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:39556 -> 10.201.0.20:22
+04/27-02:02:44.262946 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:39570 -> 10.201.0.20:22
+04/27-02:02:44.277070 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:39556 -> 10.201.0.20:22
+04/27-02:02:46.531296 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:39570 -> 10.201.0.20:22
+04/27-02:02:55.321271 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:39556 -> 10.201.0.20:22
+04/27-02:03:29.592046 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41742 -> 10.201.0.20:22
+04/27-02:03:29.633402 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41742 -> 10.201.0.20:22
+04/27-02:03:29.638842 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41742 -> 10.201.0.20:22
+04/27-02:03:29.689532 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41740 -> 10.201.0.20:22
+04/27-02:03:34.122657 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41742 -> 10.201.0.20:22
+04/27-02:03:40.728723 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:41740 -> 10.201.0.20:22
+04/27-02:04:12.755250 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:44396 -> 10.201.0.20:22
+04/27-02:04:12.762610 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:44396 -> 10.201.0.20:22
+04/27-02:04:12.808809 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:44396 -> 10.201.0.20:22
+04/27-02:04:15.031979 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:44396 -> 10.201.0.20:22
+04/27-02:04:23.848217 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:44394 -> 10.201.0.20:22
+exit_code=0
+[2026-04-27T02:04:50Z] alerts capture end

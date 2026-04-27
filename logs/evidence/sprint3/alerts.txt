@@ -1,0 +1,10 @@
+[2026-04-26T23:52:54Z] alerts capture start
+$ docker exec ms_ips sh -lc 'ls -la /var/log/minisnort; tail -n 200 /var/log/minisnort/alert.log'
+total 4
+drwxr-xr-x 5 root root  160 Apr 26 23:50 .
+drwxr-xr-x 1 root root 4096 Apr 26 16:48 ..
+-rw-r--r-- 1 root root    0 Apr 26 23:50 alert.log
+drwxr-xr-x 2 root root   64 Apr 26 15:05 attacker
+drwxr-xr-x 6 root root  192 Apr 26 23:49 evidence
+exit_code=0
+[2026-04-26T23:52:54Z] alerts capture end

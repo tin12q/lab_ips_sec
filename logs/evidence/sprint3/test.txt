@@ -1,0 +1,77 @@
+[2026-04-26T23:52:52Z] test capture start
+$ ctest --test-dir /Users/tin12q/Projects/lab_ips_sec/build --output-on-failure
+Test project /Users/tin12q/Projects/lab_ips_sec/build
+      Start  1: decode TCP packet and produce summary
+ 1/34 Test  #1: decode TCP packet and produce summary .......................   Passed    0.04 sec
+      Start  2: decode UDP packet
+ 2/34 Test  #2: decode UDP packet ...........................................   Passed    0.04 sec
+      Start  3: decode ICMP packet
+ 3/34 Test  #3: decode ICMP packet ..........................................   Passed    0.04 sec
+      Start  4: reject unsupported non IPv4 ethertype
+ 4/34 Test  #4: reject unsupported non IPv4 ethertype .......................   Passed    0.04 sec
+      Start  5: reject truncated ethernet and truncated ipv4/tcp
+ 5/34 Test  #5: reject truncated ethernet and truncated ipv4/tcp ............   Passed    0.04 sec
+      Start  6: parser accepts six demo rules
+ 6/34 Test  #6: parser accepts six demo rules ...............................   Passed    0.04 sec
+      Start  7: parser reports malformed rule
+ 7/34 Test  #7: parser reports malformed rule ...............................   Passed    0.04 sec
+      Start  8: parser rejects sid overflow
+ 8/34 Test  #8: parser rejects sid overflow .................................   Passed    0.04 sec
+      Start  9: parser handles semicolon inside quoted values
+ 9/34 Test  #9: parser handles semicolon inside quoted values ...............   Passed    0.04 sec
+      Start 10: parser rejects unknown threshold token
+10/34 Test #10: parser rejects unknown threshold token ......................   Passed    0.04 sec
+      Start 11: parser rejects trailing text after closing parenthesis
+11/34 Test #11: parser rejects trailing text after closing parenthesis ......   Passed    0.04 sec
+      Start 12: rule store returns exact then any candidates
+12/34 Test #12: rule store returns exact then any candidates ................   Passed    0.04 sec
+      Start 13: rule store ignores rules from other protocols
+13/34 Test #13: rule store ignores rules from other protocols ...............   Passed    0.04 sec
+      Start 14: rule store treats invalid dst_port token as any
+14/34 Test #14: rule store treats invalid dst_port token as any .............   Passed    0.04 sec
+      Start 15: config loader reads known keys
+15/34 Test #15: config loader reads known keys ..............................   Passed    0.04 sec
+      Start 16: config loader trims values
+16/34 Test #16: config loader trims values ..................................   Passed    0.04 sec
+      Start 17: config loader rejects unknown top-level section
+17/34 Test #17: config loader rejects unknown top-level section .............   Passed    0.04 sec
+      Start 18: config loader rejects invalid logging level
+18/34 Test #18: config loader rejects invalid logging level .................   Passed    0.04 sec
+      Start 19: config loader reports missing file
+19/34 Test #19: config loader reports missing file ..........................   Passed    0.04 sec
+      Start 20: matcher matches icmp type
+20/34 Test #20: matcher matches icmp type ...................................   Passed    0.04 sec
+      Start 21: matcher checks tcp flags
+21/34 Test #21: matcher checks tcp flags ....................................   Passed    0.04 sec
+      Start 22: matcher checks content and nocase
+22/34 Test #22: matcher checks content and nocase ...........................   Passed    0.04 sec
+      Start 23: matcher checks pcre
+23/34 Test #23: matcher checks pcre .........................................   Passed    0.04 sec
+      Start 24: matcher applies http_uri content to uri only
+24/34 Test #24: matcher applies http_uri content to uri only ................   Passed    0.04 sec
+      Start 25: matcher fails http_uri content for malformed request line
+25/34 Test #25: matcher fails http_uri content for malformed request line ...   Passed    0.04 sec
+      Start 26: matcher rejects uppercase non-http request line
+26/34 Test #26: matcher rejects uppercase non-http request line .............   Passed    0.04 sec
+      Start 27: matcher supports lf-only request line
+27/34 Test #27: matcher supports lf-only request line .......................   Passed    0.04 sec
+      Start 28: matcher returns false for invalid regex
+28/34 Test #28: matcher returns false for invalid regex .....................   Passed    0.04 sec
+      Start 29: engine drops when drop rule matches
+29/34 Test #29: engine drops when drop rule matches .........................   Passed    0.04 sec
+      Start 30: engine accepts when no rule matches
+30/34 Test #30: engine accepts when no rule matches .........................   Passed    0.04 sec
+      Start 31: engine prefers pass over drop
+31/34 Test #31: engine prefers pass over drop ...............................   Passed    0.04 sec
+      Start 32: engine records alert sid while keeping accept verdict
+32/34 Test #32: engine records alert sid while keeping accept verdict .......   Passed    0.04 sec
+      Start 33: engine evaluates ip drop rules for tcp packets
+33/34 Test #33: engine evaluates ip drop rules for tcp packets ..............   Passed    0.04 sec
+      Start 34: engine pass rule on ip overrides tcp drop
+34/34 Test #34: engine pass rule on ip overrides tcp drop ...................   Passed    0.04 sec
+
+100% tests passed, 0 tests failed out of 34
+
+Total Test time (real) =   1.38 sec
+exit_code=0
+[2026-04-26T23:52:53Z] test capture end

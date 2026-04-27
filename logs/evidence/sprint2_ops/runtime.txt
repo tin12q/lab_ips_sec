@@ -1,0 +1,6 @@
+[2026-04-26T15:59:39Z] runtime capture start
+$ "/Users/tin12q/Projects/lab_ips_sec/build/src/minisnort" --config "/Users/tin12q/Projects/lab_ips_sec/config/minisnort.yaml" --rules "/Users/tin12q/Projects/lab_ips_sec/config/rules/local.rules" --mode ids -i lo || true
+[2026-04-26 22:59:39.693] [info] Loaded 6 rules: SIDs [1000001,1000002,1000003,1000004,1000005,1000006]
+[2026-04-26 22:59:39.695] [error] [pcap] open failed on lo: lo: No such device exists (No such device exists)
+exit_code=0
+[2026-04-26T15:59:39Z] runtime capture end

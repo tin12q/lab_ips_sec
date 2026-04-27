@@ -1,0 +1,4 @@
+[2026-04-26T15:59:39Z] test capture start
+No command provided for test.
+Set it as argument when calling verify_capture.sh.
+[2026-04-26T15:59:39Z] test capture end

@@ -1,0 +1,4 @@
+[2026-04-26T15:59:39Z] attacks capture start
+No command provided for attacks.
+Set it as argument when calling verify_capture.sh.
+[2026-04-26T15:59:39Z] attacks capture end

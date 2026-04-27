@@ -1,0 +1,108 @@
+[2026-04-27T02:05:28Z] runtime capture start
+$ docker compose up ips (captured ~20s)
+ Container ms_ips  Running
+Attaching to ms_ips
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] decoded packet_id=1238 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] packet_id=1238 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] decoded packet_id=1239 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] packet_id=1239 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] decoded packet_id=1240 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.406] [[32minfo[m] [nfq] packet_id=1240 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.408] [[32minfo[m] [nfq] decoded packet_id=1241 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.408] [[32minfo[m] [nfq] packet_id=1241 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.408] [[32minfo[m] [nfq] decoded packet_id=1242 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.408] [[32minfo[m] [nfq] packet_id=1242 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] decoded packet_id=1243 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] packet_id=1243 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] decoded packet_id=1244 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] packet_id=1244 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] decoded packet_id=1245 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.422] [[32minfo[m] [nfq] packet_id=1245 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.423] [[32minfo[m] [nfq] decoded packet_id=1246 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.423] [[32minfo[m] [nfq] packet_id=1246 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.424] [[32minfo[m] [nfq] decoded packet_id=1247 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.424] [[32minfo[m] [nfq] packet_id=1247 verdict=accept matched_sids=1
+ms_ips  | [2026-04-27 02:05:43.428] [[32minfo[m] [nfq] decoded packet_id=1248 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.428] [[32minfo[m] [nfq] packet_id=1248 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.429] [[32minfo[m] [nfq] decoded packet_id=1249 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.429] [[32minfo[m] [nfq] packet_id=1249 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] decoded packet_id=1250 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] packet_id=1250 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] decoded packet_id=1251 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] packet_id=1251 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] decoded packet_id=1252 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] packet_id=1252 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] decoded packet_id=1253 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.470] [[32minfo[m] [nfq] packet_id=1253 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.471] [[32minfo[m] [nfq] decoded packet_id=1254 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.471] [[32minfo[m] [nfq] packet_id=1254 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.482] [[32minfo[m] [nfq] decoded packet_id=1255 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.482] [[32minfo[m] [nfq] packet_id=1255 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.482] [[32minfo[m] [nfq] decoded packet_id=1256 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.482] [[32minfo[m] [nfq] packet_id=1256 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:43.523] [[32minfo[m] [nfq] decoded packet_id=1257 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:43.523] [[32minfo[m] [nfq] packet_id=1257 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.688] [[32minfo[m] [nfq] decoded packet_id=1258 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.688] [[32minfo[m] [nfq] packet_id=1258 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.688] [[32minfo[m] [nfq] decoded packet_id=1259 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.690] [[32minfo[m] [nfq] packet_id=1259 verdict=accept matched_sids=1
+ms_ips  | [2026-04-27 02:05:45.690] [[32minfo[m] [nfq] decoded packet_id=1260 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.690] [[32minfo[m] [nfq] packet_id=1260 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] decoded packet_id=1261 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] packet_id=1261 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] decoded packet_id=1262 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] packet_id=1262 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] decoded packet_id=1263 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.693] [[32minfo[m] [nfq] packet_id=1263 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.694] [[32minfo[m] [nfq] decoded packet_id=1264 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.694] [[32minfo[m] [nfq] packet_id=1264 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.694] [[32minfo[m] [nfq] decoded packet_id=1265 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.694] [[32minfo[m] [nfq] packet_id=1265 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.702] [[32minfo[m] [nfq] decoded packet_id=1266 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.702] [[32minfo[m] [nfq] packet_id=1266 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.702] [[32minfo[m] [nfq] decoded packet_id=1267 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.702] [[32minfo[m] [nfq] packet_id=1267 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.703] [[32minfo[m] [nfq] decoded packet_id=1268 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.703] [[32minfo[m] [nfq] packet_id=1268 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.704] [[32minfo[m] [nfq] decoded packet_id=1269 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.704] [[32minfo[m] [nfq] packet_id=1269 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.704] [[32minfo[m] [nfq] decoded packet_id=1270 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.704] [[32minfo[m] [nfq] packet_id=1270 verdict=accept matched_sids=1
+ms_ips  | [2026-04-27 02:05:45.708] [[32minfo[m] [nfq] decoded packet_id=1271 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.708] [[32minfo[m] [nfq] packet_id=1271 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.708] [[32minfo[m] [nfq] decoded packet_id=1272 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.708] [[32minfo[m] [nfq] packet_id=1272 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] decoded packet_id=1273 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] packet_id=1273 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] decoded packet_id=1274 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] packet_id=1274 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] decoded packet_id=1275 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] packet_id=1275 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] decoded packet_id=1276 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] packet_id=1276 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] decoded packet_id=1277 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.749] [[32minfo[m] [nfq] packet_id=1277 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.759] [[32minfo[m] [nfq] decoded packet_id=1278 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.759] [[32minfo[m] [nfq] packet_id=1278 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.759] [[32minfo[m] [nfq] decoded packet_id=1279 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.759] [[32minfo[m] [nfq] packet_id=1279 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:45.801] [[32minfo[m] [nfq] decoded packet_id=1280 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:45.801] [[32minfo[m] [nfq] packet_id=1280 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:47.895] [[32minfo[m] [nfq] decoded packet_id=1281 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.895] [[32minfo[m] [nfq] packet_id=1281 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:47.896] [[32minfo[m] [nfq] decoded packet_id=1282 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.897] [[32minfo[m] [nfq] packet_id=1282 verdict=accept matched_sids=1
+ms_ips  | [2026-04-27 02:05:47.897] [[32minfo[m] [nfq] decoded packet_id=1283 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.897] [[32minfo[m] [nfq] packet_id=1283 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:47.967] [[32minfo[m] [nfq] decoded packet_id=1284 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.967] [[32minfo[m] [nfq] packet_id=1284 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:47.968] [[32minfo[m] [nfq] decoded packet_id=1285 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.968] [[32minfo[m] [nfq] packet_id=1285 verdict=accept matched_sids=0
+ms_ips  | [2026-04-27 02:05:47.968] [[32minfo[m] [nfq] decoded packet_id=1286 using synthetic L2 framing
+ms_ips  | [2026-04-27 02:05:47.968] [[32minfo[m] [nfq] packet_id=1286 verdict=accept matched_sids=0
+Gracefully Stopping... press Ctrl+C again to force
+ Container ms_ips  Stopping
+ Container ms_ips  Stopped
+
+exit_code=0
+[2026-04-27T02:05:49Z] runtime capture end

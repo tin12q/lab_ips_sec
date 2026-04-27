@@ -1,0 +1,4 @@
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED         STATUS         PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   11 hours ago    Up 4 hours     
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        2 minutes ago   Up 2 minutes   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     11 hours ago    Up 4 hours     

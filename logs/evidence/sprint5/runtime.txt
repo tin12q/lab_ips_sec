@@ -1,0 +1,10 @@
+[2026-04-27T02:52:54Z] runtime capture start
+$ docker compose up ips (captured ~20s)
+ Container ms_ips  Running
+Attaching to ms_ips
+Gracefully Stopping... press Ctrl+C again to force
+ Container ms_ips  Stopping
+ Container ms_ips  Stopped
+
+exit_code=0
+[2026-04-27T02:53:15Z] runtime capture end
