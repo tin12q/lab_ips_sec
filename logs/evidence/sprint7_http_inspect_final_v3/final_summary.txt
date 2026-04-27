@@ -1,0 +1,25 @@
+Sprint 7 HTTP inspector final v3 evidence
+
+Evidence folder: logs/evidence/sprint7_http_inspect_final_v3
+
+Result:
+- Build: PASS
+- Tests: PASS, 58/58
+- Runtime: PASS, Docker lab up with FORWARD NFQUEUE rule installed
+- Attack run: PASS, scripted admin, raw traversal, SQLi body, sqlmap User-Agent, ICMP, and SYN scan traffic executed
+- Alerts: PASS, Sprint 7 HTTP alerts present
+
+Key validated alerts:
+- SID 1000006 Block admin URL
+- SID 1000007 Path traversal
+- SID 1000008 SQLi in body
+- SID 1000009 Suspicious User-Agent
+
+Review blockers addressed:
+- Content-Length validation uses non-overflowing bounds checks and rejects conflicting duplicate lengths.
+- Chunked HTTP request bodies are decoded into http_client_body.
+- URI decoding repeats with a bounded cap so over-encoded traversal reaches detection.
+- HTTP-buffer contents in one rule must match the same parsed request.
+- PCRE is scoped to matching HTTP client bodies when HTTP-buffer content is used.
+
+No commit performed.

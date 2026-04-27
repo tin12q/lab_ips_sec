@@ -1,0 +1,32 @@
+# Sprint 7 runtime path validation
+captured_at_utc=2026-04-27T08:05:00Z
+
+## docker compose ps
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED          STATUS          PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   13 minutes ago   Up 13 minutes   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        13 minutes ago   Up 13 minutes   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     13 minutes ago   Up 13 minutes   
+
+## container inspect restart/status
+/ms_ips restart=0 status=running started=2026-04-27T07:51:38.910479294Z finished=0001-01-01T00:00:00Z
+/ms_attacker restart=0 status=running started=2026-04-27T07:51:39.20730046Z finished=0001-01-01T00:00:00Z
+/ms_victim restart=0 status=running started=2026-04-27T07:51:39.204440127Z finished=0001-01-01T00:00:00Z
+
+## attacker route
+default via 10.200.0.2 dev eth0 
+10.200.0.0/24 dev eth0 proto kernel scope link src 10.200.0.10 
+
+## victim route
+default via 10.201.0.2 dev eth0 
+10.201.0.0/24 dev eth0 proto kernel scope link src 10.201.0.20 
+
+## ips interfaces
+OCI runtime exec failed: exec failed: unable to start container process: exec: "ip": executable file not found in $PATH
+
+## ips forward rules
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+
+## tcp reachability
+tcp80_ok
+tcp22_ok

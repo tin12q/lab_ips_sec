@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="MiniSnort">
+  <rect width="64" height="64" rx="16" fill="#0d1117" />
+  <path d="M32 8 52 17v14c0 12-8 21-20 25-12-4-20-13-20-25V17l20-9Z" fill="#35d4ff" />
+  <path d="M22 32h20M32 22v20" stroke="#061019" stroke-width="6" stroke-linecap="round" />
+</svg>

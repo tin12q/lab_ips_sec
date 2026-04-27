@@ -1,0 +1,28 @@
+[2026-04-27T08:27:44Z] attacks capture start
+$ set +e; docker exec ms_attacker /scripts/attack_admin.sh 10.201.0.20; echo admin_exit=0; docker exec ms_attacker /scripts/attack_traversal.sh 10.201.0.20; echo traversal_exit=0; docker exec ms_attacker /scripts/attack_sqli_body.sh 10.201.0.20; echo sqli_body_exit=0; docker exec ms_attacker /scripts/attack_sqlmap.sh 10.201.0.20; echo sqlmap_exit=0; docker exec ms_attacker /scripts/attack_block_icmp.sh 10.201.0.20; echo icmp_exit=0; docker exec ms_attacker /scripts/attack_synscan.sh 10.201.0.20; echo synscan_exit=0; true
+curl: (52) Empty reply from server
+admin_exit=0
+curl: (52) Empty reply from server
+traversal_exit=0
+curl: (52) Empty reply from server
+sqli_body_exit=0
+curl: (52) Empty reply from server
+sqlmap_exit=0
+PING 10.201.0.20 (10.201.0.20) 56(84) bytes of data.
+
+--- 10.201.0.20 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4094ms
+
+icmp_exit=0
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 08:32 UTC
+Nmap scan report for 10.201.0.20
+Host is up (0.0071s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.29 seconds
+synscan_exit=0
+exit_code=0
+[2026-04-27T08:32:34Z] attacks capture end

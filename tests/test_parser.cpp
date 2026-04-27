@@ -48,7 +48,29 @@ TEST_CASE("parser accepts six demo rules") {
   REQUIRE(result.rules[0].dst_ip == "10.201.0.0/24");
   REQUIRE(result.rules[3].contents.size() == 2);
   REQUIRE(result.rules[3].contents[0].nocase);
-  REQUIRE(result.rules[5].contents[0].http_uri);
+  REQUIRE(result.rules[5].contents[0].http_buffer == minisnort::rules::HttpBuffer::kUri);
+}
+
+TEST_CASE("parser accepts Sprint 7 HTTP buffer keywords") {
+  minisnort::rules::Parser parser;
+  auto result = parser.parse_text(
+      "drop tcp any any -> $HOME_NET 80 (msg:\"SQLi in body\"; content:\"UNION\"; nocase; http_client_body; sid:1000008; rev:1;)\n"
+      "drop tcp any any -> $HOME_NET 80 (msg:\"Suspicious User-Agent\"; content:\"sqlmap\"; nocase; http_header; sid:1000009; rev:1;)\n"
+      "drop tcp any any -> $HOME_NET 80 (msg:\"POST method\"; content:\"POST\"; http_method; sid:1000010; rev:1;)\n"
+      "drop tcp any any -> $HOME_NET 80 (msg:\"Body PCRE\"; pcre:\"/union\\s+select/i\"; http_client_body; sid:1000011; rev:1;)\n"
+      "drop tcp any any -> $HOME_NET 80 (msg:\"Mixed Body PCRE\"; content:\"UNION\"; nocase; pcre:\"/union\\s+select/i\"; http_client_body; sid:1000012; rev:1;)\n"
+      "drop tcp any any -> $HOME_NET 80 (msg:\"Shipped Body SQLi\"; content:\"UNION\"; nocase; http_client_body; pcre:\"/union\\s+select/i\"; http_client_body; sid:1000013; rev:1;)",
+      default_vars());
+
+  REQUIRE(result.ok());
+  REQUIRE(result.rules[0].contents[0].http_buffer == minisnort::rules::HttpBuffer::kClientBody);
+  REQUIRE(result.rules[1].contents[0].http_buffer == minisnort::rules::HttpBuffer::kHeader);
+  REQUIRE(result.rules[2].contents[0].http_buffer == minisnort::rules::HttpBuffer::kMethod);
+  REQUIRE(result.rules[3].pcre->http_buffer == minisnort::rules::HttpBuffer::kClientBody);
+  REQUIRE(result.rules[4].contents[0].http_buffer == minisnort::rules::HttpBuffer::kPayload);
+  REQUIRE(result.rules[4].pcre->http_buffer == minisnort::rules::HttpBuffer::kClientBody);
+  REQUIRE(result.rules[5].contents[0].http_buffer == minisnort::rules::HttpBuffer::kClientBody);
+  REQUIRE(result.rules[5].pcre->http_buffer == minisnort::rules::HttpBuffer::kClientBody);
 }
 
 TEST_CASE("parser reports malformed rule") {
@@ -106,6 +128,17 @@ TEST_CASE("parser resolves port variables before validation") {
   REQUIRE(result.ok());
   REQUIRE(result.rules.size() == 1);
   REQUIRE(result.rules[0].dst_port == "80");
+}
+
+TEST_CASE("parser rejects port variables that resolve to invalid ports") {
+  minisnort::rules::Parser parser;
+  auto vars = default_vars();
+  vars["BAD_PORT"] = "99999";
+
+  auto result = parser.parse_text(
+      "alert tcp any any -> $HOME_NET $BAD_PORT (msg:\"x\"; sid:1; rev:1;)", vars);
+
+  REQUIRE_FALSE(result.ok());
 }
 
 TEST_CASE("rule store returns exact then any candidates") {

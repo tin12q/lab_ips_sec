@@ -1,0 +1,2 @@
+ms_dashboard  | dashboard listening on http://0.0.0.0:8080
+ms_dashboard  | dashboard write token file: /tmp/minisnort-dashboard-token

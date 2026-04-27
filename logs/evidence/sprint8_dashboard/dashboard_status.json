@@ -1,0 +1,9 @@
+{
+  "rulesPath": "/workspace/config/rules/local.rules",
+  "rulesExists": true,
+  "rulesSize": 1145,
+  "alertPath": "/var/log/minisnort/alert.log",
+  "alertExists": true,
+  "alertSize": 24334,
+  "writeTokenRequired": true
+}

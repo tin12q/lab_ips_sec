@@ -1,0 +1,104 @@
+[2026-04-27T08:48:09Z] alerts capture start
+$ docker compose exec -T ips sh -lc 'cat /var/log/minisnort/alert.log'
+04/27-08:45:19.745466 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:19.952435 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:20.159618 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:20.575896 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:21.400500 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:23.069243 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:26.395692 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:33.061862 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:45:46.369739 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:46:11.616056 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:11.616056 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:11.825472 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:11.825472 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:12.031772 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:12.031772 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:12.440808 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:12.440808 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:12.985864 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:40102 -> 10.201.0.20:80
+04/27-08:46:13.304622 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:13.304622 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:14.970759 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:14.970759 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:18.237228 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:18.237228 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:24.761756 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:24.761756 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:38.073333 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:46:38.073333 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:47:03.241715 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:03.447726 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:03.655597 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:04.064637 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:04.182722 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:47:04.182722 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33760 -> 10.201.0.20:80
+04/27-08:47:04.891724 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:06.555294 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:09.814797 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:16.474115 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:29.787686 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:54.973935 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:54.973935 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:55.899319 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:33400 -> 10.201.0.20:80
+04/27-08:47:56.024457 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:56.024457 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:57.053439 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:57.053439 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:58.074074 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:58.074074 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:59.096495 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:47:59.096495 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:48:09.202849 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:445
+04/27-08:48:09.207366 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:488
+04/27-08:48:09.208522 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:687
+04/27-08:48:09.210898 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:67
+04/27-08:48:09.215039 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:645
+04/27-08:48:09.215731 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:181
+04/27-08:48:09.219891 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:465
+04/27-08:48:09.224369 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:497
+04/27-08:48:09.225564 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:940
+04/27-08:48:09.228145 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:935
+04/27-08:48:09.231972 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:245
+04/27-08:48:09.245395 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:71
+04/27-08:48:09.249305 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:835
+04/27-08:48:09.251973 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:29
+04/27-08:48:09.258513 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:398
+04/27-08:48:09.261221 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:470
+04/27-08:48:09.262441 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:882
+04/27-08:48:09.266477 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:677
+04/27-08:48:09.282187 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:112
+04/27-08:48:09.288128 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:675
+04/27-08:48:09.292300 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:697
+04/27-08:48:09.293896 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:174
+04/27-08:48:09.298508 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:752
+04/27-08:48:09.300035 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:869
+04/27-08:48:09.302092 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:234
+04/27-08:48:09.305792 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:538
+04/27-08:48:09.308761 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:568
+04/27-08:48:09.309686 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:965
+04/27-08:48:09.310357 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:307
+04/27-08:48:09.316306 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:326
+04/27-08:48:09.318827 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:50
+04/27-08:48:09.323210 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:810
+04/27-08:48:09.325636 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:374
+04/27-08:48:09.333064 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:730
+04/27-08:48:09.345790 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:73
+04/27-08:48:09.358332 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:268
+04/27-08:48:09.360939 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:226
+04/27-08:48:09.362743 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:924
+04/27-08:48:09.364727 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:459
+04/27-08:48:09.365202 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:279
+04/27-08:48:09.371124 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:449
+04/27-08:48:09.373837 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:530
+04/27-08:48:09.387596 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:244
+04/27-08:48:09.399215 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:802
+04/27-08:48:09.403990 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:593
+04/27-08:48:09.416322 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:249
+04/27-08:48:09.424854 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:409
+04/27-08:48:09.428168 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:876
+04/27-08:48:09.429790 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:300
+04/27-08:48:09.434604 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:59171 -> 10.201.0.20:464
+exit_code=0
+[2026-04-27T08:48:09Z] alerts capture end

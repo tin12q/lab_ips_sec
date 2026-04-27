@@ -4,6 +4,7 @@
 #include <sstream>
 #include <string>
 #include <unordered_map>
+#include <cstdlib>
 #include <vector>
 
 #include <spdlog/spdlog.h>
@@ -130,7 +131,8 @@ int main(int argc, char** argv) {
           parsed_queue > std::numeric_limits<int>::max()) {
         return 2;
       }
-      minisnort::daq::NfqDaq daq;
+      const char* fail_open_env = std::getenv("MINISNORT_FAIL_OPEN");
+      minisnort::daq::NfqDaq daq(fail_open_env != nullptr && std::string(fail_open_env) == "1");
       return daq.run(static_cast<int>(parsed_queue), engine, alert_logger);
     } catch (...) {
       return 2;

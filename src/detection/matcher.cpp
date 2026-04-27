@@ -34,6 +34,12 @@ struct RegexPattern {
   bool icase = false;
 };
 
+struct HttpMatchContext {
+  std::vector<HttpBuffers> requests;
+  std::vector<size_t> matching_request_indexes;
+  bool has_http_content = false;
+};
+
 RegexPattern normalize_regex(const rules::PcreOpt& opt) {
   RegexPattern out{opt.regex, opt.nocase};
   if (out.pattern.size() >= 2 && out.pattern.front() == '/') {
@@ -49,11 +55,47 @@ RegexPattern normalize_regex(const rules::PcreOpt& opt) {
   return out;
 }
 
+const std::string& http_buffer_value(const HttpBuffers& request, rules::HttpBuffer buffer) {
+  switch (buffer) {
+    case rules::HttpBuffer::kHeader:
+      return request.headers;
+    case rules::HttpBuffer::kMethod:
+      return request.method;
+    case rules::HttpBuffer::kClientBody:
+      return request.client_body;
+    case rules::HttpBuffer::kUri:
+    case rules::HttpBuffer::kPayload:
+      return request.uri;
+  }
+  return request.uri;
+}
+
+bool http_content_matches(const HttpBuffers& request, const rules::ContentOpt& content) {
+  if (content.http_buffer == rules::HttpBuffer::kUri) {
+    return contains_with_case(request.uri, content.pattern, content.nocase) ||
+           contains_with_case(request.decoded_uri, content.pattern, content.nocase);
+  }
+  return contains_with_case(http_buffer_value(request, content.http_buffer), content.pattern, content.nocase);
+}
+
+bool regex_matches(const RegexPattern& normalized, const std::string& haystack) {
+  std::regex_constants::syntax_option_type options = std::regex_constants::ECMAScript;
+  if (normalized.icase) {
+    options |= std::regex_constants::icase;
+  }
+
+  const std::regex re(normalized.pattern, options);
+  return std::regex_search(haystack, re);
+}
+
 }  // namespace
 
 bool Matcher::match(const rules::Rule& rule, const core::Packet& packet) const {
+  std::vector<size_t> matching_request_indexes;
+  bool has_http_content = false;
   return match_proto(rule, packet) && match_icmp_type(rule, packet) && match_tcp_flags(rule, packet) &&
-         match_contents(rule, packet) && match_pcre(rule, packet);
+         match_contents(rule, packet, matching_request_indexes, has_http_content) &&
+         match_pcre(rule, packet, matching_request_indexes, has_http_content);
 }
 
 bool Matcher::match_proto(const rules::Rule& rule, const core::Packet& packet) const {
@@ -88,45 +130,82 @@ bool Matcher::match_tcp_flags(const rules::Rule& rule, const core::Packet& packe
   return (packet.tcp_flags & required) == required;
 }
 
-bool Matcher::match_contents(const rules::Rule& rule, const core::Packet& packet) const {
+bool Matcher::match_contents(const rules::Rule& rule, const core::Packet& packet,
+                             std::vector<size_t>& matching_request_indexes, bool& has_http_content) const {
   if (rule.contents.empty()) {
     return true;
   }
 
   const std::string payload = payload_to_string(packet);
-  const std::optional<std::string> uri = http_parser_.extract_uri(payload);
+  const std::vector<HttpBuffers> requests = http_parser_.parse_requests(payload);
+  std::vector<const rules::ContentOpt*> http_contents;
 
   for (const auto& content : rule.contents) {
-    const std::string* haystack = &payload;
-    if (content.http_uri) {
-      if (!uri.has_value()) {
+    if (content.http_buffer == rules::HttpBuffer::kPayload) {
+      if (!contains_with_case(payload, content.pattern, content.nocase)) {
         return false;
       }
-      haystack = &uri.value();
-    }
-
-    if (!contains_with_case(*haystack, content.pattern, content.nocase)) {
-      return false;
+    } else {
+      http_contents.push_back(&content);
     }
   }
-  return true;
+
+  if (http_contents.empty()) {
+    return true;
+  }
+
+  has_http_content = true;
+  for (size_t i = 0; i < requests.size(); ++i) {
+    bool request_matches = true;
+    for (const rules::ContentOpt* content : http_contents) {
+      if (!http_content_matches(requests[i], *content)) {
+        request_matches = false;
+        break;
+      }
+    }
+    if (request_matches) {
+      matching_request_indexes.push_back(i);
+    }
+  }
+
+  return !matching_request_indexes.empty();
 }
 
-bool Matcher::match_pcre(const rules::Rule& rule, const core::Packet& packet) const {
+bool Matcher::match_pcre(const rules::Rule& rule, const core::Packet& packet,
+                         const std::vector<size_t>& matching_request_indexes, bool has_http_content) const {
   if (!rule.pcre.has_value()) {
     return true;
   }
 
   const RegexPattern normalized = normalize_regex(rule.pcre.value());
-  std::regex_constants::syntax_option_type options = std::regex_constants::ECMAScript;
-  if (normalized.icase) {
-    options |= std::regex_constants::icase;
-  }
 
   try {
-    const std::regex re(normalized.pattern, options);
-    const std::string payload = payload_to_string(packet);
-    return std::regex_search(payload, re);
+    if (!has_http_content && rule.pcre->http_buffer == rules::HttpBuffer::kPayload) {
+      return regex_matches(normalized, payload_to_string(packet));
+    }
+
+    const std::vector<HttpBuffers> requests = http_parser_.parse_requests(payload_to_string(packet));
+    if (!has_http_content) {
+      for (const auto& request : requests) {
+        if (regex_matches(normalized, http_buffer_value(request, rule.pcre->http_buffer))) {
+          return true;
+        }
+      }
+      return false;
+    }
+
+    for (size_t index : matching_request_indexes) {
+      if (index >= requests.size()) {
+        continue;
+      }
+      const std::string& haystack = rule.pcre->http_buffer == rules::HttpBuffer::kPayload
+                                      ? payload_to_string(packet)
+                                      : http_buffer_value(requests[index], rule.pcre->http_buffer);
+      if (regex_matches(normalized, haystack)) {
+        return true;
+      }
+    }
+    return false;
   } catch (const std::regex_error&) {
     return false;
   }

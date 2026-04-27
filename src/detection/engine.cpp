@@ -50,12 +50,15 @@ Decision Engine::inspect(const core::Packet& packet) {
 
     if (rule->action == rules::Action::kPass) {
       decision.matched_sids.clear();
+      decision.matched_rules.clear();
       decision.matched_sids.push_back(rule->sid);
+      decision.matched_rules.push_back({rule->sid, rule->action, rule->msg});
       decision.verdict = Verdict::kAccept;
       return decision;
     }
 
     decision.matched_sids.push_back(rule->sid);
+    decision.matched_rules.push_back({rule->sid, rule->action, rule->msg});
 
     if (rule->action == rules::Action::kDrop) {
       has_drop = true;

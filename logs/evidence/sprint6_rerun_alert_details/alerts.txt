@@ -1,0 +1,254 @@
+[2026-04-27T07:50:29Z] alerts capture start
+$ docker exec ms_ips tail -n 80 /var/log/minisnort/alert.log && echo '--- runtime_snapshot ---' && docker exec ms_ips cat /var/log/minisnort/runtime_snapshot.txt && echo '--- ips logs ---' && docker logs --tail=160 ms_ips
+04/27-07:49:08.737731 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:47926 -> 10.201.0.20:22
+04/27-07:49:12.984673 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59468 -> 10.201.0.20:22
+04/27-07:49:13.033366 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59468 -> 10.201.0.20:22
+04/27-07:49:19.666090 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59468 -> 10.201.0.20:22
+04/27-07:49:22.415925 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:22.624083 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:22.831913 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:23.247641 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:24.129094 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:25.792656 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:29.122899 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:30.700397 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:59468 -> 10.201.0.20:22
+04/27-07:49:35.837706 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:49.154079 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:49:54.051722 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:52234 -> 10.201.0.20:22
+04/27-07:49:56.321088 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:52234 -> 10.201.0.20:22
+04/27-07:50:02.748260 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57130 -> 10.201.0.20:22
+04/27-07:50:02.810081 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:57130 -> 10.201.0.20:22
+04/27-07:50:07.363791 [**] [1:1000003:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:52234 -> 10.201.0.20:22
+04/27-07:50:14.674288 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:14.674288 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:15.715348 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:15.715348 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:15.778359 [**] [1:1000006:1] minisnort event [**] [Classification: drop] [Priority: 1] {TCP} 10.200.0.10:51804 -> 10.201.0.20:80
+04/27-07:50:16.740581 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:16.740581 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:17.763052 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:17.763052 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:18.787418 [**] [1:1000001:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:18.787418 [**] [1:1000005:1] minisnort event [**] [Classification: drop] [Priority: 1] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:50:29.083259 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:443
+04/27-07:50:29.086243 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:590
+04/27-07:50:29.087793 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:6
+04/27-07:50:29.095994 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:167
+04/27-07:50:29.102584 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:911
+04/27-07:50:29.104570 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:63
+04/27-07:50:29.106060 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:149
+04/27-07:50:29.110495 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:237
+04/27-07:50:29.114214 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:238
+04/27-07:50:29.115938 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:862
+04/27-07:50:29.119353 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:332
+04/27-07:50:29.123650 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:689
+04/27-07:50:29.125061 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:97
+04/27-07:50:29.128116 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:171
+04/27-07:50:29.132644 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:66
+04/27-07:50:29.136309 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:371
+04/27-07:50:29.139150 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:466
+04/27-07:50:29.141751 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:43
+04/27-07:50:29.143961 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:701
+04/27-07:50:29.145037 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:888
+04/27-07:50:29.147348 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:266
+04/27-07:50:29.152350 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:218
+04/27-07:50:29.152835 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:522
+04/27-07:50:29.153555 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:540
+04/27-07:50:29.160738 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:942
+04/27-07:50:29.162210 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:323
+04/27-07:50:29.169534 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:164
+04/27-07:50:29.170260 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:807
+04/27-07:50:29.170813 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:687
+04/27-07:50:29.172705 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:396
+04/27-07:50:29.173484 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:731
+04/27-07:50:29.177882 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:336
+04/27-07:50:29.178450 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:623
+04/27-07:50:29.179166 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:751
+04/27-07:50:29.181789 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:536
+04/27-07:50:29.183152 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:420
+04/27-07:50:29.185194 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:973
+04/27-07:50:29.186859 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:207
+04/27-07:50:29.187470 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:427
+04/27-07:50:29.191751 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:373
+04/27-07:50:29.192527 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:394
+04/27-07:50:29.195654 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:215
+04/27-07:50:29.199104 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:376
+04/27-07:50:29.205082 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:368
+04/27-07:50:29.206549 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:474
+04/27-07:50:29.209916 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:123
+04/27-07:50:29.211755 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:971
+04/27-07:50:29.213563 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:533
+04/27-07:50:29.215655 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:378
+04/27-07:50:29.219673 [**] [1:1000002:1] minisnort event [**] [Classification: accept] [Priority: 1] {TCP} 10.200.0.10:37718 -> 10.201.0.20:161
+--- runtime_snapshot ---
+started_at_utc=2026-04-27T03:41:32Z
+nfqueue_fail_open=0
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+--- ips logs ---
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31463 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31463 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31464 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31464 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31465 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31465 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31466 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31466 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31467 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31467 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31468 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31468 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31469 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31469 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] decoded packet_id=31470 using synthetic L2 framing
+[2026-04-27 07:50:29.214] [[32minfo[m] [nfq] packet_id=31470 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31471 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31471 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31472 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31472 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31473 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31473 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31474 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31474 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31475 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31475 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31476 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31476 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31477 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31477 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31478 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31478 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31479 using synthetic L2 framing
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] packet_id=31479 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.215] [[32minfo[m] [nfq] decoded packet_id=31480 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31480 verdict=accept matched_sids=1
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31481 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31481 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31482 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31482 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31483 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31483 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31484 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31484 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31485 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31485 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31486 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31486 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31487 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31487 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31488 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31488 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31489 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31489 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31490 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31490 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31491 using synthetic L2 framing
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] packet_id=31491 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.216] [[32minfo[m] [nfq] decoded packet_id=31492 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31492 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31493 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31493 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31494 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31494 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31495 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31495 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31496 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31496 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31497 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31497 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31498 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31498 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31499 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31499 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31500 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31500 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31501 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31501 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31502 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31502 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31503 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31503 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31504 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31504 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31505 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31505 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31506 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31506 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31507 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31507 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31508 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31508 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31509 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31509 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31510 using synthetic L2 framing
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] packet_id=31510 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.217] [[32minfo[m] [nfq] decoded packet_id=31511 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31511 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31512 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31512 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31513 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31513 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31514 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31514 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31515 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31515 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31516 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31516 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31517 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31517 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31518 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31518 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31519 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31519 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31520 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31520 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31521 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31521 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31522 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31522 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31523 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31523 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31524 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31524 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31525 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31525 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31526 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31526 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31527 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31527 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31528 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31528 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31529 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31529 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] decoded packet_id=31530 using synthetic L2 framing
+[2026-04-27 07:50:29.218] [[32minfo[m] [nfq] packet_id=31530 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31531 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31531 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31532 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31532 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31533 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31533 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31534 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31534 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31535 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31535 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31536 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31536 verdict=accept matched_sids=1
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] decoded packet_id=31537 using synthetic L2 framing
+[2026-04-27 07:50:29.219] [[32minfo[m] [nfq] packet_id=31537 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] decoded packet_id=31538 using synthetic L2 framing
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] packet_id=31538 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] decoded packet_id=31539 using synthetic L2 framing
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] packet_id=31539 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] decoded packet_id=31540 using synthetic L2 framing
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] packet_id=31540 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] decoded packet_id=31541 using synthetic L2 framing
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] packet_id=31541 verdict=accept matched_sids=0
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] decoded packet_id=31542 using synthetic L2 framing
+[2026-04-27 07:50:29.220] [[32minfo[m] [nfq] packet_id=31542 verdict=accept matched_sids=0
+exit_code=0
+[2026-04-27T07:50:29Z] alerts capture end

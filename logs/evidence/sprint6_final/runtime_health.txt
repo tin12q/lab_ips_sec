@@ -1,0 +1,21 @@
+captured_at_utc=2026-04-27T07:03:47Z
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED        STATUS       PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   14 hours ago   Up 7 hours   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        3 hours ago    Up 3 hours   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     14 hours ago   Up 7 hours   
+
+[attacker route]
+default via 10.200.0.2 dev eth0 
+10.200.0.0/24 dev eth0 proto kernel scope link src 10.200.0.10 
+
+[victim route]
+default via 10.201.0.2 dev eth0 
+10.201.0.0/24 dev eth0 proto kernel scope link src 10.201.0.20 
+
+[ips forward]
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+
+[tcp reachability]
+tcp80_ok
+tcp22_ok

@@ -1,0 +1,434 @@
+# Sprint 7 enriched alert evidence
+attack_exit_status=0
+captured_at_utc=2026-04-27T08:33:55Z
+
+## alert tail
+04/27-08:28:52.598735 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:52.806778 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:53.014986 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:53.423816 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:54.257690 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:55.918929 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:28:59.182983 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:29:05.911238 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:29:19.216466 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:29:44.564490 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:44.767013 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:44.975447 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:45.329586 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:45426 -> 10.201.0.20:80
+04/27-08:29:45.382170 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:46.224017 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:47.887204 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:51.152702 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:29:58.131934 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:30:11.442472 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:30:36.735382 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:36.735382 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:36.943410 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:36.943410 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:37.150463 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:37.150463 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:37.553265 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:50562 -> 10.201.0.20:80
+04/27-08:30:37.561039 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:37.561039 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:38.384421 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:38.384421 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:40.053627 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:40.053627 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:41.135251 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:41.135251 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:42.161606 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:42.161606 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:43.185482 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:43.185482 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:43.311431 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:43.311431 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:44.213917 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:44.213917 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:45.232456 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:45.232456 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:30:49.847714 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:49.847714 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:30:58.368771 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:111
+04/27-08:30:58.370697 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:225
+04/27-08:30:58.371906 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:101
+04/27-08:30:58.374059 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:396
+04/27-08:30:58.376927 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:703
+04/27-08:30:58.377797 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:107
+04/27-08:30:58.380087 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:487
+04/27-08:30:58.380952 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:655
+04/27-08:30:58.387776 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:704
+04/27-08:30:58.394053 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:775
+04/27-08:30:58.398687 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:753
+04/27-08:30:58.400436 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:297
+04/27-08:30:58.403308 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:724
+04/27-08:30:58.407790 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:436
+04/27-08:30:58.412038 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:95
+04/27-08:30:58.413193 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:65
+04/27-08:30:58.415607 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:928
+04/27-08:30:58.418305 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:632
+04/27-08:30:58.419684 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:643
+04/27-08:30:58.420430 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:223
+04/27-08:30:58.421686 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:818
+04/27-08:30:58.422553 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:601
+04/27-08:30:58.424059 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:725
+04/27-08:30:58.427389 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:935
+04/27-08:30:58.486194 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:895
+04/27-08:30:58.516477 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:673
+04/27-08:30:58.522406 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:193
+04/27-08:30:58.524638 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:543
+04/27-08:30:58.527332 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:946
+04/27-08:30:58.528533 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:392
+04/27-08:30:58.530688 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:4
+04/27-08:30:58.531266 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:644
+04/27-08:30:58.532353 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:980
+04/27-08:30:58.533764 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:787
+04/27-08:30:58.536685 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:249
+04/27-08:30:58.538308 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:969
+04/27-08:30:58.540049 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:432
+04/27-08:30:58.541241 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:493
+04/27-08:30:58.542131 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:444
+04/27-08:30:58.543126 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:151
+04/27-08:30:58.546484 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:992
+04/27-08:30:58.549377 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:508
+04/27-08:30:58.553255 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:368
+04/27-08:30:58.555155 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:831
+04/27-08:30:58.557408 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:636
+04/27-08:30:58.562381 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:112
+04/27-08:30:58.563332 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:710
+04/27-08:30:58.565096 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:905
+04/27-08:30:58.567925 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:519
+04/27-08:30:58.569718 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:60668 -> 10.201.0.20:894
+04/27-08:31:03.155296 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:31:03.155296 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:31:07.696506 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:07.902754 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:08.111100 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:08.519410 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:09.365895 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:11.022965 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:14.291541 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:21.071453 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:28.430328 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:28.638870 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:28.847767 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:29.257710 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:29.263273 [**] [1:1000004:1] SQLi UNION SELECT [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:31:29.263273 [**] [1:1000008:1] SQLi in body [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:34894 -> 10.201.0.20:80
+04/27-08:31:30.102517 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:31.761023 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:34.384607 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:31:35.025768 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:41.555608 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:31:54.866155 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:32:00.503842 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:60286 -> 10.201.0.20:80
+04/27-08:32:02.580964 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:02.580964 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:03.636220 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:03.636220 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:04.659834 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:04.659834 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:05.683311 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:05.683311 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:06.708673 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:06.708673 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:20.145882 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:20.145882 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:20.975071 [**] [1:1000009:1] Suspicious User-Agent [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:59616 -> 10.201.0.20:80
+04/27-08:32:21.167296 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:21.167296 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:22.192912 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:22.192912 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:23.224117 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:23.224117 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:24.241532 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:24.241532 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:32:34.402763 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:80
+04/27-08:32:34.404967 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:407
+04/27-08:32:34.406345 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:641
+04/27-08:32:34.408520 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:846
+04/27-08:32:34.411425 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:887
+04/27-08:32:34.412775 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:283
+04/27-08:32:34.413943 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:650
+04/27-08:32:34.417852 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:934
+04/27-08:32:34.419089 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:972
+04/27-08:32:34.420525 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:495
+04/27-08:32:34.422170 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:276
+04/27-08:32:34.422890 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:923
+04/27-08:32:34.423929 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:39
+04/27-08:32:34.428247 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:900
+04/27-08:32:34.429433 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:903
+04/27-08:32:34.430522 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:161
+04/27-08:32:34.432632 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:689
+04/27-08:32:34.434568 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:372
+04/27-08:32:34.436790 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:325
+04/27-08:32:34.438505 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:358
+04/27-08:32:34.470192 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:72
+04/27-08:32:34.471940 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:305
+04/27-08:32:34.474251 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:58
+04/27-08:32:34.474789 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:984
+04/27-08:32:34.479199 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:429
+04/27-08:32:34.481480 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:885
+04/27-08:32:34.485925 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:518
+04/27-08:32:34.486723 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:63
+04/27-08:32:34.488226 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:719
+04/27-08:32:34.489488 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:824
+04/27-08:32:34.490392 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:377
+04/27-08:32:34.499246 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:191
+04/27-08:32:34.507716 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:70
+04/27-08:32:34.511560 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:15
+04/27-08:32:34.513053 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:680
+04/27-08:32:34.522248 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:432
+04/27-08:32:34.523107 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:565
+04/27-08:32:34.524427 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:326
+04/27-08:32:34.528658 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:854
+04/27-08:32:34.529867 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:246
+04/27-08:32:34.532059 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:159
+04/27-08:32:34.532965 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:310
+04/27-08:32:34.545808 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:197
+04/27-08:32:34.554819 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:814
+04/27-08:32:34.559372 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:643
+04/27-08:32:34.566458 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:953
+04/27-08:32:34.575403 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:553
+04/27-08:32:34.579074 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:30
+04/27-08:32:34.580078 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:344
+04/27-08:32:34.588187 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:322
+
+## sid counts
+  15 [1:1000001:1]
+ 100 [1:1000002:1]
+  10 [1:1000004:1]
+  15 [1:1000005:1]
+  30 [1:1000006:1]
+  10 [1:1000008:1]
+  10 [1:1000009:1]
+
+## action counts
+ 115 [Action: alert]
+  75 [Action: drop]
+
+## reason counts
+  75 [Reason: blocked because drop rule matched]
+ 115 [Reason: logged because alert/pass rule matched]
+
+## recent IPS verdict logs
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3910 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3911 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3912 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3913 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3914 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3915 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3916 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3917 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3918 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3919 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3920 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3921 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3922 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3923 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3924 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.562] [[32minfo[m] [nfq] packet_id=3925 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.571] [[32minfo[m] [nfq] packet_id=3926 verdict=accept matched_rules=1
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3927 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3928 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3929 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3930 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3931 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3932 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3933 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3934 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3935 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3936 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3937 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3938 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3939 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3940 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3941 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3942 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3943 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3944 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3945 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3946 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3947 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3948 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3949 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3950 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3951 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3952 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3953 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3954 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3955 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3956 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3957 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3958 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3959 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3960 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3961 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3962 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3963 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3964 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3965 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3966 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.572] [[32minfo[m] [nfq] packet_id=3967 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3968 verdict=accept matched_rules=1
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3969 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3970 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3971 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3972 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3973 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3974 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3975 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3976 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3977 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3978 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3979 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3980 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3981 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3982 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3983 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3984 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3985 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3986 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3987 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3988 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3989 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3990 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3991 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3992 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3993 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3994 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3995 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3996 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3997 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3998 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=3999 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=4000 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=4001 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=4002 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.576] [[32minfo[m] [nfq] packet_id=4003 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.577] [[32minfo[m] [nfq] packet_id=4004 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.578] [[32minfo[m] [nfq] packet_id=4005 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.578] [[32minfo[m] [nfq] packet_id=4006 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.578] [[32minfo[m] [nfq] packet_id=4007 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4008 verdict=accept matched_rules=1
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4009 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4010 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4011 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4012 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4013 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4014 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4015 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4016 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4017 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4018 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4019 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4020 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4021 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4022 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4023 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4024 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4025 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4026 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4027 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4028 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4029 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4030 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4031 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4032 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4033 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4034 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4035 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4036 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4037 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4038 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4039 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4040 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4041 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4042 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4043 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4044 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4045 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4046 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.579] [[32minfo[m] [nfq] packet_id=4047 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4048 verdict=accept matched_rules=1
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4049 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4050 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4051 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4052 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4053 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4054 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4055 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4056 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4057 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4058 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4059 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4060 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4061 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4062 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4063 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4064 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4065 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4066 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4067 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4068 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4069 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4070 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4071 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4072 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4073 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4074 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4075 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4076 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4077 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4078 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4079 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4080 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4081 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4082 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4083 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4084 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4085 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4086 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4087 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4088 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4089 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4090 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4091 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4092 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4093 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4094 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4095 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4096 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.580] [[32minfo[m] [nfq] packet_id=4097 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4098 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4099 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4100 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4101 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4102 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4103 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4104 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4105 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4106 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4107 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4108 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4109 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4110 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4111 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.581] [[32minfo[m] [nfq] packet_id=4112 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4113 verdict=accept matched_rules=1
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4114 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4115 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4116 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4117 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4118 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4119 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4120 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4121 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4122 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4123 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4124 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4125 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4126 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.588] [[32minfo[m] [nfq] packet_id=4127 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.589] [[32minfo[m] [nfq] packet_id=4128 verdict=accept matched_rules=0
+[2026-04-27 08:32:34.589] [[32minfo[m] [nfq] packet_id=4129 verdict=accept matched_rules=0

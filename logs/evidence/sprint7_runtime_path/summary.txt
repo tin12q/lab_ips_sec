@@ -1,0 +1,59 @@
+# Sprint 7 runtime path summary
+captured_at_utc=2026-04-27T08:07:21Z
+
+## runtime checks
+/ms_ips restart=0 status=running started=2026-04-27T07:51:38.910479294Z finished=0001-01-01T00:00:00Z
+/ms_attacker restart=0 status=running started=2026-04-27T07:51:39.20730046Z finished=0001-01-01T00:00:00Z
+/ms_victim restart=0 status=running started=2026-04-27T07:51:39.204440127Z finished=0001-01-01T00:00:00Z
+-A FORWARD -j NFQUEUE --queue-num 0
+tcp80_ok
+tcp22_ok
+
+## attack status
+attack_exit_status=0
+
+## enriched alert indicators
+04/27-08:05:45.426772 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:497
+04/27-08:05:45.427681 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:986
+04/27-08:05:45.432226 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:522
+04/27-08:05:45.434508 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:576
+04/27-08:05:45.439516 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:149
+04/27-08:05:45.443600 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:54285 -> 10.201.0.20:231
+04/27-08:05:54.677962 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:05:54.880300 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:05:55.087491 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:05:55.504672 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:05:56.384478 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:05:58.051383 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:06:01.377147 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:06:08.102303 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:06:21.416223 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:06:48.036316 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:51048 -> 10.201.0.20:80
+04/27-08:06:49.619324 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:49.619324 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:50.657580 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:50.657580 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:51.683062 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:51.683062 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:52.709825 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:52.709825 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:53.729905 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-08:06:53.729905 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+ 115 [Action: alert]
+  35 [Action: drop]
+  35 [Reason: blocked because drop rule matched]
+ 115 [Reason: logged because alert/pass rule matched]
+
+## sid counts
+  15 [1:1000001:1]
+ 100 [1:1000002:1]
+  15 [1:1000005:1]
+  20 [1:1000006:1]
+
+## evidence files
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/alert_after_attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/alert_tail_before.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/ips_logs_tail.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/runtime_path.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7_runtime_path/summary.txt

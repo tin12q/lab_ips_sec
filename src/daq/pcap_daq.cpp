@@ -33,11 +33,11 @@ void handle_packet(u_char* user, const struct pcap_pkthdr* header, const u_char*
   decoded.timestamp_us = sec * 1000000ULL + usec;
 
   const auto decision = ctx->engine->inspect(decoded);
-  if (!decision.matched_sids.empty()) {
-    ctx->alert_logger->emit(decoded, decision.verdict, decision.matched_sids);
-    spdlog::info("[pcap] verdict={} matched_sids={}",
+  if (!decision.matched_rules.empty()) {
+    ctx->alert_logger->emit(decoded, decision.verdict, decision.matched_rules);
+    spdlog::info("[pcap] verdict={} matched_rules={}",
                  decision.verdict == detection::Verdict::kDrop ? "drop" : "accept",
-                 decision.matched_sids.size());
+                 decision.matched_rules.size());
   }
 }
 }  // namespace

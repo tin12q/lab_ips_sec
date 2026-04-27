@@ -1,6 +1,7 @@
 #pragma once
 
 #include <cstdint>
+#include <string>
 #include <vector>
 
 #include "core/packet.h"
@@ -16,9 +17,16 @@ enum class Verdict {
   kDrop,
 };
 
+struct MatchedRule {
+  uint32_t sid = 0;
+  rules::Action action = rules::Action::kAlert;
+  std::string msg;
+};
+
 struct Decision {
   Verdict verdict = Verdict::kAccept;
   std::vector<uint32_t> matched_sids;
+  std::vector<MatchedRule> matched_rules;
 };
 
 class Engine {

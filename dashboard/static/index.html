@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>MiniSnort Dashboard</title>
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="stylesheet" href="/dashboard.css" />
+    <script src="/dashboard.js" defer></script>
+  </head>
+  <body>
+    <header class="hero">
+      <div>
+        <p class="eyebrow">MiniSnort Lab</p>
+        <h1>Inline IPS command desk</h1>
+      </div>
+      <div class="hero-panel" aria-label="Dashboard connection status">
+        <span class="pulse" aria-hidden="true"></span>
+        <span id="connection-status">Connecting</span>
+      </div>
+    </header>
+
+    <main class="dashboard-shell">
+      <section class="status-grid" aria-label="Service status">
+        <article class="status-card accent-rules">
+          <p>Active rules</p>
+          <strong id="rule-count">0</strong>
+          <span id="rules-meta">Waiting for status</span>
+        </article>
+        <article class="status-card accent-alerts">
+          <p>Total alerts</p>
+          <strong id="alert-count">0</strong>
+          <span id="alerts-meta">Waiting for status</span>
+        </article>
+        <article class="status-card accent-offset">
+          <p>Dropped packets</p>
+          <strong id="drop-count">0</strong>
+          <span id="tail-offset">0 bytes consumed</span>
+        </article>
+        <article class="status-card accent-sqli">
+          <p>Top SID</p>
+          <strong id="top-sid">—</strong>
+          <span id="top-sid-meta">No alerts yet</span>
+        </article>
+      </section>
+
+      <section class="workspace" aria-label="Dashboard workspace">
+        <article class="panel alert-panel" aria-labelledby="alerts-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Realtime</p>
+              <h2 id="alerts-heading">Packet alerts</h2>
+            </div>
+            <button id="clear-alerts" type="button">Clear view</button>
+          </div>
+          <div class="alert-summary" aria-label="Alert summary">
+            <span><strong id="tcp-count">0</strong> TCP</span>
+            <span><strong id="icmp-count">0</strong> ICMP</span>
+            <span><strong id="latest-action">—</strong> latest action</span>
+          </div>
+          <ol id="alert-feed" class="alert-feed" aria-live="polite"></ol>
+        </article>
+
+        <article class="panel editor-panel" aria-labelledby="rules-heading">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">Configuration</p>
+              <h2 id="rules-heading">Rule editor</h2>
+            </div>
+            <button id="reload-rules" type="button">Reload</button>
+          </div>
+
+          <label class="token-field" for="write-token">
+            Dashboard write token
+            <input id="write-token" type="password" autocomplete="off" placeholder="Paste token from container log or token file" />
+          </label>
+
+          <div class="rule-builder" aria-label="Rule builder">
+            <div class="guide-card">
+              <p class="guide-title">Build by dragging</p>
+              <p>Drag snippets into the editor, or use Insert to place them at the cursor. Keep each rule on one line.</p>
+            </div>
+            <div class="snippet-grid">
+              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Block admin URL"; content:"/admin"; http_uri; sid:1000010; rev:1;)'>Admin URL</button>
+              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"SQLi body"; content:"UNION"; nocase; http_client_body; pcre:"/union\\s+select/i"; http_client_body; sid:1000011; rev:1;)'>SQLi body</button>
+              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Suspicious User-Agent"; content:"sqlmap"; nocase; http_header; sid:1000012; rev:1;)'>User-Agent</button>
+              <button class="snippet" type="button" draggable="true" data-snippet='alert icmp any any -> $HOME_NET any (msg:"ICMP Ping detected"; itype:8; sid:1000013; rev:1;)'>ICMP ping</button>
+            </div>
+          </div>
+
+          <div class="inline-guide" aria-label="Rule syntax guide">
+            <span><b>action</b> alert/drop/pass/log</span>
+            <span><b>proto</b> ip/tcp/udp/icmp</span>
+            <span><b>buffer</b> http_uri/http_header/http_client_body</span>
+            <span><b>required</b> msg + positive unique sid</span>
+          </div>
+
+          <label class="rules-editor" for="rules-text">Rules</label>
+          <textarea id="rules-text" spellcheck="false" placeholder='drop tcp any any -> $HOME_NET 80 (msg:"Block admin URL"; content:"/admin"; http_uri; sid:1000010; rev:1;)'></textarea>
+
+          <div class="editor-actions">
+            <button id="save-rules" class="primary-action" type="button">Save rules</button>
+            <button id="format-rules" type="button">Format spacing</button>
+            <span id="save-message" role="status"></span>
+          </div>
+          <div id="rule-hints" class="rule-hints" aria-live="polite"></div>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>

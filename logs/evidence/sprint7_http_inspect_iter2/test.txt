@@ -1,0 +1,115 @@
+[2026-04-27T08:43:46Z] test capture start
+$ ctest --test-dir build --output-on-failure
+Test project /Users/tin12q/Projects/lab_ips_sec/build
+      Start  1: decode TCP packet and produce summary
+ 1/53 Test  #1: decode TCP packet and produce summary ................................   Passed    0.38 sec
+      Start  2: decode UDP packet
+ 2/53 Test  #2: decode UDP packet ....................................................   Passed    0.41 sec
+      Start  3: decode ICMP packet
+ 3/53 Test  #3: decode ICMP packet ...................................................   Passed    0.13 sec
+      Start  4: reject unsupported non IPv4 ethertype
+ 4/53 Test  #4: reject unsupported non IPv4 ethertype ................................   Passed    0.11 sec
+      Start  5: reject truncated ethernet and truncated ipv4/tcp
+ 5/53 Test  #5: reject truncated ethernet and truncated ipv4/tcp .....................   Passed    0.06 sec
+      Start  6: parser accepts six demo rules
+ 6/53 Test  #6: parser accepts six demo rules ........................................   Passed    0.40 sec
+      Start  7: parser accepts Sprint 7 HTTP buffer keywords
+ 7/53 Test  #7: parser accepts Sprint 7 HTTP buffer keywords .........................   Passed    0.08 sec
+      Start  8: parser reports malformed rule
+ 8/53 Test  #8: parser reports malformed rule ........................................   Passed    0.06 sec
+      Start  9: parser rejects sid overflow
+ 9/53 Test  #9: parser rejects sid overflow ..........................................   Passed    0.07 sec
+      Start 10: parser handles semicolon inside quoted values
+10/53 Test #10: parser handles semicolon inside quoted values ........................   Passed    0.08 sec
+      Start 11: parser rejects unknown threshold token
+11/53 Test #11: parser rejects unknown threshold token ...............................   Passed    0.07 sec
+      Start 12: parser rejects trailing text after closing parenthesis
+12/53 Test #12: parser rejects trailing text after closing parenthesis ...............   Passed    0.08 sec
+      Start 13: parser resolves port variables before validation
+13/53 Test #13: parser resolves port variables before validation .....................   Passed    0.06 sec
+      Start 14: parser rejects port variables that resolve to invalid ports
+14/53 Test #14: parser rejects port variables that resolve to invalid ports ..........   Passed    0.08 sec
+      Start 15: rule store returns exact then any candidates
+15/53 Test #15: rule store returns exact then any candidates .........................   Passed    0.07 sec
+      Start 16: rule store ignores rules from other protocols
+16/53 Test #16: rule store ignores rules from other protocols ........................   Passed    0.06 sec
+      Start 17: rule store treats invalid dst_port token as any
+17/53 Test #17: rule store treats invalid dst_port token as any ......................   Passed    0.08 sec
+      Start 18: config loader reads known keys
+18/53 Test #18: config loader reads known keys .......................................   Passed    0.05 sec
+      Start 19: config loader trims values
+19/53 Test #19: config loader trims values ...........................................   Passed    0.05 sec
+      Start 20: config loader rejects unknown top-level section
+20/53 Test #20: config loader rejects unknown top-level section ......................   Passed    0.07 sec
+      Start 21: config loader rejects invalid logging level
+21/53 Test #21: config loader rejects invalid logging level ..........................   Passed    0.32 sec
+      Start 22: config loader rejects relative alert file path
+22/53 Test #22: config loader rejects relative alert file path .......................   Passed    0.17 sec
+      Start 23: config loader rejects alert file path with parent traversal
+23/53 Test #23: config loader rejects alert file path with parent traversal ..........   Passed    0.10 sec
+      Start 24: config loader accepts normalized absolute alert file path
+24/53 Test #24: config loader accepts normalized absolute alert file path ............   Passed    0.07 sec
+      Start 25: config loader reports missing file
+25/53 Test #25: config loader reports missing file ...................................   Passed    0.11 sec
+      Start 26: matcher matches icmp type
+26/53 Test #26: matcher matches icmp type ............................................   Passed    0.65 sec
+      Start 27: matcher checks tcp flags
+27/53 Test #27: matcher checks tcp flags .............................................   Passed    0.10 sec
+      Start 28: matcher checks content and nocase
+28/53 Test #28: matcher checks content and nocase ....................................   Passed    0.17 sec
+      Start 29: matcher checks pcre
+29/53 Test #29: matcher checks pcre ..................................................   Passed    0.15 sec
+      Start 30: matcher applies http_uri content to normalized and decoded uri
+30/53 Test #30: matcher applies http_uri content to normalized and decoded uri .......   Passed    0.11 sec
+      Start 31: matcher fails http_uri content for malformed request line
+31/53 Test #31: matcher fails http_uri content for malformed request line ............   Passed    0.24 sec
+      Start 32: matcher rejects uppercase non-http request line
+32/53 Test #32: matcher rejects uppercase non-http request line ......................   Passed    0.11 sec
+      Start 33: matcher supports lf-only request line
+33/53 Test #33: matcher supports lf-only request line ................................   Passed    0.11 sec
+      Start 34: matcher matches Sprint 7 HTTP header method and body buffers
+34/53 Test #34: matcher matches Sprint 7 HTTP header method and body buffers .........   Passed    0.08 sec
+      Start 35: matcher handles two pipelined HTTP requests
+35/53 Test #35: matcher handles two pipelined HTTP requests ..........................   Passed    0.07 sec
+      Start 36: matcher returns false for invalid regex
+36/53 Test #36: matcher returns false for invalid regex ..............................   Passed    0.09 sec
+      Start 37: threshold allows rule immediately when threshold is absent
+37/53 Test #37: threshold allows rule immediately when threshold is absent ...........   Passed    0.60 sec
+      Start 38: threshold triggers exactly at count within sliding window
+38/53 Test #38: threshold triggers exactly at count within sliding window ............   Passed    0.25 sec
+      Start 39: threshold evicts events at window boundary
+39/53 Test #39: threshold evicts events at window boundary ...........................   Passed    0.11 sec
+      Start 40: threshold tracks counters independently by source
+40/53 Test #40: threshold tracks counters independently by source ....................   Passed    0.12 sec
+      Start 41: threshold tracks counters independently by destination
+41/53 Test #41: threshold tracks counters independently by destination ...............   Passed    0.07 sec
+      Start 42: threshold resets bucket after trigger
+42/53 Test #42: threshold resets bucket after trigger ................................   Passed    0.07 sec
+      Start 43: engine drops when drop rule matches
+43/53 Test #43: engine drops when drop rule matches ..................................   Passed    0.69 sec
+      Start 44: engine accepts when no rule matches
+44/53 Test #44: engine accepts when no rule matches ..................................   Passed    0.35 sec
+      Start 45: engine prefers pass over drop
+45/53 Test #45: engine prefers pass over drop ........................................   Passed    0.09 sec
+      Start 46: engine records alert sid while keeping accept verdict
+46/53 Test #46: engine records alert sid while keeping accept verdict ................   Passed    0.23 sec
+      Start 47: engine evaluates ip drop rules for tcp packets
+47/53 Test #47: engine evaluates ip drop rules for tcp packets .......................   Passed    0.31 sec
+      Start 48: engine pass rule on ip overrides tcp drop
+48/53 Test #48: engine pass rule on ip overrides tcp drop ............................   Passed    0.13 sec
+      Start 49: engine flow_to_server uses client-origin direction
+49/53 Test #49: engine flow_to_server uses client-origin direction ...................   Passed    0.51 sec
+      Start 50: engine flow_established requires handshake completion
+50/53 Test #50: engine flow_established requires handshake completion ................   Passed    0.06 sec
+      Start 51: engine keeps pass precedence with flow-filtered candidates
+51/53 Test #51: engine keeps pass precedence with flow-filtered candidates ...........   Passed    0.05 sec
+      Start 52: engine drops rule match before flow closes and ignores after close
+52/53 Test #52: engine drops rule match before flow closes and ignores after close ...   Passed    0.12 sec
+      Start 53: alert fast includes threat details and block reason
+53/53 Test #53: alert fast includes threat details and block reason ..................   Passed    1.73 sec
+
+100% tests passed, 0 tests failed out of 53
+
+Total Test time (real) =  10.73 sec
+exit_code=0
+[2026-04-27T08:43:58Z] test capture end

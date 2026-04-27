@@ -1,0 +1,120 @@
+[2026-04-27T08:27:24Z] runtime capture start
+$ docker compose up -d --build --force-recreate ips attacker victim && sleep 8 && docker compose ps && docker exec ms_ips sh -lc ': > /var/log/minisnort/alert.log' && docker exec ms_attacker ip route && docker exec ms_victim ip route && docker exec ms_ips cat /var/log/minisnort/runtime_snapshot.txt
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.49kB done
+#1 DONE 0.0s
+
+#2 [ips internal] load build definition from Dockerfile
+#2 transferring dockerfile: 379B 0.0s done
+#2 DONE 0.0s
+
+#3 [attacker internal] load build definition from Dockerfile
+#3 transferring dockerfile: 278B done
+#3 DONE 0.0s
+
+#4 [victim internal] load build definition from Dockerfile
+#4 transferring dockerfile: 645B done
+#4 DONE 0.0s
+
+#5 [attacker internal] load metadata for docker.io/library/ubuntu:22.04
+#5 DONE 5.7s
+
+#6 [victim internal] load .dockerignore
+#6 transferring context: 2B 0.0s done
+#6 DONE 0.0s
+
+#7 [attacker internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [ips internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [ips 1/4] FROM docker.io/library/ubuntu:22.04@sha256:962f6cadeae0ea6284001009daa4cc9a8c37e75d1f5191cf0eb83fe565b63dd7
+#9 DONE 0.0s
+
+#10 [attacker 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     nmap hydra curl wget iputils-ping sqlmap iproute2 net-tools   && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [attacker 3/3] WORKDIR /scripts
+#11 CACHED
+
+#12 [ips 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     build-essential cmake ninja-build pkg-config     libpcap-dev libnetfilter-queue-dev libnfnetlink-dev     libpcre2-dev iptables tcpdump ca-certificates git   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ips 3/3] WORKDIR /workspace
+#13 CACHED
+
+#14 [victim internal] load build context
+#14 transferring context: 34B done
+#14 DONE 0.0s
+
+#15 [victim 3/4] COPY init-dvwa.sh /usr/local/bin/init-dvwa.sh
+#15 CACHED
+
+#16 [victim 2/4] RUN apt-get update && apt-get install -y --no-install-recommends     openssh-server apache2 php php-mysql mysql-server     iproute2 net-tools curl wget git   && rm -rf /var/lib/apt/lists/*   && mkdir -p /var/run/sshd
+#16 CACHED
+
+#17 [victim 4/4] RUN chmod +x /usr/local/bin/init-dvwa.sh
+#17 CACHED
+
+#18 [attacker] exporting to image
+#18 exporting layers done
+#18 writing image sha256:8ffe5bf421ca88d16c6e62e52133f74a183dfdc34b1e30ec0fff21d8a78c3709 done
+#18 naming to docker.io/library/lab_ips_sec-attacker done
+#18 DONE 0.0s
+
+#19 [ips] exporting to image
+#19 exporting layers done
+#19 writing image sha256:888a706db53f05d907436ef992f37922a380769d6ccc2f70318d7912170e2fb1 done
+#19 naming to docker.io/library/lab_ips_sec-ips done
+#19 DONE 0.0s
+
+#20 [victim] exporting to image
+#20 exporting layers done
+#20 writing image sha256:925d68e4687cfb665ac4414916c568e812f978dd8cbc14af979e54bc7db23a76 done
+#20 naming to docker.io/library/lab_ips_sec-victim done
+#20 DONE 0.0s
+
+#21 [attacker] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [ips] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [victim] resolving provenance for metadata file
+#23 DONE 0.0s
+ lab_ips_sec-victim  Built
+ lab_ips_sec-attacker  Built
+ lab_ips_sec-ips  Built
+ Container ms_ips  Recreate
+ Container ms_ips  Recreated
+ Container ms_victim  Recreate
+ Container ms_attacker  Recreate
+ Container ms_attacker  Recreated
+ Container ms_victim  Recreated
+ Container ms_ips  Starting
+ Container ms_ips  Started
+ Container ms_victim  Starting
+ Container ms_attacker  Starting
+ Container ms_attacker  Started
+ Container ms_victim  Started
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED          STATUS         PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   11 seconds ago   Up 8 seconds   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        13 seconds ago   Up 8 seconds   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     11 seconds ago   Up 8 seconds   
+default via 10.200.0.2 dev eth0 
+10.200.0.0/24 dev eth0 proto kernel scope link src 10.200.0.10 
+default via 10.201.0.2 dev eth0 
+10.201.0.0/24 dev eth0 proto kernel scope link src 10.201.0.20 
+started_at_utc=2026-04-27T07:52:37Z
+nfqueue_fail_open=0
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+exit_code=0
+[2026-04-27T08:27:44Z] runtime capture end

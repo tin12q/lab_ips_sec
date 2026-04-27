@@ -1,0 +1,40 @@
+# Sprint 7 runtime validation
+# commands: docker compose ps; docker inspect; docker exec route/iptables/tcp checks
+captured_at_utc=2026-04-27T08:30:15Z
+
+## docker compose ps
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED         STATUS         PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   2 minutes ago   Up 2 minutes   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        2 minutes ago   Up 2 minutes   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     2 minutes ago   Up 2 minutes   
+
+## container restart/status
+/ms_ips restart=0 status=running started=2026-04-27T08:27:35.434896291Z finished=0001-01-01T00:00:00Z
+/ms_attacker restart=0 status=running started=2026-04-27T08:27:35.725842083Z finished=0001-01-01T00:00:00Z
+/ms_victim restart=0 status=running started=2026-04-27T08:27:35.720623333Z finished=0001-01-01T00:00:00Z
+
+## attacker route
+default via 10.200.0.2 dev eth0 
+10.200.0.0/24 dev eth0 proto kernel scope link src 10.200.0.10 
+
+## victim route
+default via 10.201.0.2 dev eth0 
+10.201.0.0/24 dev eth0 proto kernel scope link src 10.201.0.20 
+
+## ips forwarding
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+
+## ips runtime snapshot
+started_at_utc=2026-04-27T08:28:35Z
+nfqueue_fail_open=0
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+
+## TCP attacker 10.200.0.10 to victim 10.201.0.20
+tcp80_ok
+tcp22_ok

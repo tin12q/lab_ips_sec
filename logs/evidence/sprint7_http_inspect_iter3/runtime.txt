@@ -1,0 +1,112 @@
+[2026-04-27T08:49:23Z] runtime capture start
+$ docker compose build && docker compose up -d --force-recreate && docker compose exec -T ips sh -lc 'rm -f /var/log/minisnort/alert.log; touch /var/log/minisnort/alert.log; iptables -L FORWARD -n -v; pgrep minisnort; tail -n 40 /tmp/minisnort.log || true' && docker compose ps
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.49kB done
+#1 DONE 0.0s
+
+#2 [victim internal] load build definition from Dockerfile
+#2 transferring dockerfile: 645B 0.0s done
+#2 DONE 0.0s
+
+#3 [attacker internal] load build definition from Dockerfile
+#3 transferring dockerfile: 278B 0.0s done
+#3 DONE 0.0s
+
+#4 [ips internal] load build definition from Dockerfile
+#4 transferring dockerfile: 379B 0.0s done
+#4 DONE 0.0s
+
+#5 [ips internal] load metadata for docker.io/library/ubuntu:22.04
+#5 DONE 1.5s
+
+#6 [attacker internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.0s
+
+#7 [ips internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.0s
+
+#8 [victim internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.0s
+
+#9 [attacker 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     nmap hydra curl wget iputils-ping sqlmap iproute2 net-tools   && rm -rf /var/lib/apt/lists/*
+#9 CACHED
+
+#10 [attacker 3/3] WORKDIR /scripts
+#10 CACHED
+
+#11 [victim 1/3] FROM docker.io/library/ubuntu:22.04@sha256:962f6cadeae0ea6284001009daa4cc9a8c37e75d1f5191cf0eb83fe565b63dd7
+#11 DONE 0.0s
+
+#12 [ips 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     build-essential cmake ninja-build pkg-config     libpcap-dev libnetfilter-queue-dev libnfnetlink-dev     libpcre2-dev iptables tcpdump ca-certificates git   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ips 3/3] WORKDIR /workspace
+#13 CACHED
+
+#14 [attacker] exporting to image
+#14 exporting layers done
+#14 writing image sha256:8ffe5bf421ca88d16c6e62e52133f74a183dfdc34b1e30ec0fff21d8a78c3709 done
+#14 naming to docker.io/library/lab_ips_sec-attacker done
+#14 DONE 0.0s
+
+#15 [victim internal] load build context
+#15 transferring context: 34B done
+#15 DONE 0.0s
+
+#16 [victim 2/4] RUN apt-get update && apt-get install -y --no-install-recommends     openssh-server apache2 php php-mysql mysql-server     iproute2 net-tools curl wget git   && rm -rf /var/lib/apt/lists/*   && mkdir -p /var/run/sshd
+#16 CACHED
+
+#17 [victim 3/4] COPY init-dvwa.sh /usr/local/bin/init-dvwa.sh
+#17 CACHED
+
+#18 [victim 4/4] RUN chmod +x /usr/local/bin/init-dvwa.sh
+#18 CACHED
+
+#19 [ips] exporting to image
+#19 exporting layers done
+#19 writing image sha256:888a706db53f05d907436ef992f37922a380769d6ccc2f70318d7912170e2fb1 done
+#19 naming to docker.io/library/lab_ips_sec-ips done
+#19 DONE 0.0s
+
+#20 [victim] exporting to image
+#20 exporting layers done
+#20 writing image sha256:925d68e4687cfb665ac4414916c568e812f978dd8cbc14af979e54bc7db23a76 done
+#20 naming to docker.io/library/lab_ips_sec-victim done
+#20 DONE 0.0s
+
+#21 [ips] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [attacker] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [victim] resolving provenance for metadata file
+#23 DONE 0.0s
+ lab_ips_sec-ips  Built
+ lab_ips_sec-victim  Built
+ lab_ips_sec-attacker  Built
+ Container ms_ips  Recreate
+ Container ms_ips  Recreated
+ Container ms_victim  Recreate
+ Container ms_attacker  Recreate
+ Container ms_attacker  Recreated
+ Container ms_victim  Recreated
+ Container ms_ips  Starting
+ Container ms_ips  Started
+ Container ms_attacker  Starting
+ Container ms_victim  Starting
+ Container ms_victim  Started
+ Container ms_attacker  Started
+Chain FORWARD (policy ACCEPT 0 packets, 0 bytes)
+ pkts bytes target     prot opt in     out     source               destination         
+    0     0 NFQUEUE    all  --  *      *       0.0.0.0/0            0.0.0.0/0            NFQUEUE num 0
+tail: cannot open '/tmp/minisnort.log' for reading: No such file or directory
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED         STATUS                  PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   3 seconds ago   Up Less than a second   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        4 seconds ago   Up 1 second             
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     3 seconds ago   Up Less than a second   
+exit_code=0
+[2026-04-27T08:49:31Z] runtime capture end

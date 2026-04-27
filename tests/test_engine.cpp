@@ -65,7 +65,7 @@ TEST_CASE("engine drops when drop rule matches", "[engine]") {
 
 TEST_CASE("engine accepts when no rule matches", "[engine]") {
   auto rule = make_rule(rules::Action::kDrop, rules::Proto::kTcp, "80", 1000006);
-  rule.contents.push_back(rules::ContentOpt{"/admin", false, true});
+  rule.contents.push_back(rules::ContentOpt{"/admin", false, rules::HttpBuffer::kUri});
 
   rules::RuleStore store;
   store.set_rules({rule});
@@ -81,10 +81,10 @@ TEST_CASE("engine accepts when no rule matches", "[engine]") {
 
 TEST_CASE("engine prefers pass over drop", "[engine]") {
   auto pass_rule = make_rule(rules::Action::kPass, rules::Proto::kTcp, "80", 2000001);
-  pass_rule.contents.push_back(rules::ContentOpt{"/admin", false, true});
+  pass_rule.contents.push_back(rules::ContentOpt{"/admin", false, rules::HttpBuffer::kUri});
 
   auto drop_rule = make_rule(rules::Action::kDrop, rules::Proto::kTcp, "80", 2000002);
-  drop_rule.contents.push_back(rules::ContentOpt{"/admin", false, true});
+  drop_rule.contents.push_back(rules::ContentOpt{"/admin", false, rules::HttpBuffer::kUri});
 
   rules::RuleStore store;
   store.set_rules({drop_rule, pass_rule});
@@ -115,7 +115,7 @@ TEST_CASE("engine records alert sid while keeping accept verdict", "[engine]") {
 
 TEST_CASE("engine evaluates ip drop rules for tcp packets", "[engine]") {
   auto ip_drop = make_rule(rules::Action::kDrop, rules::Proto::kIp, "any", 3000001);
-  ip_drop.contents.push_back(rules::ContentOpt{"blocked", true, false});
+  ip_drop.contents.push_back(rules::ContentOpt{"blocked", true, rules::HttpBuffer::kPayload});
 
   rules::RuleStore store;
   store.set_rules({ip_drop});
@@ -131,10 +131,10 @@ TEST_CASE("engine evaluates ip drop rules for tcp packets", "[engine]") {
 
 TEST_CASE("engine pass rule on ip overrides tcp drop", "[engine]") {
   auto tcp_drop = make_rule(rules::Action::kDrop, rules::Proto::kTcp, "80", 3000002);
-  tcp_drop.contents.push_back(rules::ContentOpt{"/admin", false, true});
+  tcp_drop.contents.push_back(rules::ContentOpt{"/admin", false, rules::HttpBuffer::kUri});
 
   auto ip_pass = make_rule(rules::Action::kPass, rules::Proto::kIp, "any", 3000003);
-  ip_pass.contents.push_back(rules::ContentOpt{"/admin", false, true});
+  ip_pass.contents.push_back(rules::ContentOpt{"/admin", false, rules::HttpBuffer::kUri});
 
   rules::RuleStore store;
   store.set_rules({tcp_drop, ip_pass});

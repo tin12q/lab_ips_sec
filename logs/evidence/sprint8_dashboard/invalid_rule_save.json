@@ -1,0 +1,7 @@
+{
+  "error": "rule validation failed",
+  "details": [
+    "line 1: invalid rule header or options",
+    "rules file must contain at least one active rule"
+  ]
+}

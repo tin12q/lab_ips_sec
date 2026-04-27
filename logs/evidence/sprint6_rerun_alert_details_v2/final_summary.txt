@@ -1,0 +1,28 @@
+Sprint 6 rerun evidence with enriched alert details
+
+Evidence folder: logs/evidence/sprint6_rerun_alert_details_v2
+Generated at: 2026-04-27T07:54Z
+
+Verification:
+- Build: PASS, see build.txt (exit_code=0)
+- Tests: PASS, see test.txt (50/50 tests passed)
+- Runtime: PASS, see runtime.txt (ms_ips, ms_attacker, ms_victim Up)
+- NFQUEUE fail-open: disabled (nfqueue_fail_open=0)
+- Attacks executed: admin URL, SQLi URL, ICMP block test, TCP SYN scan; see attacks.txt
+- Alerts: PASS, see alerts.txt
+
+Enriched alert evidence:
+- Alert lines now include rule message / threat type, verdict classification, action, reason, protocol, source and destination.
+- Example format:
+  [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+
+Observed enriched alert counts:
+- Block admin URL: 10
+- Block all ICMP: 5
+- ICMP Ping detected: 5
+- TCP SYN Scan: 50
+- Total enriched lines containing Action/Reason: 70
+
+Notes:
+- The first rerun folder logs/evidence/sprint6_rerun_alert_details captured stale old-format runtime alerts because ms_ips was still running the previous binary.
+- This v2 folder force-recreated the lab containers and cleared /var/log/minisnort/alert.log before attacks, so it is the valid fresh evidence bundle.

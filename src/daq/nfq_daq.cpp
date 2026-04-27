@@ -24,29 +24,35 @@ namespace {
 struct NfqContext {
   detection::Engine* engine = nullptr;
   logger::AlertFast* alert_logger = nullptr;
+  bool fail_open = false;
 };
+
+uint32_t failure_verdict(const NfqContext& ctx) {
+  return ctx.fail_open ? NF_ACCEPT : NF_DROP;
+}
 
 int callback(nfq_q_handle* queue_handle, nfgenmsg* nfmsg, nfq_data* data, void* user_data) {
   (void)nfmsg;
 
   nfqnl_msg_packet_hdr* packet_header = nfq_get_msg_packet_hdr(data);
   if (packet_header == nullptr) {
-    spdlog::warn("[nfq] missing packet header; fail-open without packet_id");
-    return NF_ACCEPT;
+    spdlog::warn("[nfq] missing packet header; cannot set verdict without packet_id");
+    return 1;
   }
 
   const uint32_t packet_id = ntohl(packet_header->packet_id);
   auto* ctx = reinterpret_cast<NfqContext*>(user_data);
   if (ctx == nullptr || ctx->engine == nullptr || ctx->alert_logger == nullptr) {
-    spdlog::warn("[nfq] fail-open: invalid callback context");
-    return nfq_set_verdict(queue_handle, packet_id, NF_ACCEPT, 0, nullptr);
+    spdlog::warn("[nfq] packet_id={} invalid callback context; verdict=drop", packet_id);
+    return nfq_set_verdict(queue_handle, packet_id, NF_DROP, 0, nullptr);
   }
 
   unsigned char* payload = nullptr;
   const int payload_len = nfq_get_payload(data, &payload);
   if (payload_len <= 0 || payload == nullptr) {
-    spdlog::warn("[nfq] fail-open: empty payload for packet_id={}", packet_id);
-    return nfq_set_verdict(queue_handle, packet_id, NF_ACCEPT, 0, nullptr);
+    spdlog::warn("[nfq] packet_id={} empty payload; verdict={}", packet_id,
+                 ctx->fail_open ? "accept" : "drop");
+    return nfq_set_verdict(queue_handle, packet_id, failure_verdict(*ctx), 0, nullptr);
   }
 
   core::Packet decoded;
@@ -65,9 +71,9 @@ int callback(nfq_q_handle* queue_handle, nfgenmsg* nfmsg, nfq_data* data, void* 
 
     decode_ok = decoder::decodePacket(framed_payload.data(), framed_payload.size(), decoded);
     if (!decode_ok) {
-      spdlog::warn("[nfq] fail-open: decode failed for packet_id={} payload_len={}", packet_id,
-                   payload_len);
-      return nfq_set_verdict(queue_handle, packet_id, NF_ACCEPT, 0, nullptr);
+      spdlog::warn("[nfq] packet_id={} decode failed payload_len={}; verdict={}", packet_id,
+                   payload_len, ctx->fail_open ? "accept" : "drop");
+      return nfq_set_verdict(queue_handle, packet_id, failure_verdict(*ctx), 0, nullptr);
     }
 
     spdlog::info("[nfq] decoded packet_id={} using synthetic L2 framing", packet_id);
@@ -80,19 +86,21 @@ int callback(nfq_q_handle* queue_handle, nfgenmsg* nfmsg, nfq_data* data, void* 
   decoded.nfq_packet_id = packet_id;
 
   const auto decision = ctx->engine->inspect(decoded);
-  if (!decision.matched_sids.empty()) {
-    ctx->alert_logger->emit(decoded, decision.verdict, decision.matched_sids);
+  if (!decision.matched_rules.empty()) {
+    ctx->alert_logger->emit(decoded, decision.verdict, decision.matched_rules);
   }
 
   const uint32_t verdict = decision.verdict == detection::Verdict::kDrop ? NF_DROP : NF_ACCEPT;
-  spdlog::info("[nfq] packet_id={} verdict={} matched_sids={}", packet_id,
+  spdlog::info("[nfq] packet_id={} verdict={} matched_rules={}", packet_id,
                decision.verdict == detection::Verdict::kDrop ? "drop" : "accept",
-               decision.matched_sids.size());
+               decision.matched_rules.size());
   return nfq_set_verdict(queue_handle, packet_id, verdict, 0, nullptr);
 }
 
 }  // namespace
 #endif
+
+NfqDaq::NfqDaq(bool fail_open) : fail_open_(fail_open) {}
 
 int NfqDaq::run(int queue_num, detection::Engine& engine,
                 logger::AlertFast& alert_logger) const {
@@ -121,6 +129,7 @@ int NfqDaq::run(int queue_num, detection::Engine& engine,
   NfqContext ctx;
   ctx.engine = &engine;
   ctx.alert_logger = &alert_logger;
+  ctx.fail_open = fail_open_;
   nfq_q_handle* queue_handle =
       nfq_create_queue(handle, static_cast<uint16_t>(queue_num), &callback, &ctx);
   if (queue_handle == nullptr) {

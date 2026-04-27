@@ -1,0 +1,264 @@
+[2026-04-27T07:54:03Z] alerts capture start
+$ docker exec ms_ips tail -n 120 /var/log/minisnort/alert.log && echo '--- runtime_snapshot ---' && docker exec ms_ips cat /var/log/minisnort/runtime_snapshot.txt && echo '--- ips logs ---' && docker logs --tail=180 ms_ips
+04/27-07:52:56.561481 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:52:56.771527 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:52:56.979473 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:52:57.395864 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:52:58.276131 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:52:59.939801 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:53:03.267369 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:53:09.863345 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:53:23.177916 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:53:48.567406 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:48.567406 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:49.607055 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:49.607055 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:49.796374 [**] [1:1000006:1] Block admin URL [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {TCP} 10.200.0.10:46954 -> 10.201.0.20:80
+04/27-07:53:50.629739 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:50.629739 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:51.654002 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:51.654002 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:52.678905 [**] [1:1000001:1] ICMP Ping detected [**] [Classification: drop] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:53:52.678905 [**] [1:1000005:1] Block all ICMP [**] [Classification: drop] [Priority: 1] [Action: drop] [Reason: blocked because drop rule matched] {ICMP} 10.200.0.10:0 -> 10.201.0.20:0
+04/27-07:54:02.889587 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:80
+04/27-07:54:02.893933 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:635
+04/27-07:54:02.895356 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:595
+04/27-07:54:02.901214 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:304
+04/27-07:54:02.906039 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:789
+04/27-07:54:02.912832 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:349
+04/27-07:54:02.915958 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:280
+04/27-07:54:02.930073 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:214
+04/27-07:54:02.937155 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:360
+04/27-07:54:02.937972 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:182
+04/27-07:54:02.939946 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:372
+04/27-07:54:02.942589 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:891
+04/27-07:54:02.947502 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:551
+04/27-07:54:02.949655 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:817
+04/27-07:54:02.952966 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:910
+04/27-07:54:02.954771 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:193
+04/27-07:54:02.956718 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:7
+04/27-07:54:02.958443 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:416
+04/27-07:54:02.960787 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:976
+04/27-07:54:02.978669 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:348
+04/27-07:54:02.982071 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:998
+04/27-07:54:02.985252 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:815
+04/27-07:54:02.987030 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:620
+04/27-07:54:02.989119 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:71
+04/27-07:54:02.990527 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:715
+04/27-07:54:02.995142 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:927
+04/27-07:54:02.996432 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:299
+04/27-07:54:02.997885 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:513
+04/27-07:54:02.998914 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:222
+04/27-07:54:02.999764 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:434
+04/27-07:54:03.007104 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:676
+04/27-07:54:03.014531 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:844
+04/27-07:54:03.018642 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:17
+04/27-07:54:03.020537 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:116
+04/27-07:54:03.022526 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:988
+04/27-07:54:03.027289 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:956
+04/27-07:54:03.028682 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:156
+04/27-07:54:03.030814 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:248
+04/27-07:54:03.033165 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:66
+04/27-07:54:03.036709 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:781
+04/27-07:54:03.039221 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:338
+04/27-07:54:03.044224 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:480
+04/27-07:54:03.045227 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:477
+04/27-07:54:03.045793 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:772
+04/27-07:54:03.047772 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:561
+04/27-07:54:03.049816 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:287
+04/27-07:54:03.051877 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:659
+04/27-07:54:03.053085 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:436
+04/27-07:54:03.054266 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:154
+04/27-07:54:03.054750 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:45923 -> 10.201.0.20:893
+--- runtime_snapshot ---
+started_at_utc=2026-04-27T07:52:37Z
+nfqueue_fail_open=0
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+--- ips logs ---
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1946 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1946 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1947 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1947 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1948 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1948 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1949 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1949 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1950 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1950 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1951 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1951 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1952 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1952 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1953 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1953 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1954 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1954 verdict=accept matched_rules=1
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1955 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1955 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1956 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1956 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1957 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1957 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1958 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1958 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1959 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1959 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1960 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1960 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1961 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1961 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1962 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1962 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1963 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1963 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1964 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1964 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1965 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1965 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1966 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1966 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1967 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1967 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1968 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1968 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1969 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1969 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1970 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1970 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1971 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1971 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1972 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1972 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1973 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1973 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1974 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1974 verdict=accept matched_rules=1
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1975 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1975 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1976 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1976 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1977 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1977 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1978 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1978 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1979 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1979 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1980 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1980 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1981 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1981 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1982 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1982 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1983 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1983 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1984 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1984 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1985 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1985 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1986 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1986 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1987 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1987 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1988 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1988 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1989 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1989 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1990 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1990 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1991 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1991 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1992 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1992 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1993 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1993 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1994 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1994 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1995 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1995 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1996 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1996 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1997 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1997 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1998 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1998 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1999 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1999 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2000 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2000 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2001 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2001 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2002 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2002 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2003 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2003 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2004 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2004 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2005 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2005 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2006 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2006 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2007 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2007 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2008 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2008 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2009 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2009 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2010 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2010 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2011 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2011 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2012 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2012 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2013 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2013 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2014 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2014 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2015 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2015 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2016 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2016 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2017 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2017 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2018 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2018 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2019 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2019 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2020 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2020 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2021 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2021 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2022 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2022 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2023 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2023 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2024 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2024 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2025 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2025 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2026 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2026 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2027 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2027 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2028 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2028 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2029 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2029 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2030 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2030 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2031 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2031 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2032 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2032 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2033 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2033 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2034 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2034 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2035 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2035 verdict=accept matched_rules=0
+exit_code=0
+[2026-04-27T07:54:03Z] alerts capture end

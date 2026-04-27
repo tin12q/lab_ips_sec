@@ -105,12 +105,12 @@ bool parse_proto(const std::string& raw, Proto& out) {
   return false;
 }
 
-bool is_valid_port_token(const std::string& token) {
+bool is_valid_port_token(const std::string& token, bool allow_variable) {
   if (token == "any") {
     return true;
   }
 
-  if (!token.empty() && token[0] == '$') {
+  if (allow_variable && !token.empty() && token[0] == '$') {
     return true;
   }
 
@@ -178,12 +178,12 @@ bool parse_header(const std::string& header, Rule& rule, std::string& error) {
     return false;
   }
 
-  if (!is_valid_port_token(src_port)) {
+  if (!is_valid_port_token(src_port, true)) {
     error = "invalid source port token: " + src_port;
     return false;
   }
 
-  if (!is_valid_port_token(dst_port)) {
+  if (!is_valid_port_token(dst_port, true)) {
     error = "invalid destination port token: " + dst_port;
     return false;
   }
@@ -398,7 +398,13 @@ bool parse_option(const std::string& key, const std::string& value, Rule& rule, 
   return false;
 }
 
-bool apply_keyword(const std::string& keyword, Rule& rule, std::string& error) {
+enum class LastOption {
+  kNone,
+  kContent,
+  kPcre,
+};
+
+bool apply_keyword(const std::string& keyword, Rule& rule, LastOption last_option, std::string& error) {
   if (keyword == "nocase") {
     if (rule.contents.empty()) {
       error = "nocase requires previous content";
@@ -408,13 +414,28 @@ bool apply_keyword(const std::string& keyword, Rule& rule, std::string& error) {
     return true;
   }
 
-  if (keyword == "http_uri") {
-    if (rule.contents.empty()) {
-      error = "http_uri requires previous content";
-      return false;
+  if (keyword == "http_uri" || keyword == "http_header" || keyword == "http_method" ||
+      keyword == "http_client_body") {
+    HttpBuffer buffer = HttpBuffer::kClientBody;
+    if (keyword == "http_uri") {
+      buffer = HttpBuffer::kUri;
+    } else if (keyword == "http_header") {
+      buffer = HttpBuffer::kHeader;
+    } else if (keyword == "http_method") {
+      buffer = HttpBuffer::kMethod;
     }
-    rule.contents.back().http_uri = true;
-    return true;
+
+    if (last_option == LastOption::kContent && !rule.contents.empty()) {
+      rule.contents.back().http_buffer = buffer;
+      return true;
+    }
+    if (last_option == LastOption::kPcre && rule.pcre.has_value()) {
+      rule.pcre->http_buffer = buffer;
+      return true;
+    }
+
+    error = keyword + " requires previous content or pcre";
+    return false;
   }
 
   error = "unsupported keyword option: " + keyword;
@@ -477,10 +498,11 @@ bool parse_options(const std::string& options, Rule& rule, std::string& error) {
     return false;
   }
 
+  LastOption last_option = LastOption::kNone;
   for (const std::string& raw_token : tokens) {
     const size_t sep = raw_token.find(':');
     if (sep == std::string::npos) {
-      if (!apply_keyword(raw_token, rule, error)) {
+      if (!apply_keyword(raw_token, rule, last_option, error)) {
         return false;
       }
       continue;
@@ -495,6 +517,13 @@ bool parse_options(const std::string& options, Rule& rule, std::string& error) {
 
     if (!parse_option(key, value, rule, error)) {
       return false;
+    }
+    if (key == "content") {
+      last_option = LastOption::kContent;
+    } else if (key == "pcre") {
+      last_option = LastOption::kPcre;
+    } else {
+      last_option = LastOption::kNone;
     }
   }
 
@@ -546,6 +575,16 @@ ParseResult Parser::parse_text(
     rule.src_port = resolve_variable(rule.src_port, variables);
     rule.dst_ip = resolve_variable(rule.dst_ip, variables);
     rule.dst_port = resolve_variable(rule.dst_port, variables);
+
+    if (!is_valid_port_token(rule.src_port, false)) {
+      result.errors.push_back({line_no, "invalid resolved source port token: " + rule.src_port});
+      break;
+    }
+
+    if (!is_valid_port_token(rule.dst_port, false)) {
+      result.errors.push_back({line_no, "invalid resolved destination port token: " + rule.dst_port});
+      break;
+    }
 
     if (!trim(trimmed.substr(rparen + 1)).empty()) {
       result.errors.push_back({line_no, "unexpected trailing text after rule options"});

@@ -724,7 +724,7 @@ Victim không cần entrypoint đặc biệt; Dockerfile sẽ start sshd + apach
 - `test_http_inspect` pass.
 - 3 rule mới (1000007–1000009) hoạt động đúng trên 3 attack script tương ứng.
 - Demo cũ (sid 1000006 admin URL) vẫn pass — kể cả khi attacker dùng `%2Fadmin` hay `/foo/../admin`.
-
+ 
 ---
 
 ### Sprint 8 — Hot reload rule (không restart) (2–3 ngày)

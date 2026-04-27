@@ -46,11 +46,17 @@ add_executable(test_flow
   ../src/flow/tcp_state.cpp
 )
 
+add_executable(test_alert_fast
+  test_alert_fast.cpp
+  ../src/logger/alert_fast.cpp
+)
+
 target_include_directories(test_parser PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(test_matcher PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(test_threshold PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(test_engine PRIVATE ${CMAKE_SOURCE_DIR}/src)
 target_include_directories(test_flow PRIVATE ${CMAKE_SOURCE_DIR}/src)
+target_include_directories(test_alert_fast PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
 target_link_libraries(test_parser
   PRIVATE
@@ -77,6 +83,12 @@ target_link_libraries(test_flow
     Catch2::Catch2WithMain
 )
 
+target_link_libraries(test_alert_fast
+  PRIVATE
+    Catch2::Catch2WithMain
+    spdlog::spdlog
+)
+
 include(CTest)
 include(Catch)
 catch_discover_tests(test_decoder)
@@ -85,3 +97,4 @@ catch_discover_tests(test_matcher)
 catch_discover_tests(test_threshold)
 catch_discover_tests(test_engine)
 catch_discover_tests(test_flow)
+catch_discover_tests(test_alert_fast)

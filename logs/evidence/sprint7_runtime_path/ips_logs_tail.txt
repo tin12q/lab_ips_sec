@@ -1,0 +1,252 @@
+# Recent IPS logs
+captured_at_utc=2026-04-27T08:05:02Z
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1923 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1923 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1924 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1924 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1925 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1925 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1926 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1926 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1927 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1927 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1928 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1928 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1929 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1929 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1930 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1930 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1931 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1931 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1932 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1932 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1933 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1933 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1934 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1934 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1935 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1935 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1936 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1936 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1937 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1937 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1938 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1938 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1939 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1939 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1940 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1940 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1941 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1941 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1942 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1942 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1943 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1943 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1944 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1944 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1945 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1945 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1946 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1946 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1947 using synthetic L2 framing
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] packet_id=1947 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.053] [[32minfo[m] [nfq] decoded packet_id=1948 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1948 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1949 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1949 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1950 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1950 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1951 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1951 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1952 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1952 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1953 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1953 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1954 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1954 verdict=accept matched_rules=1
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1955 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1955 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1956 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1956 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1957 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1957 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1958 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1958 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1959 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1959 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1960 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1960 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1961 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1961 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1962 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1962 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1963 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1963 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1964 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1964 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1965 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1965 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1966 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1966 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1967 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1967 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1968 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1968 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1969 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1969 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1970 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1970 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1971 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1971 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1972 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1972 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1973 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1973 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1974 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1974 verdict=accept matched_rules=1
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1975 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1975 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1976 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1976 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1977 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1977 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1978 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1978 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1979 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1979 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1980 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1980 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1981 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1981 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1982 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1982 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1983 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1983 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1984 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1984 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1985 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1985 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1986 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1986 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1987 using synthetic L2 framing
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] packet_id=1987 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.054] [[32minfo[m] [nfq] decoded packet_id=1988 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1988 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1989 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1989 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1990 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1990 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1991 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1991 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1992 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1992 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1993 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1993 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1994 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1994 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1995 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1995 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] decoded packet_id=1996 using synthetic L2 framing
+[2026-04-27 07:54:03.055] [[32minfo[m] [nfq] packet_id=1996 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1997 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1997 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1998 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1998 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=1999 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=1999 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2000 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2000 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2001 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2001 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2002 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2002 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2003 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2003 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2004 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2004 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2005 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2005 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2006 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2006 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2007 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2007 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2008 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2008 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2009 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2009 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2010 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2010 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2011 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2011 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2012 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2012 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2013 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2013 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2014 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2014 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2015 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2015 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2016 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2016 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2017 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2017 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2018 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2018 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2019 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2019 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2020 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2020 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2021 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2021 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2022 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2022 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2023 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2023 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2024 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2024 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2025 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2025 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2026 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2026 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2027 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2027 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2028 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2028 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2029 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2029 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2030 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2030 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2031 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2031 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2032 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2032 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2033 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2033 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2034 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2034 verdict=accept matched_rules=0
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] decoded packet_id=2035 using synthetic L2 framing
+[2026-04-27 07:54:03.056] [[32minfo[m] [nfq] packet_id=2035 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.039] [[32minfo[m] [nfq] decoded packet_id=2036 using synthetic L2 framing
+[2026-04-27 08:05:02.041] [[32minfo[m] [nfq] packet_id=2036 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] decoded packet_id=2037 using synthetic L2 framing
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] packet_id=2037 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] decoded packet_id=2038 using synthetic L2 framing
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] packet_id=2038 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] decoded packet_id=2039 using synthetic L2 framing
+[2026-04-27 08:05:02.042] [[32minfo[m] [nfq] packet_id=2039 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.043] [[32minfo[m] [nfq] decoded packet_id=2040 using synthetic L2 framing
+[2026-04-27 08:05:02.044] [[32minfo[m] [nfq] packet_id=2040 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.046] [[32minfo[m] [nfq] decoded packet_id=2041 using synthetic L2 framing
+[2026-04-27 08:05:02.046] [[32minfo[m] [nfq] packet_id=2041 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] decoded packet_id=2042 using synthetic L2 framing
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] packet_id=2042 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] decoded packet_id=2043 using synthetic L2 framing
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] packet_id=2043 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] decoded packet_id=2044 using synthetic L2 framing
+[2026-04-27 08:05:02.047] [[32minfo[m] [nfq] packet_id=2044 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.049] [[32minfo[m] [nfq] decoded packet_id=2045 using synthetic L2 framing
+[2026-04-27 08:05:02.049] [[32minfo[m] [nfq] packet_id=2045 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.052] [[32minfo[m] [nfq] decoded packet_id=2046 using synthetic L2 framing
+[2026-04-27 08:05:02.052] [[32minfo[m] [nfq] packet_id=2046 verdict=accept matched_rules=0
+[2026-04-27 08:05:02.052] [[32minfo[m] [nfq] decoded packet_id=2047 using synthetic L2 framing
+[2026-04-27 08:05:02.052] [[32minfo[m] [nfq] packet_id=2047 verdict=accept matched_rules=0

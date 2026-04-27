@@ -1,0 +1,22 @@
+Sprint 7 HTTP inspector final evidence
+
+Evidence folder: logs/evidence/sprint7_http_inspect_final_v2
+
+Result:
+- Build: PASS
+- Tests: PASS, 53/53
+- Runtime: PASS, Docker lab up with FORWARD NFQUEUE rule installed
+- Attack run: PASS, scripted admin, raw traversal, SQLi body, sqlmap User-Agent, ICMP, and SYN scan traffic executed
+- Alerts: PASS, Sprint 7 HTTP alerts present
+
+Key validated alerts:
+- SID 1000006 Block admin URL
+- SID 1000007 Path traversal
+- SID 1000008 SQLi in body
+- SID 1000009 Suspicious User-Agent
+
+Fix notes:
+- HTTP parser stores both canonical uri and decoded pre-canonical uri.
+- http_uri matching checks both canonical and decoded URI forms.
+- Traversal attack script sends a raw HTTP request so the encoded traversal path is not normalized by the client before reaching IPS.
+- Path traversal rule is ordered before the generic admin URL rule so SID 1000007 is observable in alert evidence.

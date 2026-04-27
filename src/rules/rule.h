@@ -21,15 +21,24 @@ enum class Proto {
   kIcmp,
 };
 
+enum class HttpBuffer {
+  kPayload,
+  kUri,
+  kHeader,
+  kMethod,
+  kClientBody,
+};
+
 struct ContentOpt {
   std::string pattern;
   bool nocase = false;
-  bool http_uri = false;
+  HttpBuffer http_buffer = HttpBuffer::kPayload;
 };
 
 struct PcreOpt {
   std::string regex;
   bool nocase = false;
+  HttpBuffer http_buffer = HttpBuffer::kPayload;
 };
 
 struct ThresholdOpt {

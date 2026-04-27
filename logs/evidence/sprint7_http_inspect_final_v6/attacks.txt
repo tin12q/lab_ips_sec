@@ -1,0 +1,10 @@
+[2026-04-27T09:56:34Z] attacks capture start
+$ docker compose exec -T attacker sh -lc './scripts/attack_admin.sh 10.201.0.20 || true; ./scripts/attack_traversal.sh 10.201.0.20 || true; ./scripts/attack_sqli_body.sh 10.201.0.20 || true; ./scripts/attack_sqlmap.sh 10.201.0.20 || true; ./scripts/attack_icmp.sh 10.201.0.20 || true; ./scripts/attack_synscan.sh 10.201.0.20 || true'
+sh: 1: ./scripts/attack_admin.sh: not found
+sh: 1: ./scripts/attack_traversal.sh: not found
+sh: 1: ./scripts/attack_sqli_body.sh: not found
+sh: 1: ./scripts/attack_sqlmap.sh: not found
+sh: 1: ./scripts/attack_icmp.sh: not found
+sh: 1: ./scripts/attack_synscan.sh: not found
+exit_code=0
+[2026-04-27T09:56:35Z] attacks capture end

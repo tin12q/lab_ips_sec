@@ -1,0 +1,201 @@
+# Sprint 7 evidence summary
+captured_at_utc=2026-04-27T08:34:13Z
+
+## required files
+build.txt present
+test.txt present
+runtime.txt present
+attacks.txt present
+alerts.txt present
+
+## build result
+# command: cmake --build /Users/tin12q/Projects/lab_ips_sec/build
+started_at_utc=2026-04-27T08:29:38Z
+[  4%] Built target spdlog
+[ 65%] Built target Catch2
+[ 67%] Built target Catch2WithMain
+[ 71%] Built target minisnort_decoder
+[ 79%] Built target minisnort
+[ 80%] Built target test_decoder
+[ 83%] Built target test_parser
+[ 85%] Built target test_matcher
+[ 87%] Built target test_threshold
+[ 92%] Built target test_engine
+[ 98%] Built target test_flow
+[100%] Built target test_alert_fast
+finished_at_utc=2026-04-27T08:29:42Z
+exit_status=0
+
+## test result
+      Start 12: parser rejects trailing text after closing parenthesis
+12/53 Test #12: parser rejects trailing text after closing parenthesis ...............   Passed    0.04 sec
+      Start 13: parser resolves port variables before validation
+13/53 Test #13: parser resolves port variables before validation .....................   Passed    0.04 sec
+      Start 14: parser rejects port variables that resolve to invalid ports
+14/53 Test #14: parser rejects port variables that resolve to invalid ports ..........   Passed    0.04 sec
+      Start 15: rule store returns exact then any candidates
+15/53 Test #15: rule store returns exact then any candidates .........................   Passed    0.05 sec
+      Start 16: rule store ignores rules from other protocols
+16/53 Test #16: rule store ignores rules from other protocols ........................   Passed    0.04 sec
+      Start 17: rule store treats invalid dst_port token as any
+17/53 Test #17: rule store treats invalid dst_port token as any ......................   Passed    0.04 sec
+      Start 18: config loader reads known keys
+18/53 Test #18: config loader reads known keys .......................................   Passed    0.04 sec
+      Start 19: config loader trims values
+19/53 Test #19: config loader trims values ...........................................   Passed    0.04 sec
+      Start 20: config loader rejects unknown top-level section
+20/53 Test #20: config loader rejects unknown top-level section ......................   Passed    0.04 sec
+      Start 21: config loader rejects invalid logging level
+21/53 Test #21: config loader rejects invalid logging level ..........................   Passed    0.04 sec
+      Start 22: config loader rejects relative alert file path
+22/53 Test #22: config loader rejects relative alert file path .......................   Passed    0.04 sec
+      Start 23: config loader rejects alert file path with parent traversal
+23/53 Test #23: config loader rejects alert file path with parent traversal ..........   Passed    0.04 sec
+      Start 24: config loader accepts normalized absolute alert file path
+24/53 Test #24: config loader accepts normalized absolute alert file path ............   Passed    0.04 sec
+      Start 25: config loader reports missing file
+25/53 Test #25: config loader reports missing file ...................................   Passed    0.04 sec
+      Start 26: matcher matches icmp type
+26/53 Test #26: matcher matches icmp type ............................................   Passed    0.33 sec
+      Start 27: matcher checks tcp flags
+27/53 Test #27: matcher checks tcp flags .............................................   Passed    0.04 sec
+      Start 28: matcher checks content and nocase
+28/53 Test #28: matcher checks content and nocase ....................................   Passed    0.04 sec
+      Start 29: matcher checks pcre
+29/53 Test #29: matcher checks pcre ..................................................   Passed    0.04 sec
+      Start 30: matcher applies http_uri content to normalized uri only
+30/53 Test #30: matcher applies http_uri content to normalized uri only ..............   Passed    0.04 sec
+      Start 31: matcher fails http_uri content for malformed request line
+31/53 Test #31: matcher fails http_uri content for malformed request line ............   Passed    0.04 sec
+      Start 32: matcher rejects uppercase non-http request line
+32/53 Test #32: matcher rejects uppercase non-http request line ......................   Passed    0.04 sec
+      Start 33: matcher supports lf-only request line
+33/53 Test #33: matcher supports lf-only request line ................................   Passed    0.04 sec
+      Start 34: matcher matches Sprint 7 HTTP header method and body buffers
+34/53 Test #34: matcher matches Sprint 7 HTTP header method and body buffers .........   Passed    0.04 sec
+      Start 35: matcher handles two pipelined HTTP requests
+35/53 Test #35: matcher handles two pipelined HTTP requests ..........................   Passed    0.04 sec
+      Start 36: matcher returns false for invalid regex
+36/53 Test #36: matcher returns false for invalid regex ..............................   Passed    0.04 sec
+      Start 37: threshold allows rule immediately when threshold is absent
+37/53 Test #37: threshold allows rule immediately when threshold is absent ...........   Passed    0.24 sec
+      Start 38: threshold triggers exactly at count within sliding window
+38/53 Test #38: threshold triggers exactly at count within sliding window ............   Passed    0.04 sec
+      Start 39: threshold evicts events at window boundary
+39/53 Test #39: threshold evicts events at window boundary ...........................   Passed    0.04 sec
+      Start 40: threshold tracks counters independently by source
+40/53 Test #40: threshold tracks counters independently by source ....................   Passed    0.04 sec
+      Start 41: threshold tracks counters independently by destination
+41/53 Test #41: threshold tracks counters independently by destination ...............   Passed    0.04 sec
+      Start 42: threshold resets bucket after trigger
+42/53 Test #42: threshold resets bucket after trigger ................................   Passed    0.04 sec
+      Start 43: engine drops when drop rule matches
+43/53 Test #43: engine drops when drop rule matches ..................................   Passed    0.23 sec
+      Start 44: engine accepts when no rule matches
+44/53 Test #44: engine accepts when no rule matches ..................................   Passed    0.04 sec
+      Start 45: engine prefers pass over drop
+45/53 Test #45: engine prefers pass over drop ........................................   Passed    0.04 sec
+      Start 46: engine records alert sid while keeping accept verdict
+46/53 Test #46: engine records alert sid while keeping accept verdict ................   Passed    0.04 sec
+      Start 47: engine evaluates ip drop rules for tcp packets
+47/53 Test #47: engine evaluates ip drop rules for tcp packets .......................   Passed    0.04 sec
+      Start 48: engine pass rule on ip overrides tcp drop
+48/53 Test #48: engine pass rule on ip overrides tcp drop ............................   Passed    0.04 sec
+      Start 49: engine flow_to_server uses client-origin direction
+49/53 Test #49: engine flow_to_server uses client-origin direction ...................   Passed    0.25 sec
+      Start 50: engine flow_established requires handshake completion
+50/53 Test #50: engine flow_established requires handshake completion ................   Passed    0.04 sec
+      Start 51: engine keeps pass precedence with flow-filtered candidates
+51/53 Test #51: engine keeps pass precedence with flow-filtered candidates ...........   Passed    0.04 sec
+      Start 52: engine drops rule match before flow closes and ignores after close
+52/53 Test #52: engine drops rule match before flow closes and ignores after close ...   Passed    0.04 sec
+      Start 53: alert fast includes threat details and block reason
+53/53 Test #53: alert fast includes threat details and block reason ..................   Passed    0.28 sec
+
+100% tests passed, 0 tests failed out of 53
+
+Total Test time (real) =   3.67 sec
+finished_at_utc=2026-04-27T08:33:55Z
+exit_status=0
+
+## runtime result
+/ms_ips restart=0 status=running started=2026-04-27T08:27:35.434896291Z finished=0001-01-01T00:00:00Z
+/ms_attacker restart=0 status=running started=2026-04-27T08:27:35.725842083Z finished=0001-01-01T00:00:00Z
+/ms_victim restart=0 status=running started=2026-04-27T08:27:35.720623333Z finished=0001-01-01T00:00:00Z
+-A FORWARD -j NFQUEUE --queue-num 0
+nfqueue_fail_open=0
+-A FORWARD -j NFQUEUE --queue-num 0
+tcp80_ok
+tcp22_ok
+
+## attack result
+===== ICMP Ping (sid 1000001) =====
+===== TCP SYN Scan (sid 1000002) =====
+===== SSH Brute Force (sid 1000003) =====
+===== SQL Injection (sid 1000004) =====
+===== Block admin URL (sid 1000006) =====
+===== Block ICMP after enabling sid 1000005 =====
+Sprint 5 demo run completed.
+exit_status=0
+
+## alert enrichment sample
+04/27-08:32:34.411425 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:887
+04/27-08:32:34.412775 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:283
+04/27-08:32:34.413943 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:650
+04/27-08:32:34.417852 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:934
+04/27-08:32:34.419089 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:972
+04/27-08:32:34.420525 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:495
+04/27-08:32:34.422170 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:276
+04/27-08:32:34.422890 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:923
+04/27-08:32:34.423929 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:39
+04/27-08:32:34.428247 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:900
+04/27-08:32:34.429433 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:903
+04/27-08:32:34.430522 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:161
+04/27-08:32:34.432632 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:689
+04/27-08:32:34.434568 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:372
+04/27-08:32:34.436790 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:325
+04/27-08:32:34.438505 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:358
+04/27-08:32:34.470192 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:72
+04/27-08:32:34.471940 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:305
+04/27-08:32:34.474251 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:58
+04/27-08:32:34.474789 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:984
+04/27-08:32:34.479199 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:429
+04/27-08:32:34.481480 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:885
+04/27-08:32:34.485925 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:518
+04/27-08:32:34.486723 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:63
+04/27-08:32:34.488226 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:719
+04/27-08:32:34.489488 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:824
+04/27-08:32:34.490392 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:377
+04/27-08:32:34.499246 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:191
+04/27-08:32:34.507716 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:70
+04/27-08:32:34.511560 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:15
+04/27-08:32:34.513053 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:680
+04/27-08:32:34.522248 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:432
+04/27-08:32:34.523107 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:565
+04/27-08:32:34.524427 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:326
+04/27-08:32:34.528658 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:854
+04/27-08:32:34.529867 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:246
+04/27-08:32:34.532059 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:159
+04/27-08:32:34.532965 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:310
+04/27-08:32:34.545808 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:197
+04/27-08:32:34.554819 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:814
+04/27-08:32:34.559372 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:643
+04/27-08:32:34.566458 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:953
+04/27-08:32:34.575403 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:553
+04/27-08:32:34.579074 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:30
+04/27-08:32:34.580078 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:344
+04/27-08:32:34.588187 [**] [1:1000002:1] TCP SYN Scan [**] [Classification: accept] [Priority: 1] [Action: alert] [Reason: logged because alert/pass rule matched] {TCP} 10.200.0.10:39882 -> 10.201.0.20:322
+ 115 [Action: alert]
+  75 [Action: drop]
+  75 [Reason: blocked because drop rule matched]
+ 115 [Reason: logged because alert/pass rule matched]
+
+## evidence files
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/alerts.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/build.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/ips_logs_before_attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/lab_up.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/runtime.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/summary.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint7/test.txt

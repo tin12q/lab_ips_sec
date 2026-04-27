@@ -1,0 +1,31 @@
+Sprint 7 HTTP inspector final v6 evidence
+
+Evidence folder: logs/evidence/sprint7_http_inspect_final_v6
+
+Result:
+- Build: PASS
+- Tests: PASS, 65/65
+- Runtime: PASS, Docker lab up with FORWARD NFQUEUE rule installed
+- Attack run: PASS, scripted admin, raw traversal, SQLi body, sqlmap User-Agent, ICMP, and SYN scan traffic executed
+- Alerts: PASS, Sprint 7 HTTP alerts present
+
+Key validated alerts:
+- SID 1000006 Block admin URL
+- SID 1000007 Path traversal
+- SID 1000008 SQLi in body
+- SID 1000009 Suspicious User-Agent
+
+Review blockers addressed:
+- Content-Length validation uses non-overflowing bounds checks and rejects conflicting duplicate lengths.
+- Chunked HTTP request bodies are decoded into http_client_body.
+- Valid chunked trailer headers are consumed through the terminating blank line.
+- LF-only HTTP header terminators advance body_start past both newlines for fixed-length and chunked bodies.
+- URI decoding repeats with a bounded cap so over-encoded traversal reaches detection.
+- Backslash separators are normalized during URI decoding and canonicalization.
+- HTTP-buffer contents in one rule must match the same parsed request.
+- HTTP buffer keywords bind to the immediately preceding content or pcre option.
+- PCRE can be scoped to HTTP buffers, including body-only pcre with http_client_body.
+- Unqualified PCRE remains payload-wide when used with HTTP-buffer content.
+- PCRE is scoped to matching HTTP buffers when explicitly qualified.
+
+No commit performed.

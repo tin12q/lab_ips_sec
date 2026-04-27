@@ -1,0 +1,29 @@
+Sprint 8 dashboard evidence
+
+Evidence folder: logs/evidence/sprint8_dashboard
+
+Result:
+- Build: PASS
+- CTest: PASS, 65/65
+- Dashboard tests: PASS, 12/12
+- Dashboard API: PASS, status/rules/alerts reachable
+- Docker runtime: PASS, dashboard service exposed on 127.0.0.1:8080
+- Browser validation: PASS, enhanced dashboard live with active rules, alert stats, highlighted alert cards, drag/drop rule snippets, and inline rule hints
+- Reviews: PASS, no CRITICAL/HIGH blockers after recursive security/code/Python review
+
+Sprint 8 highlights:
+- HTML dashboard sidecar added with Python standard library server.
+- Realtime alert tailing uses byte offsets and avoids emitting partial trailing lines.
+- Rule editor supports token-protected saves, atomic replacement, backups, path confinement, inline hints, snippet insertion, and drag/drop snippets.
+- Alert cards highlight SID, action, message, protocol, and flow.
+- Dashboard stat cards show active rules, total alerts, drops, top SID, protocol counts, and tail offset.
+
+Review blockers addressed:
+- Dashboard write token moved out of repo bind mount and generated artifacts ignored.
+- Rule saves serialized with a module-level lock.
+- Backup filenames use microsecond timestamp plus random suffix with exclusive creation.
+- Invalid UTF-8 rule payloads are rejected.
+- File-system API failures return JSON errors.
+- Public Python function/method signatures are typed.
+
+No commit performed.

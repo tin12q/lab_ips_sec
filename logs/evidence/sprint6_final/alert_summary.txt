@@ -1,0 +1,132 @@
+[sid counts]
+  69 [1:1000001:1]
+ 200 [1:1000002:1]
+1549 [1:1000003:1]
+  72 [1:1000005:1]
+  60 [1:1000006:1]
+
+[classification counts]
+1749 [Classification: accept]
+ 201 [Classification: drop]
+
+[drop verdicts]
+[2026-04-27 07:05:36.255] [[32minfo[m] [nfq] packet_id=24869 verdict=accept matched_sids=0
+[2026-04-27 07:05:36.255] [[32minfo[m] [nfq] packet_id=24870 verdict=accept matched_sids=0
+[2026-04-27 07:05:36.296] [[32minfo[m] [nfq] packet_id=24871 verdict=accept matched_sids=0
+[2026-04-27 07:05:36.584] [[32minfo[m] [nfq] packet_id=24872 verdict=accept matched_sids=0
+[2026-04-27 07:05:36.585] [[32minfo[m] [nfq] packet_id=24873 verdict=accept matched_sids=0
+[2026-04-27 07:05:36.585] [[32minfo[m] [nfq] packet_id=24874 verdict=accept matched_sids=0
+[2026-04-27 07:05:38.460] [[32minfo[m] [nfq] packet_id=24875 verdict=accept matched_sids=0
+[2026-04-27 07:05:38.463] [[32minfo[m] [nfq] packet_id=24876 verdict=accept matched_sids=1
+[2026-04-27 07:05:38.463] [[32minfo[m] [nfq] packet_id=24877 verdict=accept matched_sids=0
+[2026-04-27 07:05:38.789] [[32minfo[m] [nfq] packet_id=24878 verdict=accept matched_sids=0
+[2026-04-27 07:05:38.790] [[32minfo[m] [nfq] packet_id=24879 verdict=accept matched_sids=0
+[2026-04-27 07:05:38.790] [[32minfo[m] [nfq] packet_id=24880 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.674] [[32minfo[m] [nfq] packet_id=24881 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.680] [[32minfo[m] [nfq] packet_id=24882 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.680] [[32minfo[m] [nfq] packet_id=24883 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.996] [[32minfo[m] [nfq] packet_id=24884 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.998] [[32minfo[m] [nfq] packet_id=24885 verdict=accept matched_sids=0
+[2026-04-27 07:05:40.998] [[32minfo[m] [nfq] packet_id=24886 verdict=accept matched_sids=0
+[2026-04-27 07:05:42.890] [[32minfo[m] [nfq] packet_id=24887 verdict=accept matched_sids=0
+[2026-04-27 07:05:42.893] [[32minfo[m] [nfq] packet_id=24888 verdict=accept matched_sids=0
+[2026-04-27 07:05:42.893] [[32minfo[m] [nfq] packet_id=24889 verdict=accept matched_sids=0
+[2026-04-27 07:05:43.203] [[32minfo[m] [nfq] packet_id=24890 verdict=accept matched_sids=0
+[2026-04-27 07:05:43.207] [[32minfo[m] [nfq] packet_id=24891 verdict=accept matched_sids=1
+[2026-04-27 07:05:43.207] [[32minfo[m] [nfq] packet_id=24892 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.105] [[32minfo[m] [nfq] packet_id=24893 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.107] [[32minfo[m] [nfq] packet_id=24894 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.107] [[32minfo[m] [nfq] packet_id=24895 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.413] [[32minfo[m] [nfq] packet_id=24896 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.414] [[32minfo[m] [nfq] packet_id=24897 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.425] [[32minfo[m] [nfq] packet_id=24898 verdict=accept matched_sids=0
+[2026-04-27 07:05:45.426] [[32minfo[m] [nfq] packet_id=24899 verdict=accept matched_sids=0
+[2026-04-27 07:05:49.523] [[32minfo[m] [nfq] packet_id=24900 verdict=accept matched_sids=0
+[2026-04-27 07:05:49.525] [[32minfo[m] [nfq] packet_id=24901 verdict=accept matched_sids=0
+[2026-04-27 07:05:49.526] [[32minfo[m] [nfq] packet_id=24902 verdict=accept matched_sids=0
+[2026-04-27 07:05:51.736] [[32minfo[m] [nfq] packet_id=24903 verdict=accept matched_sids=0
+[2026-04-27 07:05:51.736] [[32minfo[m] [nfq] packet_id=24904 verdict=accept matched_sids=0
+[2026-04-27 07:05:51.747] [[32minfo[m] [nfq] packet_id=24905 verdict=accept matched_sids=0
+[2026-04-27 07:05:51.748] [[32minfo[m] [nfq] packet_id=24906 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.236] [[32minfo[m] [nfq] packet_id=24907 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.237] [[32minfo[m] [nfq] packet_id=24908 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.237] [[32minfo[m] [nfq] packet_id=24909 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.237] [[32minfo[m] [nfq] packet_id=24910 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.237] [[32minfo[m] [nfq] packet_id=24911 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.263] [[32minfo[m] [nfq] packet_id=24912 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.263] [[32minfo[m] [nfq] packet_id=24913 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.265] [[32minfo[m] [nfq] packet_id=24914 verdict=accept matched_sids=1
+[2026-04-27 07:06:15.265] [[32minfo[m] [nfq] packet_id=24915 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.306] [[32minfo[m] [nfq] packet_id=24916 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.306] [[32minfo[m] [nfq] packet_id=24917 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.306] [[32minfo[m] [nfq] packet_id=24918 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.306] [[32minfo[m] [nfq] packet_id=24919 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.309] [[32minfo[m] [nfq] packet_id=24920 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.309] [[32minfo[m] [nfq] packet_id=24921 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.310] [[32minfo[m] [nfq] packet_id=24922 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.350] [[32minfo[m] [nfq] packet_id=24923 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.351] [[32minfo[m] [nfq] packet_id=24924 verdict=accept matched_sids=1
+[2026-04-27 07:06:15.351] [[32minfo[m] [nfq] packet_id=24925 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.351] [[32minfo[m] [nfq] packet_id=24926 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.351] [[32minfo[m] [nfq] packet_id=24927 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.361] [[32minfo[m] [nfq] packet_id=24928 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.361] [[32minfo[m] [nfq] packet_id=24929 verdict=accept matched_sids=0
+[2026-04-27 07:06:15.402] [[32minfo[m] [nfq] packet_id=24930 verdict=accept matched_sids=0
+[2026-04-27 07:06:17.568] [[32minfo[m] [nfq] packet_id=24931 verdict=accept matched_sids=0
+[2026-04-27 07:06:17.569] [[32minfo[m] [nfq] packet_id=24932 verdict=accept matched_sids=0
+[2026-04-27 07:06:17.569] [[32minfo[m] [nfq] packet_id=24933 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.558] [[32minfo[m] [nfq] packet_id=24934 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.558] [[32minfo[m] [nfq] packet_id=24935 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.558] [[32minfo[m] [nfq] packet_id=24936 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.562] [[32minfo[m] [nfq] packet_id=24937 verdict=accept matched_sids=1
+[2026-04-27 07:06:21.562] [[32minfo[m] [nfq] packet_id=24938 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.574] [[32minfo[m] [nfq] packet_id=24939 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.574] [[32minfo[m] [nfq] packet_id=24940 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.574] [[32minfo[m] [nfq] packet_id=24941 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.576] [[32minfo[m] [nfq] packet_id=24942 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.577] [[32minfo[m] [nfq] packet_id=24943 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.580] [[32minfo[m] [nfq] packet_id=24944 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.580] [[32minfo[m] [nfq] packet_id=24945 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.621] [[32minfo[m] [nfq] packet_id=24946 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.622] [[32minfo[m] [nfq] packet_id=24947 verdict=accept matched_sids=1
+[2026-04-27 07:06:21.622] [[32minfo[m] [nfq] packet_id=24948 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.623] [[32minfo[m] [nfq] packet_id=24949 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.623] [[32minfo[m] [nfq] packet_id=24950 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.632] [[32minfo[m] [nfq] packet_id=24951 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.633] [[32minfo[m] [nfq] packet_id=24952 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.674] [[32minfo[m] [nfq] packet_id=24953 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.988] [[32minfo[m] [nfq] packet_id=24954 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.989] [[32minfo[m] [nfq] packet_id=24955 verdict=accept matched_sids=0
+[2026-04-27 07:06:21.989] [[32minfo[m] [nfq] packet_id=24956 verdict=accept matched_sids=0
+[2026-04-27 07:06:23.838] [[32minfo[m] [nfq] packet_id=24957 verdict=accept matched_sids=0
+[2026-04-27 07:06:23.838] [[32minfo[m] [nfq] packet_id=24958 verdict=accept matched_sids=0
+[2026-04-27 07:06:23.838] [[32minfo[m] [nfq] packet_id=24959 verdict=accept matched_sids=0
+[2026-04-27 07:06:24.195] [[32minfo[m] [nfq] packet_id=24960 verdict=accept matched_sids=0
+[2026-04-27 07:06:24.199] [[32minfo[m] [nfq] packet_id=24961 verdict=accept matched_sids=1
+[2026-04-27 07:06:24.199] [[32minfo[m] [nfq] packet_id=24962 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.045] [[32minfo[m] [nfq] packet_id=24963 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.047] [[32minfo[m] [nfq] packet_id=24964 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.047] [[32minfo[m] [nfq] packet_id=24965 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.409] [[32minfo[m] [nfq] packet_id=24966 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.412] [[32minfo[m] [nfq] packet_id=24967 verdict=accept matched_sids=0
+[2026-04-27 07:06:26.413] [[32minfo[m] [nfq] packet_id=24968 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.254] [[32minfo[m] [nfq] packet_id=24969 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.255] [[32minfo[m] [nfq] packet_id=24970 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.255] [[32minfo[m] [nfq] packet_id=24971 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.619] [[32minfo[m] [nfq] packet_id=24972 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.620] [[32minfo[m] [nfq] packet_id=24973 verdict=accept matched_sids=0
+[2026-04-27 07:06:28.621] [[32minfo[m] [nfq] packet_id=24974 verdict=accept matched_sids=0
+[2026-04-27 07:06:32.668] [[32minfo[m] [nfq] packet_id=24975 verdict=accept matched_sids=0
+[2026-04-27 07:06:32.672] [[32minfo[m] [nfq] packet_id=24976 verdict=accept matched_sids=1
+[2026-04-27 07:06:32.672] [[32minfo[m] [nfq] packet_id=24977 verdict=accept matched_sids=0
+[2026-04-27 07:06:33.030] [[32minfo[m] [nfq] packet_id=24978 verdict=accept matched_sids=0
+[2026-04-27 07:06:33.030] [[32minfo[m] [nfq] packet_id=24979 verdict=accept matched_sids=0
+[2026-04-27 07:06:33.038] [[32minfo[m] [nfq] packet_id=24980 verdict=accept matched_sids=0
+[2026-04-27 07:06:33.038] [[32minfo[m] [nfq] packet_id=24981 verdict=accept matched_sids=0
+[2026-04-27 07:06:34.880] [[32minfo[m] [nfq] packet_id=24982 verdict=accept matched_sids=0
+[2026-04-27 07:06:34.882] [[32minfo[m] [nfq] packet_id=24983 verdict=accept matched_sids=0
+[2026-04-27 07:06:34.882] [[32minfo[m] [nfq] packet_id=24984 verdict=accept matched_sids=0
+[2026-04-27 07:06:39.293] [[32minfo[m] [nfq] packet_id=24985 verdict=accept matched_sids=0
+[2026-04-27 07:06:39.294] [[32minfo[m] [nfq] packet_id=24986 verdict=accept matched_sids=0
+[2026-04-27 07:06:39.306] [[32minfo[m] [nfq] packet_id=24987 verdict=accept matched_sids=0
+[2026-04-27 07:06:39.307] [[32minfo[m] [nfq] packet_id=24988 verdict=accept matched_sids=0

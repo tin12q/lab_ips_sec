@@ -52,6 +52,27 @@ services:
     ports: []
     tty: true
 
+  dashboard:
+    image: python:3.12-slim
+    container_name: ms_dashboard
+    hostname: dashboard
+    working_dir: /app
+    environment:
+      MINISNORT_RULES: /workspace/config/rules/local.rules
+      MINISNORT_RULES_ROOT: /workspace/config/rules
+      MINISNORT_ALERTS: /var/log/minisnort/alert.log
+      DASHBOARD_TOKEN_FILE: /tmp/minisnort-dashboard-token
+    volumes:
+      - ./dashboard:/app:ro
+      - ./config/rules:/workspace/config/rules
+      - ./logs:/var/log/minisnort
+    ports:
+      - "127.0.0.1:8080:8080"
+    depends_on:
+      - ips
+    command: python /app/server.py --host 0.0.0.0 --port 8080
+    tty: true
+
 networks:
   net_attack:
     driver: bridge

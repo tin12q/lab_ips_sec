@@ -1,0 +1,238 @@
+[2026-04-27T07:49:12Z] runtime capture start
+$ scripts/lab_up.sh && docker compose ps && docker logs --tail=120 ms_ips && docker exec ms_attacker ip route && docker exec ms_victim ip route && docker exec ms_ips cat /var/log/minisnort/runtime_snapshot.txt
+scripts/lab_up.sh: line 4: modprobe: command not found
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.49kB done
+#1 DONE 0.0s
+
+#2 [ips internal] load build definition from Dockerfile
+#2 transferring dockerfile: 379B done
+#2 DONE 0.0s
+
+#3 [attacker internal] load build definition from Dockerfile
+#3 transferring dockerfile: 278B 0.0s done
+#3 DONE 0.0s
+
+#4 [victim internal] load build definition from Dockerfile
+#4 transferring dockerfile: 645B 0.0s done
+#4 DONE 0.0s
+
+#5 [attacker internal] load metadata for docker.io/library/ubuntu:22.04
+#5 DONE 1.7s
+
+#6 [attacker internal] load .dockerignore
+#6 transferring context: 2B done
+#6 DONE 0.1s
+
+#7 [victim internal] load .dockerignore
+#7 transferring context: 2B done
+#7 DONE 0.1s
+
+#8 [ips internal] load .dockerignore
+#8 transferring context: 2B done
+#8 DONE 0.1s
+
+#9 [ips 1/3] FROM docker.io/library/ubuntu:22.04@sha256:962f6cadeae0ea6284001009daa4cc9a8c37e75d1f5191cf0eb83fe565b63dd7
+#9 DONE 0.0s
+
+#10 [attacker 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     nmap hydra curl wget iputils-ping sqlmap iproute2 net-tools   && rm -rf /var/lib/apt/lists/*
+#10 CACHED
+
+#11 [attacker 3/3] WORKDIR /scripts
+#11 CACHED
+
+#12 [ips 2/3] RUN apt-get update && apt-get install -y --no-install-recommends     build-essential cmake ninja-build pkg-config     libpcap-dev libnetfilter-queue-dev libnfnetlink-dev     libpcre2-dev iptables tcpdump ca-certificates git   && rm -rf /var/lib/apt/lists/*
+#12 CACHED
+
+#13 [ips 3/3] WORKDIR /workspace
+#13 CACHED
+
+#14 [victim internal] load build context
+#14 transferring context: 34B done
+#14 DONE 0.0s
+
+#15 [victim 2/4] RUN apt-get update && apt-get install -y --no-install-recommends     openssh-server apache2 php php-mysql mysql-server     iproute2 net-tools curl wget git   && rm -rf /var/lib/apt/lists/*   && mkdir -p /var/run/sshd
+#15 CACHED
+
+#16 [victim 3/4] COPY init-dvwa.sh /usr/local/bin/init-dvwa.sh
+#16 CACHED
+
+#17 [victim 4/4] RUN chmod +x /usr/local/bin/init-dvwa.sh
+#17 CACHED
+
+#18 [ips] exporting to image
+#18 exporting layers done
+#18 writing image sha256:888a706db53f05d907436ef992f37922a380769d6ccc2f70318d7912170e2fb1 0.1s done
+#18 naming to docker.io/library/lab_ips_sec-ips
+#18 naming to docker.io/library/lab_ips_sec-ips 0.1s done
+#18 DONE 0.2s
+
+#19 [attacker] exporting to image
+#19 exporting layers done
+#19 writing image sha256:8ffe5bf421ca88d16c6e62e52133f74a183dfdc34b1e30ec0fff21d8a78c3709 0.1s done
+#19 naming to docker.io/library/lab_ips_sec-attacker 0.1s done
+#19 DONE 0.2s
+
+#20 [victim] exporting to image
+#20 exporting layers done
+#20 writing image sha256:925d68e4687cfb665ac4414916c568e812f978dd8cbc14af979e54bc7db23a76 0.1s done
+#20 naming to docker.io/library/lab_ips_sec-victim 0.0s done
+#20 DONE 0.2s
+
+#21 [ips] resolving provenance for metadata file
+#21 DONE 0.0s
+
+#22 [attacker] resolving provenance for metadata file
+#22 DONE 0.0s
+
+#23 [victim] resolving provenance for metadata file
+#23 DONE 0.0s
+ lab_ips_sec-attacker  Built
+ lab_ips_sec-ips  Built
+ lab_ips_sec-victim  Built
+ Container ms_ips  Running
+ Container ms_victim  Running
+ Container ms_attacker  Running
+Wait 5s for services...
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED        STATUS       PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   15 hours ago   Up 8 hours   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        4 hours ago    Up 4 hours   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     15 hours ago   Up 8 hours   
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED        STATUS       PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   15 hours ago   Up 8 hours   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        4 hours ago    Up 4 hours   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     15 hours ago   Up 8 hours   
+[2026-04-27 07:48:45.376] [[32minfo[m] [nfq] decoded packet_id=29351 using synthetic L2 framing
+[2026-04-27 07:48:45.376] [[32minfo[m] [nfq] packet_id=29351 verdict=accept matched_sids=0
+[2026-04-27 07:48:45.376] [[32minfo[m] [nfq] decoded packet_id=29352 using synthetic L2 framing
+[2026-04-27 07:48:45.376] [[32minfo[m] [nfq] packet_id=29352 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.644] [[32minfo[m] [nfq] decoded packet_id=29353 using synthetic L2 framing
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] packet_id=29353 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] decoded packet_id=29354 using synthetic L2 framing
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] packet_id=29354 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] decoded packet_id=29355 using synthetic L2 framing
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] packet_id=29355 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] decoded packet_id=29356 using synthetic L2 framing
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] packet_id=29356 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] decoded packet_id=29357 using synthetic L2 framing
+[2026-04-27 07:49:08.645] [[32minfo[m] [nfq] packet_id=29357 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.676] [[32minfo[m] [nfq] decoded packet_id=29358 using synthetic L2 framing
+[2026-04-27 07:49:08.676] [[32minfo[m] [nfq] packet_id=29358 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.677] [[32minfo[m] [nfq] decoded packet_id=29359 using synthetic L2 framing
+[2026-04-27 07:49:08.679] [[32minfo[m] [nfq] packet_id=29359 verdict=accept matched_sids=1
+[2026-04-27 07:49:08.679] [[32minfo[m] [nfq] decoded packet_id=29360 using synthetic L2 framing
+[2026-04-27 07:49:08.679] [[32minfo[m] [nfq] packet_id=29360 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.690] [[32minfo[m] [nfq] decoded packet_id=29361 using synthetic L2 framing
+[2026-04-27 07:49:08.690] [[32minfo[m] [nfq] packet_id=29361 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.691] [[32minfo[m] [nfq] decoded packet_id=29362 using synthetic L2 framing
+[2026-04-27 07:49:08.691] [[32minfo[m] [nfq] packet_id=29362 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.695] [[32minfo[m] [nfq] decoded packet_id=29363 using synthetic L2 framing
+[2026-04-27 07:49:08.695] [[32minfo[m] [nfq] packet_id=29363 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.695] [[32minfo[m] [nfq] decoded packet_id=29364 using synthetic L2 framing
+[2026-04-27 07:49:08.695] [[32minfo[m] [nfq] packet_id=29364 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] decoded packet_id=29365 using synthetic L2 framing
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] packet_id=29365 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] decoded packet_id=29366 using synthetic L2 framing
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] packet_id=29366 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] decoded packet_id=29367 using synthetic L2 framing
+[2026-04-27 07:49:08.736] [[32minfo[m] [nfq] packet_id=29367 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.737] [[32minfo[m] [nfq] decoded packet_id=29368 using synthetic L2 framing
+[2026-04-27 07:49:08.737] [[32minfo[m] [nfq] packet_id=29368 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.737] [[32minfo[m] [nfq] decoded packet_id=29369 using synthetic L2 framing
+[2026-04-27 07:49:08.738] [[32minfo[m] [nfq] packet_id=29369 verdict=accept matched_sids=1
+[2026-04-27 07:49:08.748] [[32minfo[m] [nfq] decoded packet_id=29370 using synthetic L2 framing
+[2026-04-27 07:49:08.748] [[32minfo[m] [nfq] packet_id=29370 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.748] [[32minfo[m] [nfq] decoded packet_id=29371 using synthetic L2 framing
+[2026-04-27 07:49:08.748] [[32minfo[m] [nfq] packet_id=29371 verdict=accept matched_sids=0
+[2026-04-27 07:49:08.789] [[32minfo[m] [nfq] decoded packet_id=29372 using synthetic L2 framing
+[2026-04-27 07:49:08.789] [[32minfo[m] [nfq] packet_id=29372 verdict=accept matched_sids=0
+[2026-04-27 07:49:10.956] [[32minfo[m] [nfq] decoded packet_id=29373 using synthetic L2 framing
+[2026-04-27 07:49:10.956] [[32minfo[m] [nfq] packet_id=29373 verdict=accept matched_sids=0
+[2026-04-27 07:49:10.956] [[32minfo[m] [nfq] decoded packet_id=29374 using synthetic L2 framing
+[2026-04-27 07:49:10.956] [[32minfo[m] [nfq] packet_id=29374 verdict=accept matched_sids=0
+[2026-04-27 07:49:10.957] [[32minfo[m] [nfq] decoded packet_id=29375 using synthetic L2 framing
+[2026-04-27 07:49:10.957] [[32minfo[m] [nfq] packet_id=29375 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] decoded packet_id=29376 using synthetic L2 framing
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] packet_id=29376 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] decoded packet_id=29377 using synthetic L2 framing
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] packet_id=29377 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] decoded packet_id=29378 using synthetic L2 framing
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] packet_id=29378 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] decoded packet_id=29379 using synthetic L2 framing
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] packet_id=29379 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] decoded packet_id=29380 using synthetic L2 framing
+[2026-04-27 07:49:12.969] [[32minfo[m] [nfq] packet_id=29380 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.984] [[32minfo[m] [nfq] decoded packet_id=29381 using synthetic L2 framing
+[2026-04-27 07:49:12.984] [[32minfo[m] [nfq] packet_id=29381 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.984] [[32minfo[m] [nfq] decoded packet_id=29382 using synthetic L2 framing
+[2026-04-27 07:49:12.985] [[32minfo[m] [nfq] packet_id=29382 verdict=accept matched_sids=1
+[2026-04-27 07:49:12.985] [[32minfo[m] [nfq] decoded packet_id=29383 using synthetic L2 framing
+[2026-04-27 07:49:12.985] [[32minfo[m] [nfq] packet_id=29383 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.986] [[32minfo[m] [nfq] decoded packet_id=29384 using synthetic L2 framing
+[2026-04-27 07:49:12.986] [[32minfo[m] [nfq] packet_id=29384 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.986] [[32minfo[m] [nfq] decoded packet_id=29385 using synthetic L2 framing
+[2026-04-27 07:49:12.986] [[32minfo[m] [nfq] packet_id=29385 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.990] [[32minfo[m] [nfq] decoded packet_id=29386 using synthetic L2 framing
+[2026-04-27 07:49:12.990] [[32minfo[m] [nfq] packet_id=29386 verdict=accept matched_sids=0
+[2026-04-27 07:49:12.990] [[32minfo[m] [nfq] decoded packet_id=29387 using synthetic L2 framing
+[2026-04-27 07:49:12.990] [[32minfo[m] [nfq] packet_id=29387 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] decoded packet_id=29388 using synthetic L2 framing
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] packet_id=29388 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] decoded packet_id=29389 using synthetic L2 framing
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] packet_id=29389 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] decoded packet_id=29390 using synthetic L2 framing
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] packet_id=29390 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.031] [[32minfo[m] [nfq] decoded packet_id=29391 using synthetic L2 framing
+[2026-04-27 07:49:13.032] [[32minfo[m] [nfq] packet_id=29391 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.032] [[32minfo[m] [nfq] decoded packet_id=29392 using synthetic L2 framing
+[2026-04-27 07:49:13.033] [[32minfo[m] [nfq] packet_id=29392 verdict=accept matched_sids=1
+[2026-04-27 07:49:13.042] [[32minfo[m] [nfq] decoded packet_id=29393 using synthetic L2 framing
+[2026-04-27 07:49:13.042] [[32minfo[m] [nfq] packet_id=29393 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.042] [[32minfo[m] [nfq] decoded packet_id=29394 using synthetic L2 framing
+[2026-04-27 07:49:13.042] [[32minfo[m] [nfq] packet_id=29394 verdict=accept matched_sids=0
+[2026-04-27 07:49:13.084] [[32minfo[m] [nfq] decoded packet_id=29395 using synthetic L2 framing
+[2026-04-27 07:49:13.084] [[32minfo[m] [nfq] packet_id=29395 verdict=accept matched_sids=0
+[2026-04-27 07:49:15.368] [[32minfo[m] [nfq] decoded packet_id=29396 using synthetic L2 framing
+[2026-04-27 07:49:15.368] [[32minfo[m] [nfq] packet_id=29396 verdict=accept matched_sids=0
+[2026-04-27 07:49:15.369] [[32minfo[m] [nfq] decoded packet_id=29397 using synthetic L2 framing
+[2026-04-27 07:49:15.369] [[32minfo[m] [nfq] packet_id=29397 verdict=accept matched_sids=0
+[2026-04-27 07:49:15.369] [[32minfo[m] [nfq] decoded packet_id=29398 using synthetic L2 framing
+[2026-04-27 07:49:15.369] [[32minfo[m] [nfq] packet_id=29398 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.453] [[32minfo[m] [nfq] decoded packet_id=29399 using synthetic L2 framing
+[2026-04-27 07:49:17.453] [[32minfo[m] [nfq] packet_id=29399 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.455] [[32minfo[m] [nfq] decoded packet_id=29400 using synthetic L2 framing
+[2026-04-27 07:49:17.455] [[32minfo[m] [nfq] packet_id=29400 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.455] [[32minfo[m] [nfq] decoded packet_id=29401 using synthetic L2 framing
+[2026-04-27 07:49:17.455] [[32minfo[m] [nfq] packet_id=29401 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.574] [[32minfo[m] [nfq] decoded packet_id=29402 using synthetic L2 framing
+[2026-04-27 07:49:17.574] [[32minfo[m] [nfq] packet_id=29402 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.575] [[32minfo[m] [nfq] decoded packet_id=29403 using synthetic L2 framing
+[2026-04-27 07:49:17.575] [[32minfo[m] [nfq] packet_id=29403 verdict=accept matched_sids=0
+[2026-04-27 07:49:17.575] [[32minfo[m] [nfq] decoded packet_id=29404 using synthetic L2 framing
+[2026-04-27 07:49:17.575] [[32minfo[m] [nfq] packet_id=29404 verdict=accept matched_sids=0
+[2026-04-27 07:49:19.663] [[32minfo[m] [nfq] decoded packet_id=29405 using synthetic L2 framing
+[2026-04-27 07:49:19.663] [[32minfo[m] [nfq] packet_id=29405 verdict=accept matched_sids=0
+[2026-04-27 07:49:19.663] [[32minfo[m] [nfq] decoded packet_id=29406 using synthetic L2 framing
+[2026-04-27 07:49:19.668] [[32minfo[m] [nfq] packet_id=29406 verdict=accept matched_sids=1
+[2026-04-27 07:49:19.668] [[32minfo[m] [nfq] decoded packet_id=29407 using synthetic L2 framing
+[2026-04-27 07:49:19.668] [[32minfo[m] [nfq] packet_id=29407 verdict=accept matched_sids=0
+[2026-04-27 07:49:19.780] [[32minfo[m] [nfq] decoded packet_id=29408 using synthetic L2 framing
+[2026-04-27 07:49:19.780] [[32minfo[m] [nfq] packet_id=29408 verdict=accept matched_sids=0
+[2026-04-27 07:49:19.781] [[32minfo[m] [nfq] decoded packet_id=29409 using synthetic L2 framing
+[2026-04-27 07:49:19.781] [[32minfo[m] [nfq] packet_id=29409 verdict=accept matched_sids=0
+[2026-04-27 07:49:19.781] [[32minfo[m] [nfq] decoded packet_id=29410 using synthetic L2 framing
+[2026-04-27 07:49:19.781] [[32minfo[m] [nfq] packet_id=29410 verdict=accept matched_sids=0
+default via 10.200.0.2 dev eth0 
+10.200.0.0/24 dev eth0 proto kernel scope link src 10.200.0.10 
+default via 10.201.0.2 dev eth0 
+10.201.0.0/24 dev eth0 proto kernel scope link src 10.201.0.20 
+started_at_utc=2026-04-27T03:41:32Z
+nfqueue_fail_open=0
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
+eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
+eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+exit_code=0
+[2026-04-27T07:49:22Z] runtime capture end

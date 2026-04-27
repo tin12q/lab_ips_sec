@@ -11,6 +11,8 @@
 
 #include <spdlog/spdlog.h>
 
+#include "rules/rule.h"
+
 namespace minisnort::logger {
 
 AlertFast::AlertFast(std::string output_path) : output_path_(std::move(output_path)) {
@@ -25,8 +27,8 @@ bool AlertFast::ok() const {
 const std::string& AlertFast::output_path() const { return output_path_; }
 
 void AlertFast::emit(const core::Packet& packet, detection::Verdict verdict,
-                     const std::vector<uint32_t>& matched_sids) {
-  if (matched_sids.empty()) {
+                     const std::vector<detection::MatchedRule>& matched_rules) {
+  if (matched_rules.empty()) {
     return;
   }
 
@@ -53,10 +55,18 @@ void AlertFast::emit(const core::Packet& packet, detection::Verdict verdict,
   const std::string dst = format_ip(packet.dst_ip);
   const std::string verdict_text = verdict == detection::Verdict::kDrop ? "drop" : "accept";
 
-  for (const uint32_t sid : matched_sids) {
-    out << ts.str() << " [**] [1:" << sid << ":1] minisnort event [**] [Classification: "
-        << verdict_text << "] [Priority: 1] {" << proto << "} " << src << ':' << packet.src_port
-        << " -> " << dst << ':' << packet.dst_port << '\n';
+  for (const auto& rule : matched_rules) {
+    const std::string action_text = rule.action == rules::Action::kDrop ? "drop"
+                                    : rule.action == rules::Action::kPass ? "pass"
+                                                                           : "alert";
+    const std::string reason = rule.action == rules::Action::kDrop
+                                   ? "blocked because drop rule matched"
+                                   : "logged because alert/pass rule matched";
+    out << ts.str() << " [**] [1:" << rule.sid
+        << ":1] " << rule.msg << " [**] [Classification: " << verdict_text
+        << "] [Priority: 1] [Action: " << action_text << "] [Reason: " << reason << "] {"
+        << proto << "} " << src << ':' << packet.src_port << " -> " << dst << ':'
+        << packet.dst_port << '\n';
   }
 }
 

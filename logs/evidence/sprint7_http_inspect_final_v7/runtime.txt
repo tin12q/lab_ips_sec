@@ -1,0 +1,10 @@
+[2026-04-27T09:59:15Z] runtime capture start
+$ docker compose ps && docker compose exec -T ips sh -lc 'iptables -S FORWARD && test -s /var/log/minisnort/alert.log || true'
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED          STATUS          PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   29 minutes ago   Up 29 minutes   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        29 minutes ago   Up 29 minutes   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     29 minutes ago   Up 29 minutes   
+-P FORWARD ACCEPT
+-A FORWARD -j NFQUEUE --queue-num 0
+exit_code=0
+[2026-04-27T09:59:15Z] runtime capture end

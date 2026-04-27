@@ -1,0 +1,13 @@
+[2026-04-27T07:00:58Z] connectivity capture start
+$ docker exec ms_attacker nmap -Pn -sT -p 22,80 10.201.0.20
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 07:00 UTC
+Nmap scan report for 10.201.0.20
+Host is up (0.0017s latency).
+
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.09 seconds
+exit_code=0
+[2026-04-27T07:00:58Z] connectivity capture end

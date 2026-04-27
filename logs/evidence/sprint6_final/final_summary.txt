@@ -1,0 +1,104 @@
+[post-test compose ps]
+NAME          IMAGE                  COMMAND                  SERVICE    CREATED        STATUS       PORTS
+ms_attacker   lab_ips_sec-attacker   "/scripts/attacker_e…"   attacker   14 hours ago   Up 7 hours   
+ms_ips        lab_ips_sec-ips        "/workspace/scripts/…"   ips        3 hours ago    Up 3 hours   
+ms_victim     lab_ips_sec-victim     "/bin/bash -lc 'serv…"   victim     14 hours ago   Up 7 hours   
+
+[container restart counts]
+/ms_ips restart=0 status=running started=2026-04-27T03:40:38.454463417Z finished=0001-01-01T00:00:00Z
+/ms_attacker restart=0 status=running started=2026-04-26T23:48:57.461921595Z finished=2026-04-26T17:33:42.534624255Z
+/ms_victim restart=0 status=running started=2026-04-26T23:48:57.461964762Z finished=2026-04-26T17:33:42.565561171Z
+
+[evidence files]
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/alert_summary.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/alert_tail.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/build.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/final_summary.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/ips_logs_after_attacks.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/ips_logs_tail.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/runtime_health.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/runtime_snapshot.txt
+/Users/tin12q/Projects/lab_ips_sec/logs/evidence/sprint6_final/test.txt
+
+[build tail]
+[  5%] Built target spdlog
+[ 67%] Built target Catch2
+[ 69%] Built target Catch2WithMain
+[ 73%] Built target minisnort_decoder
+[ 81%] Built target minisnort
+[ 82%] Built target test_decoder
+[ 85%] Built target test_parser
+[ 88%] Built target test_matcher
+[ 90%] Built target test_threshold
+[ 95%] Built target test_engine
+[100%] Built target test_flow
+
+[test tail]
+      Start 22: config loader rejects alert file path with parent traversal
+22/49 Test #22: config loader rejects alert file path with parent traversal ..........   Passed    0.11 sec
+      Start 23: config loader accepts normalized absolute alert file path
+23/49 Test #23: config loader accepts normalized absolute alert file path ............   Passed    0.06 sec
+      Start 24: config loader reports missing file
+24/49 Test #24: config loader reports missing file ...................................   Passed    0.05 sec
+      Start 25: matcher matches icmp type
+25/49 Test #25: matcher matches icmp type ............................................   Passed    0.06 sec
+      Start 26: matcher checks tcp flags
+26/49 Test #26: matcher checks tcp flags .............................................   Passed    0.09 sec
+      Start 27: matcher checks content and nocase
+27/49 Test #27: matcher checks content and nocase ....................................   Passed    0.06 sec
+      Start 28: matcher checks pcre
+28/49 Test #28: matcher checks pcre ..................................................   Passed    0.07 sec
+      Start 29: matcher applies http_uri content to uri only
+29/49 Test #29: matcher applies http_uri content to uri only .........................   Passed    0.06 sec
+      Start 30: matcher fails http_uri content for malformed request line
+30/49 Test #30: matcher fails http_uri content for malformed request line ............   Passed    0.07 sec
+      Start 31: matcher rejects uppercase non-http request line
+31/49 Test #31: matcher rejects uppercase non-http request line ......................   Passed    0.06 sec
+      Start 32: matcher supports lf-only request line
+32/49 Test #32: matcher supports lf-only request line ................................   Passed    0.06 sec
+      Start 33: matcher returns false for invalid regex
+33/49 Test #33: matcher returns false for invalid regex ..............................   Passed    0.06 sec
+      Start 34: threshold allows rule immediately when threshold is absent
+34/49 Test #34: threshold allows rule immediately when threshold is absent ...........   Passed    0.06 sec
+      Start 35: threshold triggers exactly at count within sliding window
+35/49 Test #35: threshold triggers exactly at count within sliding window ............   Passed    0.06 sec
+      Start 36: threshold evicts events at window boundary
+36/49 Test #36: threshold evicts events at window boundary ...........................   Passed    0.04 sec
+      Start 37: threshold tracks counters independently by source
+37/49 Test #37: threshold tracks counters independently by source ....................   Passed    0.11 sec
+      Start 38: threshold tracks counters independently by destination
+38/49 Test #38: threshold tracks counters independently by destination ...............   Passed    0.05 sec
+      Start 39: threshold resets bucket after trigger
+39/49 Test #39: threshold resets bucket after trigger ................................   Passed    0.05 sec
+      Start 40: engine drops when drop rule matches
+40/49 Test #40: engine drops when drop rule matches ..................................   Passed    0.06 sec
+      Start 41: engine accepts when no rule matches
+41/49 Test #41: engine accepts when no rule matches ..................................   Passed    0.06 sec
+      Start 42: engine prefers pass over drop
+42/49 Test #42: engine prefers pass over drop ........................................   Passed    0.10 sec
+      Start 43: engine records alert sid while keeping accept verdict
+43/49 Test #43: engine records alert sid while keeping accept verdict ................   Passed    0.11 sec
+      Start 44: engine evaluates ip drop rules for tcp packets
+44/49 Test #44: engine evaluates ip drop rules for tcp packets .......................   Passed    0.05 sec
+      Start 45: engine pass rule on ip overrides tcp drop
+45/49 Test #45: engine pass rule on ip overrides tcp drop ............................   Passed    0.16 sec
+      Start 46: engine flow_to_server uses client-origin direction
+46/49 Test #46: engine flow_to_server uses client-origin direction ...................   Passed    0.09 sec
+      Start 47: engine flow_established requires handshake completion
+47/49 Test #47: engine flow_established requires handshake completion ................   Passed    0.05 sec
+      Start 48: engine keeps pass precedence with flow-filtered candidates
+48/49 Test #48: engine keeps pass precedence with flow-filtered candidates ...........   Passed    0.05 sec
+      Start 49: engine drops rule match before flow closes and ignores after close
+49/49 Test #49: engine drops rule match before flow closes and ignores after close ...   Passed    0.07 sec
+
+100% tests passed, 0 tests failed out of 49
+
+Total Test time (real) =   4.19 sec
+
+[sid counts]
+  69 [1:1000001:1]
+ 200 [1:1000002:1]
+1549 [1:1000003:1]
+  72 [1:1000005:1]
+  60 [1:1000006:1]

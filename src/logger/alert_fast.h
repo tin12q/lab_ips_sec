@@ -16,7 +16,7 @@ class AlertFast {
   bool ok() const;
   const std::string& output_path() const;
   void emit(const core::Packet& packet, detection::Verdict verdict,
-            const std::vector<uint32_t>& matched_sids);
+            const std::vector<detection::MatchedRule>& matched_rules);
 
  private:
   std::string format_ip(uint32_t ip) const;
