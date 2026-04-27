@@ -1,0 +1,55 @@
+[2026-04-27T04:13:50Z] attacks capture start
+$ docker exec ms_attacker bash /scripts/run_all_demo.sh 10.201.0.20 /var/log/minisnort/alert.log
+
+===== ICMP Ping (sid 1000001) =====
+PING 10.201.0.20 (10.201.0.20) 56(84) bytes of data.
+
+--- 10.201.0.20 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4125ms
+
+----- latest alerts (ICMP Ping (sid 1000001)) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+===== TCP SYN Scan (sid 1000002) =====
+Starting Nmap 7.80 ( https://nmap.org ) at 2026-04-27 04:14 UTC
+Nmap scan report for 10.201.0.20
+Host is up (0.0018s latency).
+Not shown: 998 closed ports
+PORT   STATE SERVICE
+22/tcp open  ssh
+80/tcp open  http
+
+Nmap done: 1 IP address (1 host up) scanned in 0.14 seconds
+----- latest alerts (TCP SYN Scan (sid 1000002)) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+===== SSH Brute Force (sid 1000003) =====
+Hydra v9.2 (c) 2021 by van Hauser/THC & David Maciejak - Please do not use in military or secret service organizations, or for illegal purposes (this is non-binding, these *** ignore laws and ethics anyway).
+
+Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-04-27 04:14:10
+[ERROR] File for passwords not found: /scripts/passwords.txt
+----- latest alerts (SSH Brute Force (sid 1000003)) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+===== SQL Injection (sid 1000004) =====
+curl: (22) The requested URL returned error: 404
+----- latest alerts (SQL Injection (sid 1000004)) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+===== Block admin URL (sid 1000006) =====
+curl: (52) Empty reply from server
+----- latest alerts (Block admin URL (sid 1000006)) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+===== Block ICMP after enabling sid 1000005 =====
+PING 10.201.0.20 (10.201.0.20) 56(84) bytes of data.
+
+--- 10.201.0.20 ping statistics ---
+5 packets transmitted, 0 received, 100% packet loss, time 4092ms
+
+----- latest alerts (Block ICMP after enabling sid 1000005) -----
+tail: cannot open '/var/log/minisnort/alert.log' for reading: No such file or directory
+
+Sprint 5 demo run completed.
+exit_code=0
+[2026-04-27T04:15:28Z] attacks capture end

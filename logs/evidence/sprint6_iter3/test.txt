@@ -1,0 +1,5 @@
+[2026-04-27T04:15:29Z] test capture start
+$ docker exec ms_attacker python3 -c "import socket; s=socket.socket(); s.settimeout(3); s.connect(('10.201.0.20',22)); print('port_22=ok'); s.close()"
+port_22=ok
+exit_code=0
+[2026-04-27T04:15:29Z] test capture end

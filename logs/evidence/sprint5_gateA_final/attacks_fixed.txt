@@ -23,3 +23,8 @@ Hydra (https://github.com/vanhauser-thc/thc-hydra) starting at 2026-04-27 03:48:
 [STATUS] 13.43 tries/min, 94 tries in 00:07h, 906 to do in 01:08h, 2 active
 [STATUS] 13.50 tries/min, 162 tries in 00:12h, 838 to do in 01:03h, 2 active
 [STATUS] 13.53 tries/min, 230 tries in 00:17h, 770 to do in 00:57h, 2 active
+[STATUS] 13.27 tries/min, 292 tries in 00:22h, 708 to do in 00:54h, 2 active
+[STATUS] 13.33 tries/min, 360 tries in 00:27h, 640 to do in 00:49h, 2 active
+[STATUS] 13.19 tries/min, 422 tries in 00:32h, 578 to do in 00:44h, 2 active
+[STATUS] 13.30 tries/min, 492 tries in 00:37h, 508 to do in 00:39h, 2 active
+[STATUS] 13.14 tries/min, 552 tries in 00:42h, 448 to do in 00:35h, 2 active
