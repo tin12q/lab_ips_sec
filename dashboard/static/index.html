@@ -3,109 +3,287 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>MiniSnort Dashboard</title>
+    <title>MiniSnort IPS Terminal</title>
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="stylesheet" href="/dashboard.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Share+Tech+Mono&display=swap" rel="stylesheet">
     <script src="/dashboard.js" defer></script>
   </head>
-  <body>
-    <header class="hero">
-      <div>
-        <p class="eyebrow">MiniSnort Lab</p>
-        <h1>Inline IPS command desk</h1>
-      </div>
-      <div class="hero-panel" aria-label="Dashboard connection status">
-        <span class="pulse" aria-hidden="true"></span>
-        <span id="connection-status">Connecting</span>
-      </div>
-    </header>
+  <body class="cyber-bg cyber-noise">
+    <div class="cyber-scanlines" aria-hidden="true"></div>
 
-    <main class="dashboard-shell">
-      <section class="status-grid" aria-label="Service status">
-        <article class="status-card accent-rules">
-          <p>Active rules</p>
-          <strong id="rule-count">0</strong>
-          <span id="rules-meta">Waiting for status</span>
-        </article>
-        <article class="status-card accent-alerts">
-          <p>Total alerts</p>
-          <strong id="alert-count">0</strong>
-          <span id="alerts-meta">Waiting for status</span>
-        </article>
-        <article class="status-card accent-offset">
-          <p>Dropped packets</p>
-          <strong id="drop-count">0</strong>
-          <span id="tail-offset">0 bytes consumed</span>
-        </article>
-        <article class="status-card accent-sqli">
-          <p>Top SID</p>
-          <strong id="top-sid">—</strong>
-          <span id="top-sid-meta">No alerts yet</span>
-        </article>
-      </section>
+    <div class="cyber-container">
+      <header class="cyber-header">
+        <div class="cyber-terminal-bar">
+          <span class="cyber-terminal-title">MINISNORT_IPS_v2.1</span>
+          <div class="cyber-status-indicator">
+            <span class="cyber-led" id="connection-status" data-status="connecting"></span>
+            <span class="cyber-status-text">SYSTEM_INIT</span>
+          </div>
+        </div>
+      </header>
 
-      <section class="workspace" aria-label="Dashboard workspace">
-        <article class="panel alert-panel" aria-labelledby="alerts-heading">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow">Realtime</p>
-              <h2 id="alerts-heading">Packet alerts</h2>
+      <main class="cyber-main">
+        <section class="cyber-stats-grid">
+          <div class="cyber-card accent-green">
+            <div class="cyber-card-header">ACTIVE_RULES</div>
+            <div class="cyber-card-value" id="rule-count">0</div>
+            <div class="cyber-card-meta" id="rules-meta">loading...</div>
+          </div>
+          <div class="cyber-card accent-cyan">
+            <div class="cyber-card-header">TOTAL_ALERTS</div>
+            <div class="cyber-card-value" id="alert-count">0</div>
+            <div class="cyber-card-meta" id="alerts-meta">loading...</div>
+          </div>
+          <div class="cyber-card accent-magenta">
+            <div class="cyber-card-header">DROPPED_PKT</div>
+            <div class="cyber-card-value" id="drop-count">0</div>
+            <div class="cyber-card-meta" id="tail-offset">0 bytes</div>
+          </div>
+          <div class="cyber-card accent-purple">
+            <div class="cyber-card-header">TOP_SID</div>
+            <div class="cyber-card-value" id="top-sid">—</div>
+            <div class="cyber-card-meta" id="top-sid-meta">no data</div>
+          </div>
+        </section>
+
+        <section class="cyber-workspace">
+          <div class="cyber-panel">
+            <div class="cyber-panel-header">
+              <span class="cyber-panel-title">[REALTIME_ALERTS]</span>
+              <button id="clear-session" class="cyber-btn cyber-btn-danger" type="button">CLEAR_SESSION</button>
             </div>
-            <button id="clear-alerts" type="button">Clear view</button>
-          </div>
-          <div class="alert-summary" aria-label="Alert summary">
-            <span><strong id="tcp-count">0</strong> TCP</span>
-            <span><strong id="icmp-count">0</strong> ICMP</span>
-            <span><strong id="latest-action">—</strong> latest action</span>
-          </div>
-          <ol id="alert-feed" class="alert-feed" aria-live="polite"></ol>
-        </article>
-
-        <article class="panel editor-panel" aria-labelledby="rules-heading">
-          <div class="panel-heading">
-            <div>
-              <p class="eyebrow">Configuration</p>
-              <h2 id="rules-heading">Rule editor</h2>
+            <div class="cyber-panel-toolbar">
+              <label class="cyber-checkbox">
+                <input type="checkbox" id="auto-scroll" checked>
+                <span>AUTO_SCROLL</span>
+              </label>
+              <label class="cyber-checkbox">
+                <input type="checkbox" id="filter-drop">
+                <span>FILTER_DROP</span>
+              </label>
+              <button id="clear-alerts" class="cyber-btn" type="button">CLEAR_VIEW</button>
             </div>
-            <button id="reload-rules" type="button">Reload</button>
-          </div>
-
-          <label class="token-field" for="write-token">
-            Dashboard write token
-            <input id="write-token" type="password" autocomplete="off" placeholder="Paste token from container log or token file" />
-          </label>
-
-          <div class="rule-builder" aria-label="Rule builder">
-            <div class="guide-card">
-              <p class="guide-title">Build by dragging</p>
-              <p>Drag snippets into the editor, or use Insert to place them at the cursor. Keep each rule on one line.</p>
+            <div class="cyber-alert-summary">
+              <span><strong id="tcp-count">0</strong> TCP</span>
+              <span><strong id="icmp-count">0</strong> ICMP</span>
+              <span><strong id="latest-action">—</strong> LATEST</span>
             </div>
-            <div class="snippet-grid">
-              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Block admin URL"; content:"/admin"; http_uri; sid:1000010; rev:1;)'>Admin URL</button>
-              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"SQLi body"; content:"UNION"; nocase; http_client_body; pcre:"/union\\s+select/i"; http_client_body; sid:1000011; rev:1;)'>SQLi body</button>
-              <button class="snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Suspicious User-Agent"; content:"sqlmap"; nocase; http_header; sid:1000012; rev:1;)'>User-Agent</button>
-              <button class="snippet" type="button" draggable="true" data-snippet='alert icmp any any -> $HOME_NET any (msg:"ICMP Ping detected"; itype:8; sid:1000013; rev:1;)'>ICMP ping</button>
+            <ol id="alert-feed" class="cyber-alert-feed" aria-live="polite"></ol>
+          </div>
+
+          <div class="cyber-panel">
+            <div class="cyber-panel-header">
+              <span class="cyber-panel-title">[RULE_EDITOR]</span>
+              <div class="cyber-panel-actions">
+                <span id="dirty-indicator" class="cyber-badge" hidden>UNSAVED</span>
+                <button id="reload-rules" class="cyber-btn" type="button">RELOAD</button>
+              </div>
+            </div>
+
+            <label class="cyber-input-group">
+              <span class="cyber-label">AUTH_TOKEN</span>
+              <input id="write-token" type="password" class="cyber-input" autocomplete="off" placeholder="paste_token_here" />
+            </label>
+
+            <div class="cyber-mode-toggle">
+              <button id="mode-list" class="cyber-mode-btn active" type="button">LIST_VIEW</button>
+              <button id="mode-text" class="cyber-mode-btn" type="button">TEXT_MODE</button>
+            </div>
+
+            <div id="list-mode" class="cyber-rule-list-container">
+              <div class="cyber-rule-list-header">
+                <span class="cyber-label">RULES (<span id="rule-list-count">0</span>)</span>
+                <button id="add-rule-btn" class="cyber-btn cyber-btn-primary" type="button">+ ADD_RULE</button>
+              </div>
+              <div id="rule-list" class="cyber-rule-list"></div>
+            </div>
+
+            <div id="text-mode" class="cyber-text-mode" hidden>
+              <div class="cyber-snippets">
+                <button class="cyber-snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Block admin URL"; content:"/admin"; http_uri; sid:1000010; rev:1;)'>ADMIN_URL</button>
+                <button class="cyber-snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"SQLi body"; content:"UNION"; nocase; http_client_body; pcre:"/union\\s+select/i"; sid:1000011; rev:1;)'>SQLI_BODY</button>
+                <button class="cyber-snippet" type="button" draggable="true" data-snippet='drop tcp any any -> $HOME_NET 80 (msg:"Suspicious User-Agent"; content:"sqlmap"; nocase; http_header; sid:1000012; rev:1;)'>USER_AGENT</button>
+                <button class="cyber-snippet" type="button" draggable="true" data-snippet='alert icmp any any -> $HOME_NET any (msg:"ICMP Ping detected"; itype:8; sid:1000013; rev:1;)'>ICMP_PING</button>
+              </div>
+
+              <label class="cyber-label">RULE_TEXT</label>
+              <textarea id="rules-text" class="cyber-textarea" spellcheck="false" placeholder='drop tcp any any -> $HOME_NET 80 (msg:"rule"; sid:1000000; rev:1;)'></textarea>
+
+              <div class="cyber-editor-actions">
+                <button id="validate-rules" class="cyber-btn" type="button">VALIDATE</button>
+                <button id="format-rules" class="cyber-btn" type="button">FORMAT</button>
+              </div>
+              <div id="rule-hints" class="cyber-hints" aria-live="polite"></div>
+            </div>
+
+            <div class="cyber-editor-actions-global">
+              <button id="save-rules" class="cyber-btn cyber-btn-primary" type="button">SAVE_RULES</button>
+              <span id="save-message" class="cyber-message" role="status"></span>
             </div>
           </div>
+        </section>
+      </main>
+    </div>
 
-          <div class="inline-guide" aria-label="Rule syntax guide">
-            <span><b>action</b> alert/drop/pass/log</span>
-            <span><b>proto</b> ip/tcp/udp/icmp</span>
-            <span><b>buffer</b> http_uri/http_header/http_client_body</span>
-            <span><b>required</b> msg + positive unique sid</span>
-          </div>
+    <dialog id="rule-dialog" class="cyber-dialog">
+      <form id="rule-form" class="cyber-form" method="dialog">
+        <div class="cyber-dialog-header">
+          <h3 id="dialog-title" class="cyber-dialog-title">ADD_RULE</h3>
+          <button type="button" class="cyber-dialog-close" id="rule-dialog-close" aria-label="Close">×</button>
+        </div>
 
-          <label class="rules-editor" for="rules-text">Rules</label>
-          <textarea id="rules-text" spellcheck="false" placeholder='drop tcp any any -> $HOME_NET 80 (msg:"Block admin URL"; content:"/admin"; http_uri; sid:1000010; rev:1;)'></textarea>
+        <div class="cyber-tabs">
+          <button type="button" class="cyber-tab active" data-tab="basic">BASIC</button>
+          <button type="button" class="cyber-tab" data-tab="content">CONTENT</button>
+          <button type="button" class="cyber-tab" data-tab="advanced">ADVANCED</button>
+        </div>
 
-          <div class="editor-actions">
-            <button id="save-rules" class="primary-action" type="button">Save rules</button>
-            <button id="format-rules" type="button">Format spacing</button>
-            <span id="save-message" role="status"></span>
-          </div>
-          <div id="rule-hints" class="rule-hints" aria-live="polite"></div>
-        </article>
-      </section>
-    </main>
+        <div class="cyber-dialog-body">
+          <section class="cyber-form-tab active" id="tab-basic">
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">ACTION *</span>
+                <select name="action" class="cyber-select" required>
+                  <option value="alert">ALERT</option>
+                  <option value="drop">DROP</option>
+                  <option value="pass">PASS</option>
+                  <option value="log">LOG</option>
+                </select>
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">PROTOCOL *</span>
+                <select name="protocol" class="cyber-select" required>
+                  <option value="tcp">TCP</option>
+                  <option value="udp">UDP</option>
+                  <option value="icmp">ICMP</option>
+                  <option value="ip">IP</option>
+                </select>
+              </label>
+            </div>
+
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">SRC_IP</span>
+                <input type="text" name="srcIp" class="cyber-input" value="any" />
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">SRC_PORT</span>
+                <input type="text" name="srcPort" class="cyber-input" value="any" />
+              </label>
+            </div>
+
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">DST_IP</span>
+                <input type="text" name="dstIp" class="cyber-input" value="$HOME_NET" />
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">DST_PORT</span>
+                <input type="text" name="dstPort" class="cyber-input" value="any" />
+              </label>
+            </div>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">MESSAGE *</span>
+              <input type="text" name="msg" class="cyber-input" required />
+            </label>
+
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">SID *</span>
+                <input type="number" name="sid" class="cyber-input" required min="1" />
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">REVISION</span>
+                <input type="number" name="rev" class="cyber-input" value="1" min="1" />
+              </label>
+            </div>
+          </section>
+
+          <section class="cyber-form-tab" id="tab-content" hidden>
+            <label class="cyber-form-row">
+              <span class="cyber-label">CONTENT_MATCH</span>
+              <input type="text" name="content" class="cyber-input" placeholder="/admin or UNION" />
+            </label>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">HTTP_BUFFER</span>
+              <select name="httpBuffer" class="cyber-select">
+                <option value="">NONE</option>
+                <option value="http_uri">HTTP_URI</option>
+                <option value="http_header">HTTP_HEADER</option>
+                <option value="http_client_body">HTTP_CLIENT_BODY</option>
+              </select>
+            </label>
+
+            <label class="cyber-form-row cyber-checkbox-row">
+              <span><input type="checkbox" name="nocase" /> NOCASE</span>
+            </label>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">PCRE_PATTERN</span>
+              <input type="text" name="pcre" class="cyber-input" placeholder="/union\\s+select/i" />
+            </label>
+
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">ICMP_TYPE</span>
+                <input type="number" name="itype" class="cyber-input" min="0" max="255" />
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">ICMP_CODE</span>
+                <input type="number" name="icode" class="cyber-input" min="0" max="255" />
+              </label>
+            </div>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">TCP_FLAGS</span>
+              <input type="text" name="flags" class="cyber-input" placeholder="S or SA or FPU" />
+            </label>
+          </section>
+
+          <section class="cyber-form-tab" id="tab-advanced" hidden>
+            <label class="cyber-form-row">
+              <span class="cyber-label">FLOW</span>
+              <input type="text" name="flow" class="cyber-input" placeholder="to_server,established" />
+            </label>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">THRESHOLD</span>
+              <input type="text" name="threshold" class="cyber-input" placeholder="type threshold, track by_src, count 5, seconds 60" />
+            </label>
+
+            <div class="cyber-form-row-group">
+              <label class="cyber-form-row">
+                <span class="cyber-label">CLASSTYPE</span>
+                <input type="text" name="classtype" class="cyber-input" placeholder="web-application-attack" />
+              </label>
+              <label class="cyber-form-row">
+                <span class="cyber-label">PRIORITY</span>
+                <input type="number" name="priority" class="cyber-input" min="1" max="10" />
+              </label>
+            </div>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">REFERENCE</span>
+              <input type="text" name="reference" class="cyber-input" placeholder="url,example.com/advisory" />
+            </label>
+
+            <label class="cyber-form-row">
+              <span class="cyber-label">RAW_OPTIONS</span>
+              <textarea name="rawOptions" class="cyber-textarea" rows="4" placeholder="extra options"></textarea>
+            </label>
+          </section>
+        </div>
+
+        <div class="cyber-dialog-footer">
+          <button type="button" class="cyber-btn" id="rule-dialog-cancel">CANCEL</button>
+          <button type="submit" class="cyber-btn cyber-btn-primary">SAVE_RULE</button>
+        </div>
+      </form>
+    </dialog>
   </body>
 </html>

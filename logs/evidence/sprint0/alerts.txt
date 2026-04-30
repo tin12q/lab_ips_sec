@@ -1,0 +1,4 @@
+[2026-04-29T14:54:30Z] alerts capture start
+No command provided for alerts.
+Set it as argument when calling verify_capture.sh.
+[2026-04-29T14:54:30Z] alerts capture end

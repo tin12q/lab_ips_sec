@@ -6,8 +6,10 @@ import os
 import re
 import secrets
 import shutil
+import subprocess
 import tempfile
 import threading
+import time
 from collections.abc import Callable
 from datetime import datetime, timezone
 from http import HTTPStatus
@@ -20,6 +22,9 @@ DEFAULT_RULES_PATH = "/workspace/config/rules/local.rules"
 DEFAULT_RULES_ROOT = "/workspace/config/rules"
 DEFAULT_ALERT_PATH = "/var/log/minisnort/alert.log"
 DEFAULT_STATIC_DIR = Path(__file__).resolve().parent / "static"
+DEFAULT_ALERT_LONG_POLL_TIMEOUT_MS = 1200
+DEFAULT_ALERT_LONG_POLL_INTERVAL_MS = 100
+DEFAULT_RELOAD_COMMAND = "docker exec ms_ips sh -lc 'pkill -HUP minisnort || (pkill minisnort && /workspace/scripts/ips_entrypoint.sh >/tmp/minisnort-reload.log 2>&1 &)'"
 MAX_BODY_BYTES = 128 * 1024
 ALERT_READ_BYTES = 64 * 1024
 RULE_SAVE_LOCK = threading.Lock()
@@ -64,6 +69,30 @@ def read_alerts(alert_path: str, since: int) -> dict[str, object]:
         offset = since + len(data)
     text = data.decode("utf-8", errors="replace")
     return {"offset": offset, "lines": text.splitlines(), "exists": True, "size": size}
+
+
+def read_alerts_live(alert_path: str, since: int, timeout_ms: int = DEFAULT_ALERT_LONG_POLL_TIMEOUT_MS) -> dict[str, object]:
+    path = Path(alert_path)
+    start_time = time.time()
+    timeout_sec = timeout_ms / 1000.0
+    interval_sec = DEFAULT_ALERT_LONG_POLL_INTERVAL_MS / 1000.0
+
+    initial_size = path.stat().st_size if path.exists() else 0
+    if since < 0:
+        since = 0
+    if since > initial_size:
+        since = 0
+
+    while True:
+        result = read_alerts(alert_path, since)
+        if result.get("lines"):
+            return result
+
+        elapsed = time.time() - start_time
+        if elapsed >= timeout_sec:
+            return result
+
+        time.sleep(interval_sec)
 
 
 def validate_rules(text: str) -> list[str]:
@@ -213,6 +242,22 @@ class DashboardHandler(SimpleHTTPRequestHandler):
             except OSError:
                 self.send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "unable to read alert log"})
             return
+        if parsed.path == "/api/alerts/live":
+            query = parse_qs(parsed.query)
+            raw_since = query.get("since", ["0"])[0]
+            raw_timeout = query.get("timeout", [str(DEFAULT_ALERT_LONG_POLL_TIMEOUT_MS)])[0]
+            try:
+                since = int(raw_since)
+                timeout_ms = int(raw_timeout)
+                timeout_ms = max(100, min(timeout_ms, 5000))
+            except ValueError:
+                since = 0
+                timeout_ms = DEFAULT_ALERT_LONG_POLL_TIMEOUT_MS
+            try:
+                self.send_json(HTTPStatus.OK, read_alerts_live(self.alert_path, since, timeout_ms))
+            except OSError:
+                self.send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "unable to read alert log"})
+            return
         if parsed.path == "/api/rules":
             try:
                 path = confined_path(self.rules_path, self.rules_root)
@@ -234,6 +279,20 @@ class DashboardHandler(SimpleHTTPRequestHandler):
 
     def do_POST(self) -> None:
         parsed = urlparse(self.path)
+        if parsed.path == "/api/alerts/clear":
+            if not self.has_valid_write_token():
+                self.send_json(HTTPStatus.FORBIDDEN, {"error": "invalid dashboard write token"})
+                return
+            try:
+                alert_path = Path(self.alert_path)
+                alert_path.parent.mkdir(parents=True, exist_ok=True)
+                alert_path.write_text("", encoding="utf-8")
+            except OSError:
+                self.send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "unable to clear alert log"})
+                return
+            self.send_json(HTTPStatus.OK, {"ok": True, "alertSize": 0})
+            return
+
         if parsed.path != "/api/rules":
             self.send_json(HTTPStatus.NOT_FOUND, {"error": "not found"})
             return
@@ -267,7 +326,21 @@ class DashboardHandler(SimpleHTTPRequestHandler):
         except OSError:
             self.send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "unable to save rules file"})
             return
-        self.send_json(HTTPStatus.OK, {"ok": True, "path": str(saved_path)})
+
+        reload_error = ""
+        reload_command = os.environ.get("MINISNORT_RELOAD_COMMAND", DEFAULT_RELOAD_COMMAND).strip()
+        if reload_command:
+            try:
+                result = subprocess.run(["sh", "-lc", reload_command], capture_output=True, text=True, timeout=8)
+                if result.returncode != 0:
+                    reload_error = (result.stderr or result.stdout or "reload command failed").strip()
+            except (OSError, subprocess.SubprocessError) as exc:
+                reload_error = str(exc)
+
+        payload: dict[str, object] = {"ok": True, "path": str(saved_path), "reloadTriggered": bool(reload_command)}
+        if reload_error:
+            payload["reloadError"] = reload_error
+        self.send_json(HTTPStatus.OK, payload)
 
 
 def make_handler(

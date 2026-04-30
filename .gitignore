@@ -3,3 +3,9 @@ __pycache__/
 *.py[cod]
 .pytest_cache/
 logs/dashboard-token
+logs/alert.log
+
+# Ignore virtual environment directories
+venv/
+
+config/rules/*

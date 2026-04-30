@@ -1,6 +1,8 @@
 services:
   ips:
-    build: ./docker/ips
+    build:
+      context: .
+      dockerfile: docker/ips/Dockerfile
     container_name: ms_ips
     hostname: ips
     restart: always
@@ -13,10 +15,8 @@ services:
       - ./:/workspace
       - ./logs:/var/log/minisnort
     networks:
-      net_attack:
-        ipv4_address: 10.200.0.2
-      net_victim:
-        ipv4_address: 10.201.0.2
+      lab_net:
+        ipv4_address: 10.100.0.2
     command: /workspace/scripts/ips_entrypoint.sh
     tty: true
 
@@ -31,8 +31,8 @@ services:
       - ./scripts:/scripts:ro
       - ./logs/attacker:/var/log/attacker
     networks:
-      net_attack:
-        ipv4_address: 10.200.0.10
+      lab_net:
+        ipv4_address: 10.100.0.10
     depends_on:
       - ips
     command: /scripts/attacker_entrypoint.sh
@@ -45,8 +45,8 @@ services:
     cap_add:
       - NET_ADMIN
     networks:
-      net_victim:
-        ipv4_address: 10.201.0.20
+      lab_net:
+        ipv4_address: 10.100.0.20
     depends_on:
       - ips
     ports: []
@@ -74,13 +74,9 @@ services:
     tty: true
 
 networks:
-  net_attack:
+  lab_net:
     driver: bridge
     ipam:
       config:
-        - subnet: 10.200.0.0/24
-  net_victim:
-    driver: bridge
-    ipam:
-      config:
-        - subnet: 10.201.0.0/24
+        - subnet: 10.100.0.0/24
+          gateway: 10.100.0.1

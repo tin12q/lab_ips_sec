@@ -1,0 +1,44 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(docker compose *)",
+      "Bash(curl -sS \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=200\")",
+      "Bash(curl -sS http://127.0.0.1:8080/api/rules)",
+      "Bash(python -m json.tool)",
+      "Bash(docker exec *)",
+      "Bash(curl -sS \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=800\")",
+      "Bash(curl -sS \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=500\")",
+      "Bash(python3 -m json.tool)",
+      "Bash(curl -sS \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=300\")",
+      "Bash(git -C /home/enterprise/Documents/lab_ips_sec log --oneline -40 -- dashboard/static/dashboard.js dashboard/static)",
+      "Bash(npm run *)",
+      "Bash(npx playwright *)",
+      "Bash(npm install *)",
+      "Bash(curl -s http://127.0.0.1:8080/api/status)",
+      "Bash(chmod +x \"/home/enterprise/Documents/lab_ips_sec/test_alerts.sh\")",
+      "Bash(/home/enterprise/Documents/lab_ips_sec/test_alerts.sh)",
+      "Bash(chmod +x \"/home/enterprise/Documents/lab_ips_sec/ping_test.sh\")",
+      "Bash(curl -s \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=100\")",
+      "Bash(docker inspect *)",
+      "Bash(docker network *)",
+      "Bash(docker restart *)",
+      "Bash(curl -s \"http://127.0.0.1:8080/api/alerts/live?since=0&timeout=200\")",
+      "Bash(wait)",
+      "Bash(sudo iptables *)",
+      "Bash(/home/enterprise/Documents/lab_ips_sec/scripts/verify_capture.sh)",
+      "Bash(/home/enterprise/Documents/lab_ips_sec/scripts/attack_icmp.sh)",
+      "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/fix_ips_routing.sh)",
+      "Bash(/home/enterprise/Documents/lab_ips_sec/fix_ips_routing.sh)",
+      "Read(//proc/sys/net/bridge/**)",
+      "Bash(curl -s http://127.0.0.1:8080/api/alerts/live)",
+      "Bash(cmake -S . -B build -G Ninja)",
+      "Bash(ninja -C build)",
+      "Bash(sudo pacman *)",
+      "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/scripts/force_ips_routing.sh)",
+      "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/scripts/demo_rule_tests.sh)"
+    ],
+    "additionalDirectories": [
+      "/tmp"
+    ]
+  }
+}

@@ -1,26 +1,29 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-sysctl -w net.ipv4.ip_forward=1
+echo "[ips_entrypoint] Initializing IPS forwarding..."
+sysctl -w net.ipv4.ip_forward=1 || true
+
 iptables -F FORWARD
+iptables -P FORWARD ACCEPT
+
 FAIL_OPEN="${MINISNORT_FAIL_OPEN:-0}"
 if [[ "${FAIL_OPEN}" == "1" ]]; then
   iptables -A FORWARD -j NFQUEUE --queue-num 0 --queue-bypass
+  echo "[ips_entrypoint] NFQUEUE enabled (fail-open)"
 else
   iptables -A FORWARD -j NFQUEUE --queue-num 0
+  echo "[ips_entrypoint] NFQUEUE enabled (fail-closed)"
 fi
 
-CONTAINER_BUILD_DIR="/tmp/minisnort-build"
-CONTAINER_BINARY="${CONTAINER_BUILD_DIR}/src/minisnort"
-FALLBACK_BINARY="/workspace/build/minisnort"
+iptables -L FORWARD -n -v | grep NFQUEUE || {
+  echo "[ips_entrypoint] ERROR: NFQUEUE rule missing" >&2
+  exit 1
+}
 
-if cmake -S /workspace -B "${CONTAINER_BUILD_DIR}" -G Ninja && ninja -C "${CONTAINER_BUILD_DIR}"; then
-  RUN_BINARY="${CONTAINER_BINARY}"
-elif [[ -x "${FALLBACK_BINARY}" ]]; then
-  echo "[ips_entrypoint] startup build failed, falling back to ${FALLBACK_BINARY}" >&2
-  RUN_BINARY="${FALLBACK_BINARY}"
-else
-  echo "[ips_entrypoint] startup build failed and no fallback binary found" >&2
+RUN_BINARY="/opt/minisnort/minisnort"
+if [[ ! -x "${RUN_BINARY}" ]]; then
+  echo "[ips_entrypoint] ERROR: prebuilt binary missing at ${RUN_BINARY}" >&2
   exit 1
 fi
 
@@ -34,6 +37,7 @@ SNAPSHOT_FILE="/var/log/minisnort/runtime_snapshot.txt"
   cat /proc/net/route
 } > "${SNAPSHOT_FILE}"
 
+echo "[ips_entrypoint] Starting minisnort..."
 exec "${RUN_BINARY}" \
   --mode ips \
   --queue 0 \

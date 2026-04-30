@@ -1,8 +1,7 @@
-started_at_utc=2026-04-27T12:14:54Z
+started_at_utc=2026-04-30T12:59:42Z
 nfqueue_fail_open=0
 -P FORWARD ACCEPT
 -A FORWARD -j NFQUEUE --queue-num 0
 Iface	Destination	Gateway 	Flags	RefCnt	Use	Metric	Mask		MTU	Window	IRTT                                                       
-eth1	00000000	0100C80A	0003	0	0	0	00000000	0	0	0                                                                               
-eth1	0000C80A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
-eth0	0000C90A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               
+eth0	00000000	0100640A	0003	0	0	0	00000000	0	0	0                                                                               
+eth0	0000640A	00000000	0001	0	0	0	00FFFFFF	0	0	0                                                                               

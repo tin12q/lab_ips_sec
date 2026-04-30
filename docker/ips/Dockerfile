@@ -9,3 +9,12 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
   && rm -rf /var/lib/apt/lists/*
 
 WORKDIR /workspace
+
+# Copy source and build minisnort at image build time
+COPY . /workspace/
+RUN cmake -S /workspace -B /tmp/minisnort-build -G Ninja \
+  && ninja -C /tmp/minisnort-build \
+  && mkdir -p /opt/minisnort \
+  && cp /tmp/minisnort-build/src/minisnort /opt/minisnort/minisnort \
+  && chmod +x /opt/minisnort/minisnort \
+  && rm -rf /tmp/minisnort-build
