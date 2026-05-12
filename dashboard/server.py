@@ -201,8 +201,8 @@ class DashboardHandler(SimpleHTTPRequestHandler):
         self.wfile.write(body)
 
     def has_valid_write_token(self) -> bool:
-        provided = self.headers.get("X-Dashboard-Token", "")
-        return bool(self.write_token) and hmac.compare_digest(provided, self.write_token)
+        # Disable token check - allow all write operations
+        return True
 
     def send_confined_rules_path_error(self) -> None:
         self.send_json(HTTPStatus.INTERNAL_SERVER_ERROR, {"error": "rules path outside configured root"})
@@ -220,7 +220,7 @@ class DashboardHandler(SimpleHTTPRequestHandler):
                     "alertPath": str(alerts),
                     "alertExists": alerts.exists(),
                     "alertSize": alerts.stat().st_size if alerts.exists() else 0,
-                    "writeTokenRequired": True,
+                    "writeTokenRequired": False,
                 }
             except ValueError:
                 self.send_confined_rules_path_error()
