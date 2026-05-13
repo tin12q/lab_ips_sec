@@ -14,8 +14,9 @@
   --glow-md: 0 0 16px;
   --glow-lg: 0 0 24px;
   --glow-xl: 0 0 40px;
-  --font-heading: 'Orbitron', 'Rajdhani', ui-sans-serif, system-ui, sans-serif;
-  --font-mono: 'Courier Prime', 'Share Tech Mono', 'Fira Code', ui-monospace, monospace;
+  --font-heading: "Orbitron", "Rajdhani", ui-sans-serif, system-ui, sans-serif;
+  --font-mono:
+    "Courier Prime", "Share Tech Mono", "Fira Code", ui-monospace, monospace;
 }
 
 *,
@@ -32,9 +33,21 @@ body {
   font-size: 14px;
   line-height: 1.6;
   background:
-    radial-gradient(circle at 15% 10%, rgba(0, 217, 255, 0.15), transparent 40%),
-    radial-gradient(circle at 85% 90%, rgba(181, 55, 255, 0.12), transparent 40%),
-    radial-gradient(circle at 50% 50%, rgba(255, 0, 110, 0.08), transparent 60%),
+    radial-gradient(
+      circle at 15% 10%,
+      rgba(0, 217, 255, 0.15),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 85% 90%,
+      rgba(181, 55, 255, 0.12),
+      transparent 40%
+    ),
+    radial-gradient(
+      circle at 50% 50%,
+      rgba(255, 0, 110, 0.08),
+      transparent 60%
+    ),
     #0a0a0f;
 }
 
@@ -106,18 +119,24 @@ body {
   height: 12px;
   border-radius: 50%;
   background: var(--neon-orange);
-  box-shadow: 0 0 8px var(--neon-orange), 0 0 16px var(--neon-orange);
+  box-shadow:
+    0 0 8px var(--neon-orange),
+    0 0 16px var(--neon-orange);
   animation: pulse-glow 2s ease-in-out infinite;
 }
 
 .cyber-led[data-status="live"] {
   background: var(--neon-green);
-  box-shadow: 0 0 8px var(--neon-green), 0 0 16px var(--neon-green);
+  box-shadow:
+    0 0 8px var(--neon-green),
+    0 0 16px var(--neon-green);
 }
 
 .cyber-led[data-status="offline"] {
   background: var(--neon-pink);
-  box-shadow: 0 0 8px var(--neon-pink), 0 0 16px var(--neon-pink);
+  box-shadow:
+    0 0 8px var(--neon-pink),
+    0 0 16px var(--neon-pink);
 }
 
 .cyber-status-text {
@@ -156,15 +175,21 @@ body {
   box-shadow:
     inset 0 0 20px rgba(0, 217, 255, 0.1),
     0 0 20px rgba(0, 217, 255, 0.2);
-  transition: transform 300ms ease, box-shadow 300ms ease;
+  transition:
+    transform 300ms ease,
+    box-shadow 300ms ease;
 }
 
 .cyber-card::before {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0 auto 0 0;
   width: 4px;
-  background: linear-gradient(180deg, var(--accent-color, var(--neon-blue)), transparent);
+  background: linear-gradient(
+    180deg,
+    var(--accent-color, var(--neon-blue)),
+    transparent
+  );
   box-shadow: 0 0 12px var(--accent-color, var(--neon-blue));
 }
 
@@ -294,23 +319,19 @@ body {
 .cyber-alert-feed {
   max-height: 500px;
   margin: 0;
-  padding: 0;
+  padding: 1rem;
   overflow-y: auto;
-  list-style: none;
-}
-
-.cyber-alert-feed li {
-  margin-bottom: 0.75rem;
-  border: 1px solid rgba(0, 217, 255, 0.4);
+  overflow-x: auto;
+  background: rgba(0, 0, 0, 0.6);
+  border: 1px solid rgba(0, 217, 255, 0.3);
   border-radius: 4px;
-  padding: 0.75rem;
-  background:
-    linear-gradient(135deg, rgba(18, 18, 26, 0.8), rgba(26, 26, 40, 0.6)),
-    radial-gradient(circle at top right, rgba(181, 55, 255, 0.1), transparent);
-  box-shadow:
-    inset 0 0 12px rgba(0, 217, 255, 0.1),
-    0 0 8px rgba(0, 217, 255, 0.2);
-  animation: slide-in 0.3s ease both;
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: var(--neon-green);
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  text-shadow: 0 0 2px var(--neon-green);
 }
 
 .cyber-badge {
@@ -789,7 +810,8 @@ body {
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {
@@ -797,62 +819,7 @@ body {
   }
 }
 
-.alert-line-heading {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-  margin-bottom: 0.5rem;
-}
-
-.alert-timestamp {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  color: var(--text-muted);
-  font-weight: 600;
-}
-
-.alert-chip {
-  display: inline-block;
-  border-radius: 4px;
-  padding: 0.25rem 0.5rem;
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.05em;
-  text-transform: uppercase;
-}
-
-.alert-chip.sid-chip {
-  border: 1px solid var(--neon-blue);
-  color: var(--neon-blue);
-  background: rgba(0, 217, 255, 0.1);
-  box-shadow: 0 0 8px rgba(0, 217, 255, 0.2);
-}
-
-.alert-chip.action-drop {
-  border: 1px solid var(--neon-pink);
-  color: var(--neon-pink);
-  background: rgba(255, 0, 110, 0.1);
-  box-shadow: 0 0 8px rgba(255, 0, 110, 0.3);
-}
-
-.alert-chip.action-alert {
-  border: 1px solid var(--neon-orange);
-  color: var(--neon-orange);
-  background: rgba(255, 102, 0, 0.1);
-  box-shadow: 0 0 8px rgba(255, 102, 0, 0.3);
-}
-
-.alert-message {
-  flex: 1;
-  font-weight: 700;
-  color: var(--text-primary);
-}
-
-.alert-flow {
-  display: block;
-  font-size: 0.875rem;
-  color: var(--text-secondary);
-}
+/* Alert log styling - removed card styles, using plain text */
 
 @keyframes slide-in {
   from {
@@ -866,7 +833,8 @@ body {
 }
 
 @keyframes flicker {
-  0%, 100% {
+  0%,
+  100% {
     opacity: 1;
   }
   50% {

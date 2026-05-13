@@ -4,6 +4,105 @@
 
 ---
 
+## DÀN Ý BÁO CÁO MÔN HỌC (BẢN VIẾT)
+
+> Chủ đề: **Thiết kế và triển khai hệ thống IPS MiniSnort trong môi trường Docker Lab**
+
+### 1) Overview (Tổng quan đề tài)
+- Bối cảnh an ninh mạng hiện nay: tấn công mạng tăng, nhu cầu phát hiện và ngăn chặn theo thời gian thực.
+- Mục tiêu đề tài: xây dựng mô hình IPS hoạt động inline, có khả năng **phát hiện + chặn** lưu lượng độc hại.
+- Phạm vi triển khai: lab ảo hóa bằng Docker gồm attacker, IPS, victim, dashboard.
+- Kết quả chính: hệ thống có thể nhận diện ping flood/SYN scan/SSH brute force/SQLi/path traversal và thực thi alert hoặc drop.
+
+### 2) Why Choosing (Lý do chọn đề tài)
+- IPS là thành phần cốt lõi trong hệ thống phòng thủ chủ động, khác với IDS chỉ cảnh báo.
+- Đề tài có tính thực tiễn cao, bám sát công nghệ vận hành thật (Netfilter/NFQueue/Snort-like rules).
+- Phù hợp mục tiêu môn học: kết hợp kiến thức mạng máy tính, lập trình hệ thống, bảo mật ứng dụng.
+- Có thể mở rộng cho nghiên cứu nâng cao: tối ưu hiệu năng, ML-based detection, tích hợp SIEM.
+
+### 3) Theory (Cơ sở lý thuyết)
+- Khái niệm IDS vs IPS, vị trí triển khai inline trong chuỗi mạng.
+- Cơ chế packet flow qua Netfilter và hàng đợi NFQueue trong Linux kernel.
+- Kỹ thuật phát hiện sử dụng trong đề tài:
+  - Signature matching (content, pcre, flags, itype)
+  - Flow/state tracking (TCP established)
+  - Threshold/rate limiting (đếm số sự kiện theo cửa sổ thời gian)
+  - HTTP deep inspection (URI, header, body)
+- Nguyên tắc verdict: `NF_ACCEPT` (cho qua) và `NF_DROP` (chặn).
+
+### 4) Architecture (Kiến trúc hệ thống)
+- Mô hình tổng thể:
+  - `ms_attacker` → `ms_ips` → `ms_victim`
+  - `ms_dashboard` hiển thị rules và alert theo thời gian gần thực.
+- Luồng xử lý gói:
+  1. DAQ nhận gói từ NFQueue/PCAP
+  2. Decoder tách lớp giao thức
+  3. Engine điều phối đối sánh rule
+  4. Matcher + Flow + Threshold đánh giá điều kiện
+  5. Trả verdict về kernel
+  6. Logger ghi `alert.log`
+- Chính sách độ tin cậy: fail-open có kiểm soát để ưu tiên availability khi inspection path lỗi.
+
+### 5) Technology (Công nghệ sử dụng)
+- **Ngôn ngữ**: C++ (core IPS), Python (dashboard backend), JavaScript/HTML (dashboard frontend), Bash (automation scripts).
+- **Nền tảng mạng**: Linux Netfilter, NFQueue, iptables.
+- **Môi trường triển khai**: Docker, Docker Compose.
+- **Rule engine**: cú pháp Snort-like parser tự xây dựng.
+- **Kiểm thử**: CTest + kịch bản tấn công mô phỏng trong container attacker.
+
+### 6) Code Implementation (Triển khai mã nguồn)
+- Cấu trúc module chính:
+  - `src/daq/` — nhận packet từ kernel/pcap
+  - `src/decoder/` — parse giao thức
+  - `src/detection/engine.cpp` — pipeline xử lý trung tâm
+  - `src/detection/matcher.cpp` — so khớp rule
+  - `src/flow/` — bảng trạng thái TCP
+  - `src/detection/threshold.cpp` — chống brute-force/flood theo ngưỡng
+  - `src/rules/` — parser + lưu trữ rule
+  - `src/logger/alert_fast.cpp` — ghi alert định dạng fast log
+- Rule tiêu biểu:
+  - Alert: ICMP ping, SYN scan, SSH brute force
+  - Drop: SQLi `UNION SELECT`, `/admin`, `../`, sqlmap User-Agent
+- Điểm kỹ thuật nổi bật:
+  - Candidate filtering theo protocol/port để giảm chi phí matching.
+  - Kết hợp điều kiện flow + threshold trước khi kết luận drop.
+  - Dashboard đọc trực tiếp log/rule để hỗ trợ quan sát runtime.
+
+### 7) Demo (Thực nghiệm và minh chứng)
+- Chuẩn bị:
+  - `./scripts/lab_up.sh`
+  - `tail -f logs/alert.log`
+  - mở `http://localhost:8080`
+- Kịch bản demo đề xuất:
+  1. Ping ICMP → sinh alert (không chặn)
+  2. SYN scan vượt ngưỡng → alert
+  3. SSH brute force → alert theo flow established
+  4. SQLi payload → bị drop, request thất bại
+  5. Truy cập `/admin` hoặc sqlmap UA → bị drop
+- Kết quả mong đợi:
+  - Alert hiển thị đúng SID/msg/time.
+  - Attack thuộc nhóm policy block bị chặn ngay ở kernel.
+
+### 8) Evaluation (Đánh giá kết quả)
+- Ưu điểm:
+  - Triển khai được IPS inline hoạt động thật, không chỉ mô phỏng lý thuyết.
+  - Pipeline rõ ràng, dễ debug, dễ mở rộng rule.
+  - Môi trường Docker tái lập tốt cho giảng dạy/thực nghiệm.
+- Hạn chế:
+  - Chưa tối ưu sâu hiệu năng khi lưu lượng lớn.
+  - Chưa tích hợp threat intel ngoài hoặc mô hình học máy.
+- Hướng phát triển:
+  - Benchmark throughput/latency.
+  - Mở rộng parser/rule options nâng cao.
+  - Xuất alert sang hệ thống tập trung (ELK/SIEM).
+
+### 9) Conclusion (Kết luận)
+- Đề tài đã chứng minh khả năng xây dựng một IPS mini end-to-end từ lý thuyết đến vận hành thực tế.
+- Hệ thống đáp ứng mục tiêu phát hiện/chặn các tấn công phổ biến trong lab.
+- Nền tảng hiện tại sẵn sàng cho các bước nghiên cứu mở rộng ở mức production-like.
+
+---
+
 ## 📋 TỔNG QUAN PHÂN CÔNG 4 NGƯỜI
 
 | Người | Phần phụ trách | Loại nội dung |

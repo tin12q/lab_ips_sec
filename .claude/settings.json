@@ -35,7 +35,9 @@
       "Bash(ninja -C build)",
       "Bash(sudo pacman *)",
       "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/scripts/force_ips_routing.sh)",
-      "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/scripts/demo_rule_tests.sh)"
+      "Bash(chmod +x /home/enterprise/Documents/lab_ips_sec/scripts/demo_rule_tests.sh)",
+      "Bash(curl -s -X POST http://127.0.0.1:8080/api/rules -H \"Content-Type: text/plain; charset=utf-8\" --data-binary @\"/home/enterprise/Documents/lab_ips_sec/config/rules/local.rules\")",
+      "Bash(curl -s -X POST http://127.0.0.1:8080/api/rules -H \"Content-Type: text/plain; charset=utf-8\" --data-binary @-)"
     ],
     "additionalDirectories": [
       "/tmp"

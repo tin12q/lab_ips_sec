@@ -14,6 +14,7 @@ services:
     volumes:
       - ./:/workspace
       - ./logs:/var/log/minisnort
+      - /etc/localtime:/etc/localtime:ro
     networks:
       lab_net:
         ipv4_address: 10.100.0.2
@@ -30,6 +31,7 @@ services:
     volumes:
       - ./scripts:/scripts:ro
       - ./logs/attacker:/var/log/attacker
+      - /etc/localtime:/etc/localtime:ro
     networks:
       lab_net:
         ipv4_address: 10.100.0.10
@@ -44,6 +46,8 @@ services:
     hostname: victim
     cap_add:
       - NET_ADMIN
+    volumes:
+      - /etc/localtime:/etc/localtime:ro
     networks:
       lab_net:
         ipv4_address: 10.100.0.20
@@ -53,7 +57,9 @@ services:
     tty: true
 
   dashboard:
-    image: python:3.12-slim
+    build:
+      context: .
+      dockerfile: docker/dashboard/Dockerfile
     container_name: ms_dashboard
     hostname: dashboard
     working_dir: /app
@@ -66,6 +72,8 @@ services:
       - ./dashboard:/app:ro
       - ./config/rules:/workspace/config/rules
       - ./logs:/var/log/minisnort
+      - /var/run/docker.sock:/var/run/docker.sock
+      - /etc/localtime:/etc/localtime:ro
     ports:
       - "127.0.0.1:8080:8080"
     depends_on:
